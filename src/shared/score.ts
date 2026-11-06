@@ -131,6 +131,18 @@ export function sameValue(expected: string, found: string | null | undefined): b
   return a !== '' && b !== '' && Number.isFinite(na) && Number.isFinite(nb) && na === nb
 }
 
+/** Levenshtein distance, for test names with an OCR typo ("Cholestéro total"). */
+export function editDistance(a: string, b: string): number {
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j)
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]
+    for (let j = 1; j <= b.length; j++)
+      cur[j] = Math.min(prev[j]! + 1, cur[j - 1]! + 1, prev[j - 1]! + (a[i - 1] === b[j - 1] ? 0 : 1))
+    prev = cur
+  }
+  return prev[b.length]!
+}
+
 /** Match ground-truth rows to extracted rows by normalized test name, in page order. */
 export function score(truth: TruthRow[], extracted: LabResultRow[] | null | undefined): Score {
   const rows = (extracted ?? []).filter((r) => r && (r.test_name || r.value))
@@ -145,6 +157,13 @@ export function score(truth: TruthRow[], extracted: LabResultRow[] | null | unde
         return !used.has(j) && n.length > 2 && (n.includes(key) || key.includes(n))
       })
     }
+    if (idx < 0) {
+      // Fuzzy match: a small edit distance, for OCR typos in the name.
+      const max = Math.max(1, Math.floor(key.length * 0.2))
+      idx = rows.findIndex(
+        (r, j) => !used.has(j) && editDistance(normName(r.test_name ?? ''), key) <= max,
+      )
+    }
     if (idx >= 0) used.add(idx)
     return idx
   }
@@ -153,11 +172,13 @@ export function score(truth: TruthRow[], extracted: LabResultRow[] | null | unde
     const idx = pick(t.test)
     const r = idx >= 0 ? rows[idx]! : null
     const expected = { value: t.value, flag: t.flag, units: t.units }
-    if (!r) return { test: t.test, expected, found: null, valueOk: false, flagOk: false, unitsOk: false }
+    if (!r)
+      return { test: t.test, expected, found: null, nameOk: false, valueOk: false, flagOk: false, unitsOk: false }
     return {
       test: t.test,
       expected,
-      found: { value: r.value, flag: r.flag, units: r.units },
+      found: { test: r.test_name, value: r.value, flag: r.flag, units: r.units },
+      nameOk: normName(r.test_name ?? '') === normName(t.test),
       valueOk: sameValue(t.value, r.value),
       flagOk: normFlag(t.flag) === normFlag(r.flag),
       unitsOk: normUnits(t.units) === normUnits(r.units),

@@ -91,7 +91,8 @@ export interface Extraction {
 export interface RowScore {
   test: string // ground-truth test name
   expected: { value: string; flag: string | null; units: string | null }
-  found: { value: string | null; flag: string | null; units: string | null } | null
+  found: { test: string | null; value: string | null; flag: string | null; units: string | null } | null
+  nameOk: boolean // the extracted test name matches exactly (after accent and case folding)
   valueOk: boolean
   flagOk: boolean
   unitsOk: boolean
@@ -99,7 +100,7 @@ export interface RowScore {
 
 export interface Score {
   rowsExpected: number
-  rowsFound: number // ground-truth rows matched by test name
+  rowsFound: number // ground-truth rows matched by test name (exact, contained, or within a small edit distance)
   rowsExtracted: number // rows the model returned
   valuesCorrect: number
   flagsCorrect: number

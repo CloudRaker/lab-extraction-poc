@@ -146,6 +146,13 @@ describe('score', () => {
     expect(score(truth, null)).toMatchObject({ rowsExpected: 4, rowsFound: 0, valuesCorrect: 0 })
   })
 
+  it('matches a name with an OCR typo', () => {
+    const t = parseTruth('| Test | Result | Flag | Units | Reference range |\n|---|---|---|---|---|\n| Cholestérol total | 3,54 |  | mmol/L | < 5,20 |\n')
+    const s = score(t, [row({ test_name: 'Cholestéro total', value: '3,54', units: 'mmol/L' })])
+    expect(s.perRow[0]).toMatchObject({ nameOk: false, valueOk: true, unitsOk: true })
+    expect(s.extraRows).toEqual([])
+  })
+
   it('falls back to a loose name match', () => {
     const s = score(parseTruth(combinedUnits), [row({ test_name: 'eGFR', value: '51', flag: '*', units: 'mL/min/1.73m2' })])
     expect(s.perRow[1]).toMatchObject({ valueOk: true, flagOk: true })
