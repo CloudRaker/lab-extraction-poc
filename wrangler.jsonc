@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lab-extraction-poc",
+  "main": "src/server.ts",
+  "compatibility_date": "2026-07-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "API_BASE": "https://api.cloudraker.com",
+    "CATALOG_URL": "https://catalog.cloudraker.com/catalog.json",
+    // Optional. When set (as a secret), POST /api/run needs a matching x-demo-code header.
+    "DEMO_CODE": ""
+  },
+  "observability": { "enabled": true }
+  // Secret: PAPERWORK_API_KEY (wrangler secret put PAPERWORK_API_KEY, or .dev.vars locally).
+}
