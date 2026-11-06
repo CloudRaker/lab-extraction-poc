@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_000434",
-  "ranAt": "2026-11-06T16:35:40.545Z",
+  "ranAt": "2026-11-06T17:24:05.117Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report containing comprehensive test results with analytes, values, abnormal flags, units, and reference ranges for patient Brianna Herrera, including metabolic panel and complete blood count."
+    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for patient Brianna Herrera."
   },
   "extraction": {
     "value": {
@@ -103,8 +103,8 @@
           "numeric_value": 51,
           "flag": "*",
           "units": "mL/min/1,73㎡",
-          "reference_low": null,
-          "reference_high": 60,
+          "reference_low": 60,
+          "reference_high": null,
           "reference_text": "> 60",
           "abnormal": true
         },
@@ -482,7 +482,7 @@
             "height": 0.5810000000000001
           },
           "text": "Comprehensive Metabolic Panel",
-          "confidence": 2
+          "confidence": 3
         },
         {
           "page": 0,
@@ -493,7 +493,7 @@
             "height": 0.5810000000000001
           },
           "text": "Sodium</td><td>144</td><td></td><td>135 - 145 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -504,7 +504,7 @@
             "height": 0.5810000000000001
           },
           "text": "Potassium</td><td>4.9</td><td></td><td>3.5 - 5.0 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -515,7 +515,7 @@
             "height": 0.5810000000000001
           },
           "text": "Chloride</td><td>102</td><td></td><td>98 - 107 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -526,7 +526,7 @@
             "height": 0.5810000000000001
           },
           "text": "Bicarbonate (CO2)</td><td>28</td><td></td><td>22 - 29 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -537,7 +537,7 @@
             "height": 0.5810000000000001
           },
           "text": "Urea</td><td>5.3</td><td></td><td>2.5 - 8.0 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -548,7 +548,7 @@
             "height": 0.5810000000000001
           },
           "text": "Creatinine</td><td>123</td><td>*</td><td>50 - 110 μmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -559,7 +559,7 @@
             "height": 0.5810000000000001
           },
           "text": "eGFR (CKD-EPI)</td><td>51</td><td>*</td><td>&gt; 60 mL/min/1,73㎡",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -570,7 +570,7 @@
             "height": 0.5810000000000001
           },
           "text": "Glucose (fasting)</td><td>4.6</td><td></td><td>3.9 - 6.1 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -581,7 +581,7 @@
             "height": 0.5810000000000001
           },
           "text": "Calcium</td><td>2.31</td><td></td><td>2.15 - 2.55 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -592,7 +592,7 @@
             "height": 0.5810000000000001
           },
           "text": "Magnesium</td><td>0.81</td><td></td><td>0.70 - 1.05 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -603,7 +603,7 @@
             "height": 0.5810000000000001
           },
           "text": "Phosphate</td><td>1.44</td><td></td><td>0.80 - 1.45 mmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -614,7 +614,7 @@
             "height": 0.5810000000000001
           },
           "text": "Total protein</td><td>77</td><td></td><td>60 - 80 g/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -625,7 +625,7 @@
             "height": 0.5810000000000001
           },
           "text": "Albumin</td><td>37</td><td></td><td>35 - 50 g/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -636,7 +636,7 @@
             "height": 0.5810000000000001
           },
           "text": "Total bilirubin</td><td>20</td><td></td><td>3 - 21 μmol/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -647,7 +647,7 @@
             "height": 0.5810000000000001
           },
           "text": "ALT</td><td>2</td><td>*</td><td>7 - 40 U/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -658,7 +658,7 @@
             "height": 0.5810000000000001
           },
           "text": "AST</td><td>33</td><td></td><td>10 - 40 U/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -669,7 +669,7 @@
             "height": 0.5810000000000001
           },
           "text": "Alkaline phosphatase</td><td>107</td><td></td><td>40 - 120 U/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -680,7 +680,7 @@
             "height": 0.5810000000000001
           },
           "text": "GGT</td><td>58</td><td></td><td>10 - 60 U/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -691,7 +691,7 @@
             "height": 0.5810000000000001
           },
           "text": "Complete Blood Count (CBC)",
-          "confidence": 2
+          "confidence": 3
         },
         {
           "page": 0,
@@ -702,7 +702,7 @@
             "height": 0.5810000000000001
           },
           "text": "Hemoglobin</td><td>134</td><td></td><td>120 - 160 g/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -713,7 +713,7 @@
             "height": 0.5810000000000001
           },
           "text": "Hematocrit</td><td>0.42</td><td></td><td>0.36 - 0.48 L/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -724,7 +724,7 @@
             "height": 0.5810000000000001
           },
           "text": "RBC</td><td>4.97</td><td></td><td>4.00 - 5.50 x10&lt;sup&gt;12&lt;/sup&gt;/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -735,7 +735,7 @@
             "height": 0.5810000000000001
           },
           "text": "MCV</td><td>92</td><td></td><td>80 - 100 fL",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -746,7 +746,7 @@
             "height": 0.5810000000000001
           },
           "text": "MCH</td><td>32.2</td><td></td><td>27.0 - 33.0 pg",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -757,7 +757,7 @@
             "height": 0.5810000000000001
           },
           "text": "MCHC</td><td>358</td><td></td><td>320 - 360 g/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -768,7 +768,7 @@
             "height": 0.5810000000000001
           },
           "text": "RDW</td><td>11.3</td><td>*</td><td>11.5 - 14.5 %",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -779,7 +779,7 @@
             "height": 0.5810000000000001
           },
           "text": "Platelets</td><td>192</td><td></td><td>150 - 400 x10&lt;sup&gt;9&lt;/sup&gt;/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -790,7 +790,7 @@
             "height": 0.5810000000000001
           },
           "text": "WBC</td><td>8.7</td><td></td><td>4.0 - 10.0 x10&lt;sup&gt;9&lt;/sup&gt;/L",
-          "confidence": 3
+          "confidence": 4
         },
         {
           "page": 0,
@@ -801,7 +801,7 @@
             "height": 0.5810000000000001
           },
           "text": "Neutrophils</td><td>4.21</td><td></td><td>2.00 - 7.50 x10&lt;sup&gt;9&lt;/sup&gt;/L",
-          "confidence": 3
+          "confidence": 4
         }
       ]
     }
@@ -858,10 +858,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1297,
-    "classifyMs": 26229,
-    "extractMs": 55721,
-    "totalMs": 83247
+    "uploadMs": 1570,
+    "classifyMs": 26254,
+    "extractMs": 47318,
+    "totalMs": 75142
   },
   "score": {
     "rowsExpected": 28,

@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_000507",
-  "ranAt": "2026-11-06T16:35:40.546Z",
+  "ranAt": "2026-11-06T17:24:05.118Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for one patient (John Smith)."
+    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for patient John Smith."
   },
   "extraction": {
     "value": {
@@ -194,7 +194,7 @@
         },
         {
           "section": "Endocrinology / Iron / Vitamins",
-          "test_name": "25-DH vitamin D",
+          "test_name": "25-OH vitamin D",
           "value": "268",
           "numeric_value": 268,
           "flag": "H",
@@ -462,7 +462,7 @@
             "width": 0.156,
             "height": 0.015999999999999993
           },
-          "text": "Collected : 2025-10-08 16:26",
+          "text": "Collected: 2025-10-08 16:26",
           "confidence": 5
         }
       ],
@@ -497,320 +497,12 @@
           "page": 0,
           "bbox": {
             "x": 0.086,
-            "y": 0.255,
+            "y": 0.254,
             "width": 0.838,
-            "height": 0.6400000000000001
+            "height": 0.6410000000000001
           },
-          "text": "Urine colour",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "pH",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Specific gravity",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Glucose",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Protein",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Ketones",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Blood",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Leukocyte esterase",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Nitrites",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "HbA1c",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "TSH",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Free T4",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Ferritin",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Vitamin B12",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "25-DH vitamin D",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "CRP",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Uric acid",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "INR",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Sodium",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Potassium",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Chloride",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Bicarbonate (CO2)",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Urea",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Creatinine",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "eGFR (CKD-EPI)",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Glucose (fasting)",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Calcium",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Magnesium",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.086,
-            "y": 0.255,
-            "width": 0.838,
-            "height": 0.6400000000000001
-          },
-          "text": "Phosphate",
-          "confidence": 3
+          "text": "<table><tr><td>Analysis</td><td>Result</td><td>Abn.</td><td>Reference interval / units</td><td>Comment</td></tr><tr><td colspan=5>Urinalysis</td></tr><tr><td>Urine colour</td><td>Yellow</td><td>&lt;fcel&gt;</td><td>Yellow</td><td>&lt;nl&gt;</td></tr><tr><td>pH</td><td>7.5</td><td>&lt;fcel&gt;</td><td>5.0 - 8.0</td><td>&lt;nl&gt;</td></tr><tr><td>Specific gravity</td><td>1.011</td><td>&lt;fcel&gt;</td><td>1.005 - 1.030</td><td>seen, repeat in 3</td></tr><tr><td>Glucose</td><td>Negative</td><td>&l",
+          "confidence": 4
         }
       ]
     }
@@ -867,16 +559,16 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 2805,
-    "classifyMs": 33238,
-    "extractMs": 97386,
-    "totalMs": 133429
+    "uploadMs": 1453,
+    "classifyMs": 33994,
+    "extractMs": 85984,
+    "totalMs": 121431
   },
   "score": {
     "rowsExpected": 29,
     "rowsFound": 29,
     "rowsExtracted": 29,
-    "namesCorrect": 28,
+    "namesCorrect": 29,
     "valuesCorrect": 29,
     "flagsCorrect": 29,
     "unitsCorrect": 29,
@@ -1200,13 +892,13 @@
         },
         "found": {
           "index": 14,
-          "test": "25-DH vitamin D",
+          "test": "25-OH vitamin D",
           "value": "268",
           "flag": "H",
           "units": "nmol/L",
           "reference": "75 - 250 nmol/L"
         },
-        "nameOk": false,
+        "nameOk": true,
         "valueOk": true,
         "flagOk": true,
         "unitsOk": true,

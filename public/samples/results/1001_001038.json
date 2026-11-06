@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_001038",
-  "ranAt": "2026-11-06T16:35:40.546Z",
+  "ranAt": "2026-11-06T17:24:05.119Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -380,7 +380,7 @@
             "width": 0.346,
             "height": 0.018
           },
-          "text": "**LABORATORY REPORT — FINAL**",
+          "text": "LABORATORY REPORT — FINAL",
           "confidence": 5
         }
       ],
@@ -393,8 +393,8 @@
             "width": 0.8620000000000001,
             "height": 0.479
           },
-          "text": "Lipid Profile",
-          "confidence": 1
+          "text": "Total cholesterol</td><td>4.96</td><td></td><td>3.98</td><td>6.34</td><td>mmol/L</td><td>&lt; 5.20",
+          "confidence": 3
         },
         {
           "page": 0,
@@ -404,8 +404,118 @@
             "width": 0.8620000000000001,
             "height": 0.479
           },
-          "text": "Complete Blood Count (CBC)",
-          "confidence": 1
+          "text": "LDL cholesterol</td><td>2.34</td><td></td><td>1.93</td><td>3.85</td><td>mmol/L</td><td>&lt; 3.50",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "HDL cholesterol</td><td>1.09</td><td></td><td>1.36</td><td>1.29</td><td>mmol/L</td><td>&gt; 1.00",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Non-HDL cholesterol</td><td>4.48</td><td>H</td><td>3.07</td><td>3.16</td><td>mmol/L</td><td>&lt; 4.30",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Triglycerides</td><td>1.32</td><td></td><td>1.65</td><td>1.36</td><td>mmol/L</td><td>&lt; 1.70",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Chol/HDL ratio</td><td>2.5</td><td>..</td><td>2.1</td><td>1.9</td><td></td><td>&lt; 4.0",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Hemoglobin</td><td>137</td><td></td><td>152</td><td>147</td><td>g/L</td><td>120 - 160",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Hematocrit</td><td>0.43</td><td></td><td>0.33</td><td>0.39</td><td>L/L</td><td>0.36 - 0.48",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCV</td><td>99</td><td></td><td>89</td><td>98</td><td>fL</td><td>80 - 100",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCH</td><td>29.8</td><td></td><td>36.2</td><td>30.7</td><td>pg</td><td>27.0 - 33.0",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCHC</td><td>321</td><td></td><td>339</td><td>338</td><td>g/L</td><td>320 - 360",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "RDW</td><td>13.9</td><td></td><td>16.1</td><td>11.1</td><td>%</td><td>11.5 - 14.5",
+          "confidence": 3
         }
       ]
     }
@@ -462,10 +572,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1976,
-    "classifyMs": 29489,
-    "extractMs": 84489,
-    "totalMs": 115954
+    "uploadMs": 1553,
+    "classifyMs": 30217,
+    "extractMs": 77153,
+    "totalMs": 108923
   },
   "score": {
     "rowsExpected": 20,

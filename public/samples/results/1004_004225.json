@@ -1,6 +1,6 @@
 {
   "sampleId": "1004_004225",
-  "ranAt": "2026-11-06T16:33:27.912Z",
+  "ranAt": "2026-11-06T17:22:07.163Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report with multiple test result tables showing analytes, values, abnormal flags, units, and reference ranges for one patient (Olivier Lacasse)."
+    "reasoning": "This is a laboratory report with multiple test result tables showing analytes (HbA1c, TSH, T4 libre, etc.) with values, abnormal flags (*), units, and reference ranges for one patient (Olivier Lacasse)."
   },
   "extraction": {
     "value": {
@@ -340,8 +340,8 @@
           "bbox": {
             "x": 0.06799999999999999,
             "y": 0.20600000000000002,
-            "width": 0.21300000000000002,
-            "height": 0.01199999999999999
+            "width": 0.21399999999999997,
+            "height": 0.012999999999999984
           },
           "text": "Rapport émis le : 2025-01-21 04:06",
           "confidence": 5
@@ -365,23 +365,23 @@
           "page": 0,
           "bbox": {
             "x": 0.055,
-            "y": 0.24700000000000005,
-            "width": 0.8879999999999999,
-            "height": 0.231
+            "y": 0.233,
+            "width": 0.23900000000000002,
+            "height": 0.014000000000000032
           },
-          "text": "<table><tr><th rowspan=2>Analyse</th><th rowspan=2>Résultat</th><th rowspan=2>Ind.</th><th colspan=2>Résultats antérieurs</th><th rowspan=2>Unités</th><th rowspan=2>Valeurs de référence</th></tr><tr><th>2024-11-14</th><th>2023-01-29</th></tr><tr><td>HbA1c</td><td>5,7</td><td></td><td>4,9</td><td>5,5</td><td>%</td><td>4,0 - 6,0</td></tr><tr><td>TSH</td><td>3,68</td><td></td><td>5,32</td><td>1,46</td><td>mUI/L</td><td>0,40 - 4,00</td></tr><tr><td>T4 libre</td><td>28,1</td><td>*</td><td>20,9</td><t",
-          "confidence": 3
+          "text": "Endocrinologie / Fer / Vitamines",
+          "confidence": 2
         },
         {
           "page": 0,
           "bbox": {
             "x": 0.055,
-            "y": 0.49800000000000005,
-            "width": 0.89,
-            "height": 0.23
+            "y": 0.48200000000000004,
+            "width": 0.11900000000000001,
+            "height": 0.015
           },
-          "text": "<table><tr><th rowspan=2>Analyse</th><th rowspan=2>Résultat</th><th rowspan=2>Ind.</th><th colspan=2>Résultats antérieurs</th><th rowspan=2>Unités</th><th rowspan=2>Valeurs de référence</th></tr><tr><th>2024-11-14</th><th>2023-01-29</th></tr><tr><td>Couleur urine</td><td>Ambrée</td><td>*</td><td>Jaune</td><td>Jaune</td><td></td><td>Jaune</td></tr><tr><td>pH</td><td>9,1</td><td>*</td><td>7,3</td><td>6,2</td><td></td><td>5,0 - 8,0</td></tr><tr><td>Densité</td><td>1,005</td><td></td><td>1,010</td><",
-          "confidence": 3
+          "text": "Analyse d'urine",
+          "confidence": 2
         }
       ]
     }
@@ -438,10 +438,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 3181,
-    "classifyMs": 29154,
-    "extractMs": 43745,
-    "totalMs": 76080
+    "uploadMs": 1372,
+    "classifyMs": 29628,
+    "extractMs": 31769,
+    "totalMs": 62769
   },
   "score": {
     "rowsExpected": 18,

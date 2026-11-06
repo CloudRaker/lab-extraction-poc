@@ -1,6 +1,6 @@
 {
   "sampleId": "1003_001515",
-  "ranAt": "2026-11-06T16:37:56.533Z",
+  "ranAt": "2026-11-06T17:26:09.498Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -440,7 +440,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Urine colour",
+          "text": "Urine colour</td><td>Yellow</td>",
           "confidence": 3
         },
         {
@@ -451,7 +451,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "pH",
+          "text": "pH</td><td>7.7</td>",
           "confidence": 3
         },
         {
@@ -462,7 +462,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Specific gravity",
+          "text": "Specific gravity</td><td>1.028</td>",
           "confidence": 3
         },
         {
@@ -473,7 +473,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Glucose",
+          "text": "Glucose</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -484,7 +484,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Protein",
+          "text": "Protein</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -495,7 +495,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Ketones",
+          "text": "Ketones</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -506,7 +506,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Blood",
+          "text": "Blood</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -517,7 +517,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Leukocyte esterase",
+          "text": "Leukocyte esterase</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -528,7 +528,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Nitrites",
+          "text": "Nitrites</td><td>Negative</td>",
           "confidence": 3
         },
         {
@@ -550,7 +550,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "HbA1c",
+          "text": "HbA1c</td><td>4.4</td><td></td><td>6.3</td><td>5.5</td><td>%</td><td>4.0 - 6.0",
           "confidence": 3
         },
         {
@@ -561,7 +561,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "TSH",
+          "text": "TSH</td><td>0.82</td><td></td><td>2.31</td><td>3.01</td><td>mUI/L</td><td>0.40 - 4.00",
           "confidence": 3
         },
         {
@@ -572,7 +572,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Free T4",
+          "text": "Free T4</td><td>16.0</td><td></td><td>12.4</td><td>16.6</td><td>pmol/L</td><td>10.0 - 22.0",
           "confidence": 3
         },
         {
@@ -583,7 +583,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Ferritin",
+          "text": "Ferritin</td><td>153</td><td></td><td>181</td><td>0</td><td>μg/L</td><td>20 - 250",
           "confidence": 3
         },
         {
@@ -594,7 +594,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Vitamin B12",
+          "text": "Vitamin B12</td><td>1636</td><td>**</td><td>626</td><td>181</td><td>pmol/L</td><td>150 - 650",
           "confidence": 3
         },
         {
@@ -605,7 +605,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "25-OH vitamin D",
+          "text": "25-OH vitamin D</td><td>21</td><td>*</td><td>240</td><td>176</td><td>nmol/L</td><td>75 - 250",
           "confidence": 3
         },
         {
@@ -616,7 +616,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "CRP",
+          "text": "CRP</td><td>4.6</td><td></td><td>4.4</td><td>4.1</td><td>mg/L</td><td>&lt; 5.0",
           "confidence": 3
         },
         {
@@ -627,7 +627,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Uric acid",
+          "text": "Uric acid</td><td>326</td><td></td><td>415</td><td>238</td><td>μmol/L</td><td>200 - 420",
           "confidence": 3
         },
         {
@@ -638,7 +638,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "INR",
+          "text": "INR</td><td>1.0</td><td></td><td>0.9</td><td>0.9</td><td></td><td>0.9 - 1.1",
           "confidence": 3
         },
         {
@@ -660,7 +660,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Sodium",
+          "text": "Sodium</td><td>141</td><td></td><td>143</td><td>142</td><td>mmol/L</td><td>135 - 145",
           "confidence": 3
         },
         {
@@ -671,7 +671,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Potassium",
+          "text": "Potassium</td><td>4.6</td><td></td><td>5.9</td><td>7.1</td><td>mmol/L</td><td>3.5 - 5.0",
           "confidence": 3
         },
         {
@@ -682,7 +682,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Chloride",
+          "text": "Chloride</td><td>104</td><td></td><td>106</td><td>99</td><td>mmol/L</td><td>98 - 107",
           "confidence": 3
         },
         {
@@ -693,7 +693,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Bicarbonate (CO2)",
+          "text": "Bicarbonate (CO2)</td><td>23</td><td></td><td>23</td><td>20</td><td>mmol/L</td><td>22 - 29",
           "confidence": 3
         },
         {
@@ -704,7 +704,7 @@
             "width": 0.885,
             "height": 0.5890000000000001
           },
-          "text": "Urea",
+          "text": "Urea</td><td>3.5</td><td></td><td>8.6</td><td>5.0</td><td>mmol/L</td><td>2.5 - 8.0",
           "confidence": 3
         }
       ]
@@ -762,10 +762,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 2407,
-    "classifyMs": 32407,
-    "extractMs": 38939,
-    "totalMs": 73753
+    "uploadMs": 1434,
+    "classifyMs": 39342,
+    "extractMs": 46959,
+    "totalMs": 87735
   },
   "score": {
     "rowsExpected": 23,

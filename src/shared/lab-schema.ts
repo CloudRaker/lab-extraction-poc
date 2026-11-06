@@ -48,6 +48,7 @@ export const LAB_REPORT_SCHEMA = {
 } as const
 
 export const LAB_REPORT_INSTRUCTIONS = [
+  'These are medical documents. Vocabulary and units labels should correlate with medical documents.',
   'The report can be in French, English or both. Keep values verbatim, in the language of the page.',
   'A decimal comma is allowed in "value" and "reference_text". Convert it to a dot only in numeric fields.',
   'Extract only the current result. Ignore "Previous results / Résultats antérieurs" columns.',

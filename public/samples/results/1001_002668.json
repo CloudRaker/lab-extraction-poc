@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_002668",
-  "ranAt": "2026-11-06T16:30:57.119Z",
+  "ranAt": "2026-11-06T17:19:50.210Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report with comprehensive test results tables including analytes (hemoglobin, hematocrite, glucose, etc.), values, abnormal flags (H, L, HH), units, and reference ranges for patient DESJARDINS, Diane."
+    "reasoning": "This is a laboratory report with comprehensive test results tables including analytes (hemoglobin, hematocrite, glucose, etc.), values, abnormal flags (H, L, HH), units, and reference ranges for one patient (Diane Desjardins)."
   },
   "extraction": {
     "value": {
@@ -54,7 +54,7 @@
           "value": "5,06",
           "numeric_value": 5.06,
           "flag": null,
-          "units": "x10^12/L",
+          "units": "x10<sup>12</sup>/L",
           "reference_low": 4,
           "reference_high": 5.5,
           "reference_text": "4,00 – 5,50",
@@ -114,7 +114,7 @@
           "value": "302",
           "numeric_value": 302,
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 150,
           "reference_high": 400,
           "reference_text": "150 – 400",
@@ -126,7 +126,7 @@
           "value": "7,0",
           "numeric_value": 7,
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 4,
           "reference_high": 10,
           "reference_text": "4,0 – 10,0",
@@ -138,7 +138,7 @@
           "value": "7,19",
           "numeric_value": 7.19,
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 2,
           "reference_high": 7.5,
           "reference_text": "2,00 – 7,50",
@@ -150,7 +150,7 @@
           "value": "1,31",
           "numeric_value": 1.31,
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 1,
           "reference_high": 4,
           "reference_text": "1,00 – 4,00",
@@ -162,7 +162,7 @@
           "value": "1,08",
           "numeric_value": 1.08,
           "flag": "H",
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 0.2,
           "reference_high": 1,
           "reference_text": "0,20 – 1,00",
@@ -174,7 +174,7 @@
           "value": "1,57",
           "numeric_value": 1.57,
           "flag": "HH",
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 0,
           "reference_high": 0.5,
           "reference_text": "0,00 – 0,50",
@@ -186,7 +186,7 @@
           "value": "0,18",
           "numeric_value": 0.18,
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference_low": 0,
           "reference_high": 0.2,
           "reference_text": "0,00 – 0,20",
@@ -501,8 +501,19 @@
             "width": 0.8620000000000001,
             "height": 0.63
           },
-          "text": "<table><tr><td>Analyse</td><td>Résultat</td><td>Anorm.</td><td>Intervalle de référence / unités</td><td>Commentaire</td></tr><tr><td colspan=5>Formule sanguine complète (FSC)</td></tr><tr><td>Hémoglobine</td><td>152</td><td></td><td>120 – 160 g/L</td><td></td></tr><tr><td>Hématocrite</td><td>0,51</td><td>H</td><td>0,36 – 0,48 L/L</td><td></td></tr><tr><td>Globules rouges</td><td>5,06</td><td></td><td>4,00 – 5,50 x10&lt;sup&gt;12&lt;/sup&gt;/L</td><td></td></tr><tr><td>VGM</td><td>100</td><td></t",
-          "confidence": 4
+          "text": "Formule sanguine complète (FSC)",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.23400000000000004,
+            "width": 0.8620000000000001,
+            "height": 0.63
+          },
+          "text": "Bilan biochimique",
+          "confidence": 3
         }
       ]
     }
@@ -559,10 +570,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 859,
-    "classifyMs": 36449,
-    "extractMs": 44162,
-    "totalMs": 81470
+    "uploadMs": 2537,
+    "classifyMs": 34003,
+    "extractMs": 72408,
+    "totalMs": 108948
   },
   "score": {
     "rowsExpected": 29,
@@ -631,7 +642,7 @@
           "test": "Globules rouges",
           "value": "5,06",
           "flag": null,
-          "units": "x10^12/L",
+          "units": "x10<sup>12</sup>/L",
           "reference": "4,00 – 5,50"
         },
         "nameOk": true,
@@ -741,7 +752,7 @@
           "test": "Plaquettes",
           "value": "302",
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "150 – 400"
         },
         "nameOk": true,
@@ -763,7 +774,7 @@
           "test": "Globules blancs",
           "value": "7,0",
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "4,0 – 10,0"
         },
         "nameOk": true,
@@ -785,7 +796,7 @@
           "test": "Neutrophiles",
           "value": "7,19",
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "2,00 – 7,50"
         },
         "nameOk": true,
@@ -807,7 +818,7 @@
           "test": "Lymphocytes",
           "value": "1,31",
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "1,00 – 4,00"
         },
         "nameOk": true,
@@ -829,7 +840,7 @@
           "test": "Monocytes",
           "value": "1,08",
           "flag": "H",
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "0,20 – 1,00"
         },
         "nameOk": true,
@@ -851,7 +862,7 @@
           "test": "Éosinophiles",
           "value": "1,57",
           "flag": "HH",
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "0,00 – 0,50"
         },
         "nameOk": true,
@@ -873,7 +884,7 @@
           "test": "Basophiles",
           "value": "0,18",
           "flag": null,
-          "units": "x10^9/L",
+          "units": "x10<sup>9</sup>/L",
           "reference": "0,00 – 0,20"
         },
         "nameOk": true,

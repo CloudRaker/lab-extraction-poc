@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_000635",
-  "ranAt": "2026-11-06T16:39:12.777Z",
+  "ranAt": "2026-11-06T17:27:39.646Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -44,10 +44,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1142,
-    "classifyMs": 27964,
+    "uploadMs": 1030,
+    "classifyMs": 28514,
     "extractMs": null,
-    "totalMs": 29106
+    "totalMs": 29544
   },
   "score": null
 }

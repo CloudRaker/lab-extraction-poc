@@ -1,6 +1,6 @@
 {
   "sampleId": "1002_004107",
-  "ranAt": "2026-11-06T16:33:27.912Z",
+  "ranAt": "2026-11-06T17:22:07.162Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -14,7 +14,7 @@
   },
   "extraction": {
     "value": {
-      "lab_name": "OPTILAB Montréal-Est",
+      "lab_name": "Laboratoire de biologie médicale — Grappe OPTILAB Montréal-Est",
       "patient_name": "RODRIGUE, Thérèse",
       "health_insurance_number": "RODT 9956 0929",
       "date_of_birth": "1999-06-09",
@@ -372,7 +372,7 @@
             "width": 0.42799999999999994,
             "height": 0.03900000000000001
           },
-          "text": "OPTILAB Montréal-Est",
+          "text": "Laboratoire de biologie médicale — Grappe **OPTILAB Montréal-Est**",
           "confidence": 5
         }
       ],
@@ -385,7 +385,7 @@
             "width": 0.18300000000000002,
             "height": 0.012999999999999984
           },
-          "text": "RODRIGUE, Thérèse",
+          "text": "Patient : RODRIGUE, Thérèse",
           "confidence": 5
         }
       ],
@@ -489,7 +489,7 @@
             "width": 0.8869999999999999,
             "height": 0.6310000000000001
           },
-          "text": "Formule sanguine complète (FSC)",
+          "text": "<tr><td colspan=7>Formule sanguine complète (FSC)</td></tr><tr><td>Hémoglobine</td><td>126</td><td></td><td>134</td><td>157</td><td>g/L</td><td>120 – 160</td></tr>",
           "confidence": 3
         },
         {
@@ -500,7 +500,7 @@
             "width": 0.8869999999999999,
             "height": 0.6310000000000001
           },
-          "text": "Endocrinologie / Fer / Vitamines",
+          "text": "<tr><td>Hématocrite</td><td>0,54</td><td>*</td><td>0,41</td><td>0,36</td><td>L/L</td><td>0,36 – 0,48</td></tr>",
           "confidence": 3
         },
         {
@@ -511,7 +511,282 @@
             "width": 0.8869999999999999,
             "height": 0.6310000000000001
           },
-          "text": "Bilan biochimique",
+          "text": "<tr><td>Globules rouges</td><td>4,06</td><td></td><td>3,62</td><td>3,92</td><td>x10&lt;sup&gt;12&lt;/sup&gt;/L</td><td>4,00 – 5,50</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>VGM</td><td>96</td><td></td><td>74</td><td>95</td><td>fL</td><td>80 – 100</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>TCMH</td><td>25,3</td><td>*</td><td>29,6</td><td>31,3</td><td>pg</td><td>27,0 – 33,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>CCMH</td><td>334</td><td></td><td>347</td><td>322</td><td>g/L</td><td>320 – 360</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>IDR</td><td>14,1</td><td></td><td>13,1</td><td>12,3</td><td>%</td><td>11,5 – 14,5</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Plaquettes</td><td>342</td><td></td><td>270</td><td>315</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>150 – 400</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Globules blancs</td><td>5,2</td><td></td><td>3,0</td><td>6,2</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>4,0 – 10,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Neutrophiles</td><td>8,71</td><td>*</td><td>4,42</td><td>1,56</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>2,00 – 7,50</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Lymphocytes</td><td>2,00</td><td></td><td>3,23</td><td>2,27</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>1,00 – 4,00</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Monocytes</td><td>0,00</td><td>*</td><td>0,75</td><td>0,66</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0,20 – 1,00</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Éosinophiles</td><td>0,13</td><td></td><td>0,30</td><td>0,26</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0,00 – 0,50</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Basophiles</td><td>0,03</td><td></td><td>0,19</td><td>0,00</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0,00 – 0,20</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td colspan=7>Endocrinologie / Fer / Vitamines</td></tr><tr><td>HbA1c</td><td>6,7</td><td>*</td><td>4,6</td><td>4,4</td><td>%</td><td>4,0 – 6,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>TSH</td><td>2,96</td><td></td><td>2,98</td><td>2,53</td><td>mUI/L</td><td>0,40 – 4,00</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>T4 libre</td><td>13,9</td><td></td><td>14,4</td><td>13,8</td><td>pmol/L</td><td>10,0 – 22,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Ferritine</td><td>155</td><td></td><td>114</td><td>2</td><td>μg/L</td><td>20 – 250</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Vitamine B12</td><td>435</td><td></td><td>270</td><td>424</td><td>pmol/L</td><td>150 – 650</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>25-OH vitamine D</td><td>124</td><td></td><td>169</td><td>134</td><td>nmol/L</td><td>75 – 250</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Protéine C réactive</td><td>3,5</td><td></td><td>2,5</td><td>6,1</td><td>mg/L</td><td>&lt; 5,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Acide urique</td><td>227</td><td></td><td>244</td><td>269</td><td>μmol/L</td><td>200 – 420</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>RNI</td><td>1,0</td><td></td><td>1,0</td><td>1,0</td><td></td><td>0,9 – 1,1</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td colspan=7>Bilan biochimique</td></tr><tr><td>Sodium</td><td>142</td><td></td><td>143</td><td>145</td><td>mmol/L</td><td>135 – 145</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Potassium</td><td>4,8</td><td></td><td>4,3</td><td>3,5</td><td>mmol/L</td><td>3,5 – 5,0</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Chlorure</td><td>106</td><td></td><td>98</td><td>107</td><td>mmol/L</td><td>98 – 107</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Bicarbonate (CO2)</td><td>27</td><td></td><td>23</td><td>22</td><td>mmol/L</td><td>22 – 29</td></tr>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "<tr><td>Urée</td><td>7,3</td><td></td><td>6,3</td><td>5,2</td><td>mmol/L</td><td>2,5 – 8,0</td></tr>",
           "confidence": 3
         }
       ]
@@ -569,10 +844,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 4169,
-    "classifyMs": 34425,
-    "extractMs": 75427,
-    "totalMs": 114021
+    "uploadMs": 1540,
+    "classifyMs": 34957,
+    "extractMs": 77946,
+    "totalMs": 114443
   },
   "score": {
     "rowsExpected": 28,

@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_000065",
-  "ranAt": "2026-11-06T16:30:55.971Z",
+  "ranAt": "2026-11-06T17:19:50.167Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report from Dynacare containing a comprehensive table of test results with analytes, values, abnormal flags, units, and reference ranges for patient Paulette Guillemette."
+    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for patient Paulette Guillemette."
   },
   "extraction": {
     "value": {
@@ -245,7 +245,7 @@
           "test_name": "Bicarbonate (CO2)",
           "value": "29",
           "numeric_value": 29,
-          "flag": "*",
+          "flag": "**",
           "units": "mmol/L",
           "reference_low": 22,
           "reference_high": 29,
@@ -353,7 +353,7 @@
           "test_name": "Albumine",
           "value": "54",
           "numeric_value": 54,
-          "flag": "*",
+          "flag": "**",
           "units": "g/L",
           "reference_low": 35,
           "reference_high": 50,
@@ -537,7 +537,29 @@
             "width": 0.8410000000000001,
             "height": 0.679
           },
-          "text": "<table><tr><td>Analyse / Test</td><td>Résultat / Result</td><td>Ind. / Flag</td><td>Unités / Units</td><td>Valeurs de référence / Reference range</td></tr><tr><td colspan=5>Endocrinologie / Fer / Vitamines</td></tr><tr><td>HbA1c</td><td>4,2</td><td>&lt;fcel&gt;</td><td>%</td><td>4,0 - 6,0</td></tr><tr><td>TSH</td><td>0,11</td><td>*</td><td>mUI/L</td><td>0,40 - 4,00</td></tr><tr><td>T4 libre</td><td>11,6</td><td>&lt;fcel&gt;</td><td>pmol/L</td><td>10,0 - 22,0ok - DS</td>",
+          "text": "Endocrinologie / Fer / Vitamines",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.053,
+            "y": 0.20400000000000001,
+            "width": 0.8410000000000001,
+            "height": 0.679
+          },
+          "text": "Bilan lipidique",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.053,
+            "y": 0.20400000000000001,
+            "width": 0.8410000000000001,
+            "height": 0.679
+          },
+          "text": "Bilan biochimique",
           "confidence": 3
         }
       ]
@@ -595,10 +617,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 3654,
-    "classifyMs": 45503,
-    "extractMs": 88292,
-    "totalMs": 137449
+    "uploadMs": 2758,
+    "classifyMs": 53190,
+    "extractMs": 58354,
+    "totalMs": 114302
   },
   "score": {
     "rowsExpected": 32,
@@ -606,7 +628,7 @@
     "rowsExtracted": 32,
     "namesCorrect": 28,
     "valuesCorrect": 32,
-    "flagsCorrect": 32,
+    "flagsCorrect": 30,
     "unitsCorrect": 32,
     "referencesCorrect": 32,
     "perRow": [
@@ -1018,13 +1040,13 @@
           "index": 18,
           "test": "Bicarbonate (CO2)",
           "value": "29",
-          "flag": "*",
+          "flag": "**",
           "units": "mmol/L",
           "reference": "22 - 29"
         },
         "nameOk": true,
         "valueOk": true,
-        "flagOk": true,
+        "flagOk": false,
         "unitsOk": true,
         "referenceOk": true
       },
@@ -1216,13 +1238,13 @@
           "index": 27,
           "test": "Albumine",
           "value": "54",
-          "flag": "*",
+          "flag": "**",
           "units": "g/L",
           "reference": "35 - 50"
         },
         "nameOk": true,
         "valueOk": true,
-        "flagOk": true,
+        "flagOk": false,
         "unitsOk": true,
         "referenceOk": true
       },

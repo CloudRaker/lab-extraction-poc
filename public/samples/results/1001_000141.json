@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_000141",
-  "ranAt": "2026-11-06T16:33:27.912Z",
+  "ranAt": "2026-11-06T17:22:07.163Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report from Mount Royal Children's Hospital containing multiple tables of test results (analytes) with values, abnormal flags (marked with *), units, and reference ranges for one patient."
+    "reasoning": "This is a laboratory report from Mount Royal Children's Hospital containing multiple tables of test results (analytes) with values, abnormal flags, units, and reference ranges for one patient."
   },
   "extraction": {
     "value": {
@@ -32,8 +32,8 @@
           "flag": null,
           "units": "%",
           "reference_low": 4,
-          "reference_high": 5,
-          "reference_text": "4.0 - 5.0",
+          "reference_high": 5.5,
+          "reference_text": "4.0 - 5.5 %",
           "abnormal": false
         },
         {
@@ -45,7 +45,7 @@
           "units": "mm/L",
           "reference_low": 0.4,
           "reference_high": 4,
-          "reference_text": "0.40 - 4.00",
+          "reference_text": "0.40 - 4.00 mm/L",
           "abnormal": false
         },
         {
@@ -56,8 +56,8 @@
           "flag": null,
           "units": "μmol/L",
           "reference_low": 18,
-          "reference_high": 22,
-          "reference_text": "18.0 - 22.0",
+          "reference_high": 22.8,
+          "reference_text": "18.0 - 22.8 μmol/L",
           "abnormal": false
         },
         {
@@ -69,7 +69,7 @@
           "units": "µg/L",
           "reference_low": 20,
           "reference_high": 250,
-          "reference_text": "20 - 250",
+          "reference_text": "20 - 250 µg/L",
           "abnormal": false
         },
         {
@@ -81,7 +81,7 @@
           "units": "pmol/L",
           "reference_low": 150,
           "reference_high": 553,
-          "reference_text": "150 - 553",
+          "reference_text": "150 - 553 pmol/L",
           "abnormal": true
         },
         {
@@ -93,7 +93,7 @@
           "units": "nmol/L",
           "reference_low": 75,
           "reference_high": 250,
-          "reference_text": "75 - 250",
+          "reference_text": "75 - 250 nmol/L",
           "abnormal": false
         },
         {
@@ -105,7 +105,7 @@
           "units": "mg/L",
           "reference_low": null,
           "reference_high": 5,
-          "reference_text": "< 5.0",
+          "reference_text": "< 5.0 mg/L",
           "abnormal": false
         },
         {
@@ -117,7 +117,7 @@
           "units": "µmol/L",
           "reference_low": 200,
           "reference_high": 425,
-          "reference_text": "200 - 425",
+          "reference_text": "200 - 425 µmol/L",
           "abnormal": false
         },
         {
@@ -141,7 +141,7 @@
           "units": "mmol/L",
           "reference_low": 139,
           "reference_high": 145,
-          "reference_text": "139 - 145",
+          "reference_text": "139 - 145 mmol/L",
           "abnormal": false
         },
         {
@@ -151,9 +151,9 @@
           "numeric_value": 6.2,
           "flag": null,
           "units": "mmol/L",
-          "reference_low": 5,
-          "reference_high": 6,
-          "reference_text": "$5 - $6",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$5 - $6 mmol/L",
           "abnormal": false
         },
         {
@@ -165,7 +165,7 @@
           "units": "mmol/L",
           "reference_low": 28,
           "reference_high": 357,
-          "reference_text": "28 - 357",
+          "reference_text": "28 - 357 mmol/L",
           "abnormal": false
         },
         {
@@ -175,9 +175,9 @@
           "numeric_value": 31,
           "flag": "*",
           "units": "mmol/L",
-          "reference_low": 2,
-          "reference_high": 75,
-          "reference_text": "$2 - 75",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$2 - $75 mmol/L",
           "abnormal": true
         },
         {
@@ -187,9 +187,9 @@
           "numeric_value": 7.3,
           "flag": null,
           "units": "mmol/L",
-          "reference_low": 2.5,
-          "reference_high": 8,
-          "reference_text": "$2.5 - $8",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$2.5 - $8.8 mmol/L",
           "abnormal": false
         },
         {
@@ -201,7 +201,7 @@
           "units": "μmol/L",
           "reference_low": 50,
           "reference_high": 110,
-          "reference_text": "50 - 110",
+          "reference_text": "50 - 110 μmol/L",
           "abnormal": false
         },
         {
@@ -210,10 +210,10 @@
           "value": "65",
           "numeric_value": 65,
           "flag": null,
-          "units": "ml/min/1, 73m<sup>-</sup>",
+          "units": "ml/min/1, 73m-",
           "reference_low": 60,
           "reference_high": null,
-          "reference_text": "> 60",
+          "reference_text": "> 60 ml/min/1, 73m-",
           "abnormal": false
         },
         {
@@ -223,9 +223,9 @@
           "numeric_value": 6.1,
           "flag": null,
           "units": "mmol/L",
-          "reference_low": 9,
-          "reference_high": 1,
-          "reference_text": "$9 - $1",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$9 - $1.1 mmol/L",
           "abnormal": false
         },
         {
@@ -235,9 +235,9 @@
           "numeric_value": 7.16,
           "flag": null,
           "units": "mmol/L",
-          "reference_low": 7.15,
-          "reference_high": 7.45,
-          "reference_text": "$7.15 - $7.45",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$7.15 - $7.45 mmol/L",
           "abnormal": false
         },
         {
@@ -247,9 +247,9 @@
           "numeric_value": 9.03,
           "flag": "*",
           "units": "mmol/L",
-          "reference_low": 7.79,
-          "reference_high": 1.05,
-          "reference_text": "$7.79 - $1.05",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$9.79 - $1.05 mmol/L",
           "abnormal": true
         },
         {
@@ -259,9 +259,9 @@
           "numeric_value": 1.07,
           "flag": null,
           "units": "mmol/L",
-          "reference_low": 0.88,
-          "reference_high": 1.45,
-          "reference_text": "$0.88 - $1.45",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "$9.88 - $1.45 mmol/L",
           "abnormal": false
         },
         {
@@ -273,7 +273,7 @@
           "units": "g/L",
           "reference_low": 40,
           "reference_high": 60,
-          "reference_text": "40 - 60",
+          "reference_text": "40 - 60 g/L",
           "abnormal": true
         },
         {
@@ -285,7 +285,7 @@
           "units": "g/L",
           "reference_low": 25,
           "reference_high": 50,
-          "reference_text": "25 - 50",
+          "reference_text": "25 - 50 g/L",
           "abnormal": false
         },
         {
@@ -297,7 +297,7 @@
           "units": "μmol/L",
           "reference_low": 3,
           "reference_high": 71,
-          "reference_text": "3 - 71",
+          "reference_text": "3 - 71 μmol/L",
           "abnormal": false
         },
         {
@@ -309,7 +309,7 @@
           "units": "U/L",
           "reference_low": 7,
           "reference_high": 40,
-          "reference_text": "7 - 40",
+          "reference_text": "7 - 40 U/L",
           "abnormal": false
         },
         {
@@ -321,7 +321,7 @@
           "units": "U/L",
           "reference_low": 10,
           "reference_high": 40,
-          "reference_text": "10 - 40",
+          "reference_text": "10 - 40 U/L",
           "abnormal": false
         },
         {
@@ -333,7 +333,7 @@
           "units": "U/L",
           "reference_low": 40,
           "reference_high": 120,
-          "reference_text": "40 - 120",
+          "reference_text": "40 - 120 U/L",
           "abnormal": true
         },
         {
@@ -345,7 +345,7 @@
           "units": "U/L",
           "reference_low": 10,
           "reference_high": 62,
-          "reference_text": "10 - 62",
+          "reference_text": "10 - 62 U/L",
           "abnormal": false
         }
       ]
@@ -360,7 +360,7 @@
             "width": 0.406,
             "height": 0.016000000000000007
           },
-          "text": "MOUNT ROYAL CHILDREN'S HOSPITAL",
+          "text": "**MOUNT ROYAL CHILDREN'S HOSPITAL**",
           "confidence": 5
         }
       ],
@@ -424,13 +424,24 @@
         {
           "page": 0,
           "bbox": {
+            "x": 0.05,
+            "y": 0.259,
+            "width": 0.899,
+            "height": 0.19400000000000003
+          },
+          "text": "<table><tr><td>Analytes / Analyte</td><td>Reference / <br>##s###</td><td>Abb. / <br>##or###</td><td>**Reference Interval / units / Intervalle de reference / <br>##s###</td><td>**#### / ## <br>##on###</td></tr><tr><td>Halic</td><td>6.5</td><td></td><td>4.0 - 5.5 %</td><td></td></tr><tr><td>15#</td><td>2.78</td><td></td><td>0.40 - 4.00 mm/L</td><td></td></tr><tr><td>Free T4</td><td>20.9</td><td></td><td>18.0 - 22.8 μmol/L</td><td></td></tr><tr><td>Ferritin</td><td>169</td><td></td><td>20 - 250 µg/",
+          "confidence": 4
+        },
+        {
+          "page": 0,
+          "bbox": {
             "x": 0.051000000000000004,
             "y": 0.45500000000000007,
             "width": 0.244,
             "height": 0.014000000000000032
           },
           "text": "Comparative Referencing Parallel",
-          "confidence": 3
+          "confidence": 1
         },
         {
           "page": 0,
@@ -440,195 +451,8 @@
             "width": 0.899,
             "height": 0.36600000000000005
           },
-          "text": "Sodium</td><td>138</td><td></td><td>139 - 145 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Potassium</td><td>6.2</td><td></td><td>$5 - $6 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Chloride</td><td>183</td><td></td><td>28 - 357 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Bicarbonate (CO2)</td><td>31</td><td>*</td><td>$2 - 75 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Urea</td><td>7.3</td><td></td><td>$2.5 - $8 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Creatinine</td><td>81</td><td></td><td>50 - 110 μmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "eGFR (CKD-EF1)</td><td>65</td><td></td><td>&gt; 60 ml/min/1, 73m&lt;sup&gt;-&lt;/sup&gt;</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Glucose (Fasting)</td><td>6.1</td><td></td><td>$9 - $1 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Calcium</td><td>7.16</td><td></td><td>$7.15 - $7.45 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Magnesium</td><td>9.03</td><td>*</td><td>$7.79 - $1.05 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Phosphate</td><td>1.07</td><td></td><td>$0.88 - $1.45 mmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Total protein</td><td>57</td><td>*</td><td>40 - 60 g/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Albumin</td><td>49</td><td></td><td>25 - 50 g/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Total bilirubin</td><td>5</td><td></td><td>3 - 71 μmol/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "ALT</td><td>10</td><td></td><td>7 - 40 U/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "AST</td><td>70</td><td></td><td>10 - 40 U/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "Aikeline phosphonase</td><td>149</td><td>*</td><td>40 - 120 U/L</td>",
-          "confidence": 3
-        },
-        {
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.47,
-            "width": 0.899,
-            "height": 0.36600000000000005
-          },
-          "text": "CoF</td><td>45</td><td></td><td>10 - 62 U/L</td>",
-          "confidence": 3
+          "text": "<table><tr><td>Analysis / Analyse</td><td>Result / ≥équitat</td><td>Abn. / Amorm.</td><td>Reference interval / units / Interval de référence / unités</td><td>Comment / Commentaire</td></tr><tr><td>Sodium</td><td>138</td><td></td><td>139 - 145 mmol/L</td><td></td></tr><tr><td>Potassium</td><td>6.2</td><td></td><td>$5 - $6 mmol/L</td><td></td></tr><tr><td>Chloride</td><td>183</td><td></td><td>28 - 357 mmol/L</td><td></td></tr><tr><td>Bicarbonate (CO2)</td><td>31</td><td>*</td><td>$2 - $75 mmol/L</",
+          "confidence": 4
         }
       ]
     }
@@ -685,10 +509,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1557,
-    "classifyMs": 53287,
-    "extractMs": 75400,
-    "totalMs": 130244
+    "uploadMs": 3282,
+    "classifyMs": 50307,
+    "extractMs": 57364,
+    "totalMs": 110953
   },
   "score": {
     "rowsExpected": 27,
@@ -698,7 +522,7 @@
     "valuesCorrect": 14,
     "flagsCorrect": 24,
     "unitsCorrect": 22,
-    "referencesCorrect": 8,
+    "referencesCorrect": 7,
     "perRow": [
       {
         "test": "HbA1c",
@@ -744,7 +568,7 @@
           "value": "20.9",
           "flag": null,
           "units": "μmol/L",
-          "reference": "18.0 - 22.0"
+          "reference": "18.0 - 22.8 μmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -766,7 +590,7 @@
           "value": "169",
           "flag": null,
           "units": "µg/L",
-          "reference": "20 - 250"
+          "reference": "20 - 250 µg/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -788,7 +612,7 @@
           "value": "113",
           "flag": "*",
           "units": "pmol/L",
-          "reference": "150 - 553"
+          "reference": "150 - 553 pmol/L"
         },
         "nameOk": false,
         "valueOk": true,
@@ -810,7 +634,7 @@
           "value": "138",
           "flag": null,
           "units": "nmol/L",
-          "reference": "75 - 250"
+          "reference": "75 - 250 nmol/L"
         },
         "nameOk": false,
         "valueOk": true,
@@ -832,7 +656,7 @@
           "value": "2.8",
           "flag": null,
           "units": "mg/L",
-          "reference": "< 5.0"
+          "reference": "< 5.0 mg/L"
         },
         "nameOk": false,
         "valueOk": false,
@@ -854,7 +678,7 @@
           "value": "357",
           "flag": null,
           "units": "µmol/L",
-          "reference": "200 - 425"
+          "reference": "200 - 425 µmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -891,7 +715,7 @@
           "value": "138",
           "flag": null,
           "units": "mmol/L",
-          "reference": "139 - 145"
+          "reference": "139 - 145 mmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -913,7 +737,7 @@
           "value": "6.2",
           "flag": null,
           "units": "mmol/L",
-          "reference": "$5 - $6"
+          "reference": "$5 - $6 mmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -935,7 +759,7 @@
           "value": "183",
           "flag": null,
           "units": "mmol/L",
-          "reference": "28 - 357"
+          "reference": "28 - 357 mmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -957,7 +781,7 @@
           "value": "31",
           "flag": "*",
           "units": "mmol/L",
-          "reference": "$2 - 75"
+          "reference": "$2 - $75 mmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -979,7 +803,7 @@
           "value": "7.3",
           "flag": null,
           "units": "mmol/L",
-          "reference": "$2.5 - $8"
+          "reference": "$2.5 - $8.8 mmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1001,7 +825,7 @@
           "value": "81",
           "flag": null,
           "units": "μmol/L",
-          "reference": "50 - 110"
+          "reference": "50 - 110 μmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1022,14 +846,14 @@
           "test": "eGFR (CKD-EF1)",
           "value": "65",
           "flag": null,
-          "units": "ml/min/1, 73m<sup>-</sup>",
-          "reference": "> 60"
+          "units": "ml/min/1, 73m-",
+          "reference": "> 60 ml/min/1, 73m-"
         },
         "nameOk": false,
         "valueOk": false,
         "flagOk": true,
         "unitsOk": false,
-        "referenceOk": true
+        "referenceOk": false
       },
       {
         "test": "Glucose (fasting)",
@@ -1045,7 +869,7 @@
           "value": "6.1",
           "flag": null,
           "units": "mmol/L",
-          "reference": "$9 - $1"
+          "reference": "$9 - $1.1 mmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1067,7 +891,7 @@
           "value": "7.16",
           "flag": null,
           "units": "mmol/L",
-          "reference": "$7.15 - $7.45"
+          "reference": "$7.15 - $7.45 mmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -1089,7 +913,7 @@
           "value": "9.03",
           "flag": "*",
           "units": "mmol/L",
-          "reference": "$7.79 - $1.05"
+          "reference": "$9.79 - $1.05 mmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -1111,7 +935,7 @@
           "value": "1.07",
           "flag": null,
           "units": "mmol/L",
-          "reference": "$0.88 - $1.45"
+          "reference": "$9.88 - $1.45 mmol/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -1133,7 +957,7 @@
           "value": "57",
           "flag": "*",
           "units": "g/L",
-          "reference": "40 - 60"
+          "reference": "40 - 60 g/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -1155,7 +979,7 @@
           "value": "49",
           "flag": null,
           "units": "g/L",
-          "reference": "25 - 50"
+          "reference": "25 - 50 g/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1177,7 +1001,7 @@
           "value": "5",
           "flag": null,
           "units": "μmol/L",
-          "reference": "3 - 71"
+          "reference": "3 - 71 μmol/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1199,7 +1023,7 @@
           "value": "10",
           "flag": null,
           "units": "U/L",
-          "reference": "7 - 40"
+          "reference": "7 - 40 U/L"
         },
         "nameOk": true,
         "valueOk": true,
@@ -1221,7 +1045,7 @@
           "value": "70",
           "flag": null,
           "units": "U/L",
-          "reference": "10 - 40"
+          "reference": "10 - 40 U/L"
         },
         "nameOk": true,
         "valueOk": false,
@@ -1243,7 +1067,7 @@
           "value": "149",
           "flag": "*",
           "units": "U/L",
-          "reference": "40 - 120"
+          "reference": "40 - 120 U/L"
         },
         "nameOk": false,
         "valueOk": true,
@@ -1265,7 +1089,7 @@
           "value": "45",
           "flag": null,
           "units": "U/L",
-          "reference": "10 - 62"
+          "reference": "10 - 62 U/L"
         },
         "nameOk": false,
         "valueOk": true,

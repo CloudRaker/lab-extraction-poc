@@ -1,6 +1,6 @@
 {
   "sampleId": "1001_002346",
-  "ranAt": "2026-11-06T16:30:55.968Z",
+  "ranAt": "2026-11-06T17:19:50.291Z",
   "apiBase": "https://api.cloudraker.com",
   "fileId": null,
   "runs": {
@@ -10,7 +10,7 @@
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for patient Robert Lévesque."
+    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for patient Robert Lévesque, validated by a clinical biochemist."
   },
   "extraction": {
     "value": {
@@ -433,7 +433,7 @@
             "width": 0.19699999999999998,
             "height": 0.012000000000000016
           },
-          "text": "Patient / Patient : LÉVESQUE, Robert",
+          "text": "LÉVESQUE, Robert",
           "confidence": 5
         }
       ],
@@ -446,7 +446,7 @@
             "width": 0.271,
             "height": 0.012000000000000016
           },
-          "text": "No ass. maladie / Health ins. no. : LEVR 3612 2575",
+          "text": "LEVR 3612 2575",
           "confidence": 5
         }
       ],
@@ -459,7 +459,7 @@
             "width": 0.247,
             "height": 0.01100000000000002
           },
-          "text": "Date de naissance / Date of birth : 1936-12-25",
+          "text": "1936-12-25",
           "confidence": 5
         }
       ],
@@ -472,7 +472,7 @@
             "width": 0.07800000000000001,
             "height": 0.01100000000000002
           },
-          "text": "Sexe / Sex : M",
+          "text": "M",
           "confidence": 5
         }
       ],
@@ -485,7 +485,7 @@
             "width": 0.37799999999999995,
             "height": 0.01100000000000002
           },
-          "text": "Médecin requérant / Ordering physician : Dr Vincent Lafontaine (25134)",
+          "text": "Dr Vincent Lafontaine (25134)",
           "confidence": 5
         }
       ],
@@ -498,7 +498,7 @@
             "width": 0.21899999999999997,
             "height": 0.010999999999999994
           },
-          "text": "Prélevé le / Collected : 2024-04-02 13:03",
+          "text": "2024-04-02 13:03",
           "confidence": 5
         }
       ],
@@ -511,7 +511,7 @@
             "width": 0.24900000000000003,
             "height": 0.010999999999999994
           },
-          "text": "Rapport émis le / Reported : 2024-04-04 03:03",
+          "text": "2024-04-04 03:03",
           "confidence": 5
         }
       ],
@@ -524,7 +524,7 @@
             "width": 0.6559999999999999,
             "height": 0.017999999999999985
           },
-          "text": "RAPPORT DE LABORATOIRE / LABORATORY REPORT — FINAL / FINAL",
+          "text": "FINAL / FINAL",
           "confidence": 5
         }
       ],
@@ -595,10 +595,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1734,
-    "classifyMs": 42425,
-    "extractMs": 105037,
-    "totalMs": 149196
+    "uploadMs": 5833,
+    "classifyMs": 44120,
+    "extractMs": 84540,
+    "totalMs": 134493
   },
   "score": {
     "rowsExpected": 32,
