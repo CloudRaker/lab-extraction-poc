@@ -137,6 +137,17 @@ export interface RunRequest {
   sampleId: string
 }
 
+/**
+ * POST /api/run/stream: the same request and checks as POST /api/run. A check that
+ * fails answers with an ApiError status and body. Otherwise the answer is 200 with
+ * NDJSON (application/x-ndjson): one RunEvent per line, and the last line is a
+ * result or an error event.
+ */
+export type RunEvent =
+  | { type: 'step'; step: 'upload' | 'classify' | 'extract' }
+  | { type: 'result'; result: RunResult }
+  | { type: 'error'; error: ApiError['error'] }
+
 /** Every error body. */
 export interface ApiError {
   error: {

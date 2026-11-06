@@ -56,14 +56,23 @@ function failIfNotProcessed(run: Run) {
   }
 }
 
-export async function runSample(cfg: PaperworkConfig, input: SampleInput, rates: Rates): Promise<RunResult> {
+export type RunStep = 'upload' | 'classify' | 'extract'
+
+export async function runSample(
+  cfg: PaperworkConfig,
+  input: SampleInput,
+  rates: Rates,
+  onStep?: (step: RunStep) => void,
+): Promise<RunResult> {
   const t0 = Date.now()
+  onStep?.('upload')
   const deadline = t0 + OPTIONS.deadlineMs
 
   const fileId = await step('upload', () =>
     uploadFile(cfg, { name: input.name, mimeType: input.mimeType, bytes: input.bytes }),
   )
   const t1 = Date.now()
+  onStep?.('classify')
 
   try {
     // Classify. On a fresh file this also waits for the parse (OCR) to finish.
@@ -98,6 +107,7 @@ export async function runSample(cfg: PaperworkConfig, input: SampleInput, rates:
     let extractSkipped: string | null = null
     let t3 = t2
     if (classification.classId === 'lab_report') {
+      onStep?.('extract')
       let extractId: string | undefined
       extractRun = await step(
         'extract',

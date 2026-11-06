@@ -6,9 +6,9 @@ import { Hono, type Context } from 'hono'
 
 import { loadRates } from './cost'
 import { PaperworkError } from './paperwork'
-import { OPTIONS, StepError, runSample } from './pipeline'
+import { OPTIONS, StepError, runSample, type RunStep } from './pipeline'
 
-import type { ApiError, AppConfig, RunRequest, SampleInfo } from '../shared/contract'
+import type { ApiError, AppConfig, RunEvent, RunRequest, SampleInfo } from '../shared/contract'
 
 type Env = { Bindings: CloudflareBindings }
 
@@ -83,7 +83,10 @@ app.get('/samples/:id/result', async (c) => {
   })
 })
 
-app.post('/run', async (c) => {
+type Prepared = { s: SampleInfo; file: ArrayBuffer; pageMd: string | null }
+
+/** Checks shared by both run routes. Returns the sample files, or an error response. */
+async function prepareRun(c: Context<Env>): Promise<Prepared | Response> {
   if (c.env.DEMO_CODE && c.req.header('x-demo-code') !== c.env.DEMO_CODE) {
     return fail(c, 401, 'demo_code_required', 'Enter the demo code to run a live extraction.')
   }
@@ -105,28 +108,77 @@ app.post('/run', async (c) => {
   ])
   if (!file || !truth) return fail(c, 500, 'internal', 'The sample files are missing.')
   const pageMd = s.doctype === 'lab_report' ? ((await truth.json()) as { page_md: string }).page_md : null
+  return { s, file: await file.arrayBuffer(), pageMd }
+}
 
+async function execute(c: Context<Env>, p: Prepared, onStep?: (step: RunStep) => void) {
+  return runSample(
+    { apiBase: c.env.API_BASE, apiKey: c.env.PAPERWORK_API_KEY },
+    { id: p.s.id, name: p.s.file, mimeType: p.s.mime, bytes: p.file, truthMd: p.pageMd },
+    await loadRates(c.env.CATALOG_URL), // cached, falls back on error
+    onStep,
+  )
+}
+
+/** Maps a pipeline failure to the API error shape and HTTP status. */
+function toApiError(e: PaperworkError): { status: 502 | 504; error: ApiError['error'] } {
+  const step = e instanceof StepError ? e.step : undefined
+  const runId = e instanceof StepError ? e.runId : undefined
+  const timeout = e.code === 'timeout'
+  return {
+    status: timeout ? 504 : 502,
+    error: {
+      code: timeout ? 'timeout' : e.code,
+      message: e.message,
+      retryable: e.retryable,
+      ...(step ? { step } : {}),
+      ...(runId ? { runId } : {}),
+    },
+  }
+}
+
+app.post('/run', async (c) => {
+  const p = await prepareRun(c)
+  if (p instanceof Response) return p
   try {
-    const result = await runSample(
-      { apiBase: c.env.API_BASE, apiKey: c.env.PAPERWORK_API_KEY },
-      { id: s.id, name: s.file, mimeType: s.mime, bytes: await file.arrayBuffer(), truthMd: pageMd },
-      await loadRates(c.env.CATALOG_URL),
-    )
-    return c.json(result)
+    return c.json(await execute(c, p))
   } catch (e) {
     if (e instanceof PaperworkError) {
-      const step = e instanceof StepError ? e.step : undefined
-      const runId = e instanceof StepError ? e.runId : undefined
-      const status = e.code === 'timeout' ? 504 : 502
-      console.error('run failed', s.id, step, e.code, e.message)
-      return fail(c, status, e.code === 'timeout' ? 'timeout' : e.code, e.message, {
-        retryable: e.retryable,
-        ...(step ? { step } : {}),
-        ...(runId ? { runId } : {}),
-      })
+      const { status, error } = toApiError(e)
+      console.error('run failed', p.s.id, error.step, error.code, error.message)
+      return c.json({ error } satisfies ApiError, status)
     }
     throw e
   }
+})
+
+// Same run, with progress. The browser shows each step as it starts.
+app.post('/run/stream', async (c) => {
+  const p = await prepareRun(c)
+  if (p instanceof Response) return p
+  const { readable, writable } = new TransformStream<Uint8Array, Uint8Array>()
+  const writer = writable.getWriter()
+  const enc = new TextEncoder()
+  const send = (ev: RunEvent) => writer.write(enc.encode(`${JSON.stringify(ev)}\n`)).catch(() => {})
+  const work = (async () => {
+    try {
+      const result = await execute(c, p, (step) => void send({ type: 'step', step }))
+      await send({ type: 'result', result })
+    } catch (e) {
+      const error: ApiError['error'] =
+        e instanceof PaperworkError
+          ? toApiError(e).error
+          : { code: 'internal', message: 'Something went wrong. Try again.', retryable: true }
+      console.error('run failed', p.s.id, error.step, error.code, error.message)
+      await send({ type: 'error', error })
+    } finally {
+      await writer.close().catch(() => {})
+    }
+  })()
+  c.executionCtx.waitUntil(work)
+  return new Response(readable, {
+    headers: { 'content-type': 'application/x-ndjson', 'cache-control': 'no-store' },
+  })
 })
 
 export default app
