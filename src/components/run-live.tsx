@@ -94,7 +94,7 @@ export function RunProgress({ stepIndex, startedAt }: { stepIndex: number; start
         label="Live run progress"
         steps={[
           { id: 'upload', label: 'Upload' },
-          { id: 'classify', label: 'Classify', description: 'Includes OCR' },
+          { id: 'classify', label: 'OCR and classify' },
           { id: 'extract', label: 'Extract', description: 'Lab reports only' },
         ]}
       />

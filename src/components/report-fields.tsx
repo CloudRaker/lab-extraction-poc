@@ -1,9 +1,10 @@
+import { statusLabel } from '@/lib/format'
 import { boxesOf, cleanCitationText } from '@/lib/report'
 
-import type { Citation, LabReport } from '@/shared/contract'
+import type { Citation, FieldKey, FieldScore, LabReport } from '@/shared/contract'
 import type { Highlight } from './page-viewer'
 
-const FIELDS: Array<[keyof LabReport, string]> = [
+const FIELDS: Array<[FieldKey, string]> = [
   ['patient_name', 'Patient'],
   ['health_insurance_number', 'Health insurance number'],
   ['date_of_birth', 'Date of birth'],
@@ -15,27 +16,35 @@ const FIELDS: Array<[keyof LabReport, string]> = [
   ['report_status', 'Report status'],
 ]
 
-export function fieldHighlight(label: string, key: string, citations: Citation[] | undefined): Highlight {
+function fieldHighlight(label: string, key: FieldKey, citations: Citation[] | undefined, check: FieldScore | undefined): Highlight {
   const first = citations?.find((c) => c.bbox)
   const text = cleanCitationText(first?.text)
-  const conf = first?.confidence !== undefined ? ` Confidence ${first.confidence} of 5.` : ''
+  const conf = first?.confidence !== undefined ? ` Judge confidence ${first.confidence} of 5.` : ''
+  const differs = check && !check.ok ? ' This value does not match the source.' : ''
   return {
     key: `field:${key}`,
     boxes: boxesOf(citations),
-    caption: first ? `${label}: cited text "${text}".${conf}` : `${label}: no citation for this field.`,
+    caption: first ? `${label}: cited text "${text}".${conf}${differs}` : `${label}: no citation for this field.`,
   }
+}
+
+const shownValue = (key: FieldKey, raw: unknown) => {
+  const text = typeof raw === 'string' && raw.trim() ? raw : null
+  return key === 'report_status' ? statusLabel(text) : text
 }
 
 /** Patient and report fields. Each value is a control that shows its citation on the page. */
 export function ReportFields({
   value,
   citations,
+  checks,
   activeKey,
   onHover,
   onPin,
 }: {
   value: LabReport
   citations: Record<string, Citation[]>
+  checks: FieldScore[]
   activeKey: string | null
   onHover: (h: Highlight | null) => void
   onPin: (h: Highlight) => void
@@ -45,9 +54,9 @@ export function ReportFields({
       <h3 className="mb-2 text-sm font-medium">Patient and report</h3>
       <dl className="grid grid-cols-1 gap-x-4 sm:grid-cols-2">
         {FIELDS.map(([key, label]) => {
-          const raw = value[key]
-          const text = typeof raw === 'string' && raw.trim() ? raw : null
-          const h = fieldHighlight(label, key, citations[key])
+          const text = shownValue(key, value[key])
+          const check = checks.find((c) => c.key === key)
+          const h = fieldHighlight(label, key, citations[key], check)
           const active = activeKey === h.key
           return (
             <div key={key} className="min-w-0 py-1">
@@ -69,8 +78,13 @@ export function ReportFields({
                     {text}
                   </button>
                 ) : (
-                  <span className="block px-2 py-0.5 text-sm text-muted">Not found</span>
+                  <span className="block px-2 py-0.5 text-sm text-secondary">Not found</span>
                 )}
+                {check && !check.ok ? (
+                  <span className="block px-2 text-xs text-warning">
+                    In the source: {check.key === 'report_status' ? statusLabel(check.expected) : check.expected}.
+                  </span>
+                ) : null}
               </dd>
             </div>
           )

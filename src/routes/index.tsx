@@ -37,7 +37,7 @@ function Home() {
           <p className="text-sm text-secondary">
             Classify a scanned page, extract its lab results, and check each value against the source.
           </p>
-          <p className="text-xs text-muted">Powered by the CloudRaker paperwork API and rakedoc.</p>
+          <p className="text-xs text-secondary">Powered by the CloudRaker paperwork API and rakedoc.</p>
         </div>
         <ThemeSwitch theme={theme} iconOnly onThemeChange={setTheme} />
       </header>
@@ -61,6 +61,7 @@ function Home() {
             key={selected.id}
             sample={selected}
             live={live.state}
+            liveRunsOff={config.data?.liveRunsOff ?? false}
             onRun={() => void live.start(selected.id)}
             onShowSaved={() => live.clearResult(selected.id)}
           />
@@ -72,7 +73,11 @@ function Home() {
         <a className="underline underline-offset-2" href="https://github.com/CloudRaker/cloudraker-synthdocs">
           cloudraker-synthdocs
         </a>
-        , CC BY 4.0. App code is MIT.
+        ,{' '}
+        <a className="underline underline-offset-2" href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+        . App code is MIT.
       </footer>
 
       <DemoCodeDialog need={live.state.codeNeeded} onSubmit={live.submitCode} onClose={live.closeCode} />

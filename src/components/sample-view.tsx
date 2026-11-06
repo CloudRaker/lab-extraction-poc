@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { Play, RotateCcw } from 'lucide-react'
-import { useCallback, useState } from 'react'
+import { LoaderCircle, Play, RotateCcw } from 'lucide-react'
+import { useRef, useState } from 'react'
 
 import { Alert } from '@/components/arc/alert/alert'
 import { Badge } from '@/components/arc/badge/badge'
@@ -25,11 +25,13 @@ import type { RunResult, SampleInfo } from '@/shared/contract'
 export function SampleView({
   sample,
   live,
+  liveRunsOff,
   onRun,
   onShowSaved,
 }: {
   sample: SampleInfo
   live: LiveRunState
+  liveRunsOff: boolean
   onRun: () => void
   onShowSaved: () => void
 }) {
@@ -49,12 +51,37 @@ export function SampleView({
   // Hover shows a citation for a moment. A click or Enter pins it.
   const [hover, setHover] = useState<Highlight | null>(null)
   const [pinned, setPinned] = useState<Highlight | null>(null)
-  const pin = useCallback((h: Highlight) => setPinned((p) => (p?.key === h.key ? null : h)), [])
   const active = hover ?? pinned
+
+  // On a phone the page sits far above the rows, so a tap goes to the page and offers the way back.
+  const viewer = useRef<HTMLElement>(null)
+  const tapped = useRef<HTMLElement | null>(null)
+  const [canGoBack, setCanGoBack] = useState(false)
+  const motion = (): ScrollBehavior =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+  const pin = (h: Highlight) => {
+    const unpin = pinned?.key === h.key
+    setPinned(unpin ? null : h)
+    if (unpin || window.matchMedia('(min-width: 1024px)').matches) return
+    tapped.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    viewer.current?.scrollIntoView({ block: 'start', behavior: motion() })
+    setCanGoBack(true)
+  }
+  const goBack = () => {
+    tapped.current?.scrollIntoView({ block: 'center', behavior: motion() })
+    tapped.current?.focus({ preventScroll: true })
+    setCanGoBack(false)
+  }
 
   return (
     <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      <PageViewer sample={sample} highlight={active} hasCitations={!!result?.extraction} />
+      <PageViewer
+        sample={sample}
+        highlight={active}
+        hasCitations={!!result?.extraction}
+        sectionRef={viewer}
+        onBack={canGoBack ? goBack : null}
+      />
 
       <div className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -64,6 +91,7 @@ export function SampleView({
             </h2>
             <div className="flex flex-wrap items-center gap-2 text-xs text-secondary tabular-nums">
               <span>{langLabel(sample.lang)}</span>
+              <Badge size="sm">Synthetic</Badge>
               {result ? (
                 <Badge size="sm" tone={liveResult ? 'info' : 'neutral'} dot={!!liveResult}>
                   {liveResult
@@ -80,17 +108,18 @@ export function SampleView({
             </div>
           </div>
           <div className="flex flex-col items-end gap-1">
-            <Button onClick={onRun} loading={running} disabled={running || otherRunning}>
-              {running ? (
-                'Running'
-              ) : (
-                <span className="inline-flex items-center gap-2">
+            <Button onClick={onRun} aria-busy={running || undefined} disabled={running || otherRunning || liveRunsOff}>
+              <span className="inline-flex items-center gap-2">
+                {running ? (
+                  <LoaderCircle size={16} strokeWidth={1.75} aria-hidden="true" className="motion-safe:animate-spin" />
+                ) : (
                   <Play size={16} strokeWidth={1.75} aria-hidden="true" />
-                  Run live
-                </span>
-              )}
+                )}
+                {running ? 'Running' : 'Run live'}
+              </span>
             </Button>
             {otherRunning ? <p className="text-xs text-secondary">Another sample is running.</p> : null}
+            {liveRunsOff ? <p className="text-xs text-secondary">Live runs are off here. These are saved runs.</p> : null}
           </div>
         </div>
 
@@ -126,13 +155,22 @@ export function SampleView({
         {!result && (saved.isPending && sample.hasResult) ? <Skeleton label="Loading the saved result" lines={6} /> : null}
 
         {result ? (
-          <ResultBody
-            result={result}
-            doctype={sample.doctype}
-            activeKey={active?.key ?? null}
-            onHover={setHover}
-            onPin={pin}
-          />
+          <div aria-busy={running || undefined} className="flex min-w-0 flex-col gap-4">
+            {running ? (
+              <p className="text-xs text-secondary">
+                The numbers below are from the {liveResult ? 'last' : 'saved'} run. They change when this run ends.
+              </p>
+            ) : null}
+            <div className={`flex min-w-0 flex-col gap-4 transition-opacity ${running ? 'opacity-50' : ''}`}>
+              <ResultBody
+                result={result}
+                doctype={sample.doctype}
+                activeKey={active?.key ?? null}
+                onHover={setHover}
+                onPin={pin}
+              />
+            </div>
+          </div>
         ) : null}
       </div>
     </div>
@@ -163,7 +201,7 @@ function ResultBody({
       </div>
       <CostPanel key={result.ranAt} cost={result.cost} timings={result.timings} pages={pages} />
 
-      {ex ? <ReportFields value={ex.value} citations={ex.citations} activeKey={activeKey} onHover={onHover} onPin={onPin} /> : null}
+      {ex ? <ReportFields value={ex.value} citations={ex.citations} checks={result.score?.fields ?? []} activeKey={activeKey} onHover={onHover} onPin={onPin} /> : null}
 
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-sm font-medium">{ex ? 'Results' : 'Output'}</h3>

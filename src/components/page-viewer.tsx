@@ -1,5 +1,5 @@
 import { Minus, Plus, ScanLine } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type Ref } from 'react'
 
 import { Button } from '@/components/arc/button/button'
 
@@ -21,31 +21,46 @@ export function PageViewer({
   sample,
   highlight,
   hasCitations,
+  sectionRef,
+  onBack,
 }: {
   sample: SampleInfo
   highlight: Highlight | null
   hasCitations: boolean
+  sectionRef?: Ref<HTMLElement>
+  /** On a phone, the tap on a row moved the page here. This goes back to the row. */
+  onBack?: (() => void) | null
 }) {
   const [zoomIndex, setZoomIndex] = useState(0)
   const scroller = useRef<HTMLDivElement>(null)
   const zoom = ZOOMS[zoomIndex] ?? 1
 
   // Bring the first cited box into view inside the scroller, never by moving the page.
+  // A box that shows in full stays where it is. A box taller than the view shows its top edge.
   useEffect(() => {
     const el = scroller.current
     const box = highlight?.boxes[0]
     if (!el || !box) return
     const width = el.clientWidth * zoom
     const height = (width * sample.height) / sample.width
+    const [x, y, w, h] = [box.x * width, box.y * height, box.width * width, box.height * height]
+    const shown =
+      x >= el.scrollLeft &&
+      y >= el.scrollTop &&
+      x + w <= el.scrollLeft + el.clientWidth &&
+      y + h <= el.scrollTop + el.clientHeight
+    if (shown) return
+    const edge = (start: number, size: number, view: number) =>
+      Math.max(0, size > view ? start - 16 : start + size / 2 - view / 2)
     el.scrollTo({
-      left: Math.max(0, (box.x + box.width / 2) * width - el.clientWidth / 2),
-      top: Math.max(0, (box.y + box.height / 2) * height - el.clientHeight / 2),
+      left: edge(x, w, el.clientWidth),
+      top: edge(y, h, el.clientHeight),
       behavior: reducedMotion() ? 'auto' : 'smooth',
     })
   }, [highlight, zoom, sample.height, sample.width])
 
   return (
-    <section aria-label="Document page" className="flex min-w-0 flex-col gap-2 lg:sticky lg:top-4 lg:self-start">
+    <section ref={sectionRef} aria-label="Document page" className="flex min-w-0 flex-col gap-2 lg:sticky lg:top-4 lg:self-start">
       <div className="flex items-center justify-between gap-2">
         <h2 className="text-sm font-medium">Source page</h2>
         <div className="flex items-center gap-1">
@@ -113,9 +128,16 @@ export function PageViewer({
         </div>
       </div>
       {hasCitations ? (
-        <p className="min-h-8 text-xs text-secondary" aria-live="polite">
-          {highlight?.caption ?? 'Point at a field or a result row to see where it comes from on the page.'}
-        </p>
+        <div className="flex min-h-8 items-start justify-between gap-3">
+          <p className="text-xs text-secondary" aria-live="polite">
+            {highlight?.caption ?? 'Point at a field or a result row to see where it comes from on the page.'}
+          </p>
+          {onBack ? (
+            <Button variant="secondary" size="sm" className="shrink-0 lg:hidden" onClick={onBack}>
+              Back to the results
+            </Button>
+          ) : null}
+        </div>
       ) : null}
     </section>
   )

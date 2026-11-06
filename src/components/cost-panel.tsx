@@ -8,7 +8,7 @@ export function CostPanel({ cost, timings, pages }: { cost: Cost; timings: Timin
   const perPage = cost.credits / Math.max(1, pages)
   const steps = [
     ['Upload', timings.uploadMs],
-    ['Classify', timings.classifyMs],
+    ['OCR and classify', timings.classifyMs],
     ['Extract', timings.extractMs],
   ] as const
   return (
@@ -16,20 +16,22 @@ export function CostPanel({ cost, timings, pages }: { cost: Cost; timings: Timin
       <div className="flex min-w-0 flex-col gap-2">
         <h3 className="text-sm font-medium">Cost of this run</h3>
         <div className="flex items-baseline gap-2 text-2xl">
-          <AnimatedCounter value={cost.credits} animateOnView />
+          <AnimatedCounter value={cost.credits} />
           <span className="text-sm text-secondary">credits</span>
         </div>
         <dl className="flex flex-col gap-1 text-xs tabular-nums">
           <div className="flex justify-between gap-2">
-            <dt className="text-secondary">Price</dt>
+            <dt className="text-secondary">List price</dt>
             <dd>${cost.usd.toFixed(3)}</dd>
           </div>
-          <div className="flex justify-between gap-2">
-            <dt className="text-secondary">Per page</dt>
-            <dd>
-              {perPage} credits, ${(perPage * cost.creditUsd).toFixed(3)}
-            </dd>
-          </div>
+          {pages > 1 ? (
+            <div className="flex justify-between gap-2">
+              <dt className="text-secondary">Per page</dt>
+              <dd>
+                {perPage} credits, ${(perPage * cost.creditUsd).toFixed(3)}
+              </dd>
+            </div>
+          ) : null}
           <div className="flex justify-between gap-2">
             <dt className="text-secondary">Total time</dt>
             <dd>{seconds(timings.totalMs)}</dd>
@@ -47,7 +49,7 @@ export function CostPanel({ cost, timings, pages }: { cost: Cost; timings: Timin
           <li key={l.event} className="text-xs">
             <div className="flex justify-between gap-2 tabular-nums">
               <span>
-                {l.units} × {eventLabel(l.event)} at {l.rate}
+                {l.units} × {eventLabel(l.event)} at {l.rate} credits
               </span>
               <span>{l.credits}</span>
             </div>
@@ -57,7 +59,7 @@ export function CostPanel({ cost, timings, pages }: { cost: Cost; timings: Timin
       </ul>
       <p className="border-t border-border-subtle pt-3 text-xs text-secondary sm:col-span-2">
         Estimate at Pro plan list rates{cost.ratesSource === 'catalog' ? ' from the live catalog' : ' (built-in copy)'}.
-        Runs report pages, not credits.
+        It covers OCR, classification, extraction, citations and the judge pass. Runs report pages, not credits.
       </p>
     </section>
   )
