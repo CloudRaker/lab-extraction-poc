@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type Ref } from 'react'
 import { Button } from '@/components/arc/button/button'
 
 import type { Box } from '@/lib/report'
-import type { SampleInfo } from '@/shared/contract'
+import type { PageImage } from '@/lib/upload'
 
 const ZOOMS = [1, 1.5, 2, 3]
 
@@ -16,15 +16,17 @@ export interface Highlight {
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-/** The page image with zoom, and the cited regions drawn on top. Boxes use page fractions (0 to 1). */
+/** The page images with zoom, and the cited regions drawn on top. Boxes use page fractions (0 to 1). */
 export function PageViewer({
-  sample,
+  pages,
+  alt,
   highlight,
   hasCitations,
   sectionRef,
   onBack,
 }: {
-  sample: SampleInfo
+  pages: PageImage[]
+  alt: string
   highlight: Highlight | null
   hasCitations: boolean
   sectionRef?: Ref<HTMLElement>
@@ -42,8 +44,12 @@ export function PageViewer({
     const box = highlight?.boxes[0]
     if (!el || !box) return
     const width = el.clientWidth * zoom
-    const height = (width * sample.height) / sample.width
-    const [x, y, w, h] = [box.x * width, box.y * height, box.width * width, box.height * height]
+    const heightOf = (p: PageImage) => (width * p.height) / p.width
+    const above = pages.slice(0, box.page).reduce((sum, p) => sum + heightOf(p), 0)
+    const page = pages[box.page] ?? pages[0]
+    if (!page) return
+    const height = heightOf(page)
+    const [x, y, w, h] = [box.x * width, above + box.y * height, box.width * width, box.height * height]
     const shown =
       x >= el.scrollLeft &&
       y >= el.scrollTop &&
@@ -57,7 +63,7 @@ export function PageViewer({
       top: edge(y, h, el.clientHeight),
       behavior: reducedMotion() ? 'auto' : 'smooth',
     })
-  }, [highlight, zoom, sample.height, sample.width])
+  }, [highlight, zoom, pages])
 
   return (
     <section ref={sectionRef} aria-label="Document page" className="flex min-w-0 flex-col gap-2 lg:sticky lg:top-4 lg:self-start">
@@ -104,26 +110,32 @@ export function PageViewer({
         role="group"
         className="max-h-[70dvh] overflow-auto rounded-2xl border border-border bg-surface-muted lg:max-h-[calc(100dvh-8.5rem)]"
       >
-        <div className="relative" style={{ width: `${zoom * 100}%` }}>
-          <img
-            src={`/api/samples/${sample.id}/image`}
-            alt={`${sample.title}. Synthetic document page.`}
-            width={sample.width}
-            height={sample.height}
-            className="block h-auto w-full"
-            draggable={false}
-          />
-          {highlight?.boxes.map((b) => (
-            <div
-              key={`${highlight.key}:${b.x}:${b.y}`}
-              className="cite-box"
-              style={{
-                left: `${b.x * 100}%`,
-                top: `${b.y * 100}%`,
-                width: `${b.width * 100}%`,
-                height: `${b.height * 100}%`,
-              }}
-            />
+        <div className="flex flex-col gap-2" style={{ width: `${zoom * 100}%` }}>
+          {pages.map((page, n) => (
+            <div key={page.url} className="relative">
+              <img
+                src={page.url}
+                alt={pages.length > 1 ? `${alt} Page ${n + 1} of ${pages.length}.` : alt}
+                width={page.width}
+                height={page.height}
+                className="block h-auto w-full"
+                draggable={false}
+              />
+              {highlight?.boxes
+                .filter((b) => b.page === n)
+                .map((b) => (
+                  <div
+                    key={`${highlight.key}:${b.x}:${b.y}`}
+                    className="cite-box"
+                    style={{
+                      left: `${b.x * 100}%`,
+                      top: `${b.y * 100}%`,
+                      width: `${b.width * 100}%`,
+                      height: `${b.height * 100}%`,
+                    }}
+                  />
+                ))}
+            </div>
           ))}
         </div>
       </div>

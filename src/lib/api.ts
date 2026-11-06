@@ -1,5 +1,6 @@
 // Browser client for the same-origin /api routes. Types: src/shared/contract.ts.
 
+import type { UploadedFile } from './upload'
 import type { ApiError, AppConfig, RunEvent, RunResult, SampleInfo } from '@/shared/contract'
 
 export class ApiFailure extends Error {
@@ -28,21 +29,31 @@ export const getSavedResult = (id: string) =>
   fetch(`/api/samples/${encodeURIComponent(id)}/result`).then((r) => json<RunResult>(r))
 
 /**
- * Starts a live run and reports each step as the worker starts it.
+ * Starts a live run on a sample or on the user's file, and reports each step as the worker starts it.
  * Resolves with the result. Rejects with ApiFailure (status 401 means the demo code is missing or wrong).
  */
 export async function runLive(
-  sampleId: string,
+  target: { sampleId: string } | { upload: UploadedFile },
   demoCode: string | null,
   onStep: (step: 'upload' | 'classify' | 'extract') => void,
   signal?: AbortSignal,
 ): Promise<RunResult> {
-  const res = await fetch('/api/run/stream', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', ...(demoCode ? { 'x-demo-code': demoCode } : {}) },
-    body: JSON.stringify({ sampleId }),
-    signal,
-  })
+  const code = demoCode ? { 'x-demo-code': demoCode } : undefined
+  let res: Response
+  if ('upload' in target) {
+    const form = new FormData()
+    form.set('file', target.upload.file)
+    form.set('pages', String(target.upload.pages.length))
+    if (target.upload.scanned) form.set('scanned', '1')
+    res = await fetch('/api/upload/stream', { method: 'POST', headers: code, body: form, signal })
+  } else {
+    res = await fetch('/api/run/stream', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', ...code },
+      body: JSON.stringify({ sampleId: target.sampleId }),
+      signal,
+    })
+  }
   if (!res.ok || !res.body) return json<RunResult>(res)
   const reader = res.body.pipeThrough(new TextDecoderStream()).getReader()
   let buffer = ''

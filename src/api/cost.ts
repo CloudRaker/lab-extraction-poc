@@ -73,13 +73,15 @@ export function cost(r: Rates, units: Units): Cost {
 /**
  * The events one sample run bills, and why.
  * - Parse: an image page always goes through OCR (rakedoc), so it bills page_ocr
- *   instead of page_parsed. A PDF with a text layer would bill page_parsed.
+ *   instead of page_parsed. A PDF with a text layer bills page_parsed, and a scanned PDF
+ *   (ocr: true) bills page_ocr. This is an estimate: the API does not report which ran.
  * - Classify: page_classified for each page sent to the model (usage.pages).
  * - Extract: page_extracted per page, plus extraction_grounding (citations: true)
  *   and page_judged (judge: true) for the passes that ran.
  */
 export function runUnits(opts: {
   mimeType: string
+  ocr?: boolean
   pages: number
   classified: number
   extracted: number
@@ -88,8 +90,8 @@ export function runUnits(opts: {
 }): Units {
   const image = opts.mimeType.startsWith('image/')
   const u: Units = [
-    image
-      ? ['page_ocr', opts.pages, 'The page is an image, so parsing runs OCR (rakedoc).']
+    image || opts.ocr
+      ? ['page_ocr', opts.pages, `The ${image ? 'page is an image' : 'PDF has no text layer'}, so parsing runs OCR (rakedoc).`]
       : ['page_parsed', opts.pages, 'The file is parsed once on upload.'],
     ['page_classified', opts.classified, 'Each page sent to the classifier.'],
   ]

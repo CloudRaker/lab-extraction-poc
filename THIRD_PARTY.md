@@ -42,6 +42,7 @@ pnpm dlx shadcn@latest add @uiarc/<id>
 | `@radix-ui/react-dialog` | MIT |
 | `@radix-ui/react-tooltip` | MIT |
 | `lucide-react` | ISC |
+| `pdfjs-dist` (renders an uploaded PDF in the browser) | Apache-2.0 |
 | `@fontsource-variable/geist` (Geist font) | OFL-1.1 |
 | `@fontsource-variable/inter` (Inter font) | OFL-1.1 |
 

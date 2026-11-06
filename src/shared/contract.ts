@@ -139,7 +139,8 @@ export interface Timings {
 
 /** POST /api/run response and GET /api/samples/:id/result body. */
 export interface RunResult {
-  sampleId: string
+  sampleId: string // "upload" for a file the user sent
+  pages?: number // pages in the file. Saved one-page results omit it.
   ranAt: string // ISO time
   apiBase: string
   fileId: string | null // saved results drop the production ids
@@ -169,10 +170,18 @@ export type RunEvent =
   | { type: 'result'; result: RunResult }
   | { type: 'error'; error: ApiError['error'] }
 
+/**
+ * POST /api/upload/stream: multipart form with file (PDF, PNG or JPEG), pages (page count, from
+ * the browser) and scanned ("1" when a PDF has no text layer). Same checks and same NDJSON events
+ * as POST /api/run/stream. The worker keeps nothing, and a file has no ground truth, so score is null.
+ */
+export const MAX_UPLOAD_BYTES = 15 * 1024 * 1024
+export const MAX_UPLOAD_PAGES = 5
+
 /** Every error body. */
 export interface ApiError {
   error: {
-    code: string // not_found | bad_request | demo_code_required | live_runs_off | rate_limited | upstream_error | timeout | run_failed | no_output | internal
+    code: string // not_found | bad_request | too_large | unsupported_file | demo_code_required | live_runs_off | rate_limited | upstream_error | timeout | run_failed | no_output | internal
     message: string
     retryable: boolean
     step?: 'upload' | 'classify' | 'extract'

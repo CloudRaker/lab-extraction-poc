@@ -6,7 +6,11 @@ import { Input } from '@/components/arc/input/input'
 import { Stepper } from '@/components/arc/stepper/stepper'
 import { ApiFailure, runLive } from '@/lib/api'
 
+import type { UploadedFile } from '@/lib/upload'
 import type { ApiError, RunResult } from '@/shared/contract'
+
+/** The id of the user's file in the live run state. */
+export const UPLOAD_ID = 'upload'
 
 export type RunStepId = 'upload' | 'classify' | 'extract'
 const STEP_INDEX: Record<RunStepId, number> = { upload: 0, classify: 1, extract: 2 }
@@ -31,16 +35,19 @@ export function useLiveRun(demoCodeRequired: boolean) {
     codeNeeded: null,
   })
   const code = useRef<string | null>(null)
+  const upload = useRef<UploadedFile | null>(null)
 
   const start = useCallback(
-    async (sampleId: string) => {
+    async (sampleId: string, file?: UploadedFile) => {
+      if (file) upload.current = file
       if (demoCodeRequired && !code.current) {
         setState((s) => ({ ...s, codeNeeded: { sampleId, rejected: false } }))
         return
       }
       setState((s) => ({ ...s, sampleId, stepIndex: 0, startedAt: Date.now(), error: null, codeNeeded: null }))
       try {
-        const result = await runLive(sampleId, code.current, (step) =>
+        const target = sampleId === UPLOAD_ID && upload.current ? { upload: upload.current } : { sampleId }
+        const result = await runLive(target, code.current, (step) =>
           setState((s) => ({ ...s, stepIndex: STEP_INDEX[step] })),
         )
         setState((s) => ({ ...s, sampleId: null, results: { ...s.results, [sampleId]: result } }))
@@ -99,7 +106,7 @@ export function RunProgress({ stepIndex, startedAt }: { stepIndex: number; start
         ]}
       />
       <p className="text-xs tabular-nums text-secondary">
-        Running for {Math.max(0, Math.round((now - startedAt) / 1000))} s. A live run takes about 25 to 150 seconds.
+        Running for {Math.max(0, Math.round((now - startedAt) / 1000))} s. A one-page run takes about 25 to 150 seconds.
       </p>
     </section>
   )

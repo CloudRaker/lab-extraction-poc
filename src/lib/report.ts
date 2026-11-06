@@ -35,18 +35,19 @@ export function alignRows(
   return { checks, missed }
 }
 
-export type Box = NonNullable<Citation['bbox']>
+export type Box = NonNullable<Citation['bbox']> & { page: number }
 
-/** The distinct boxes of a list of citations, on the first page. */
+/** The distinct boxes of a list of citations. page is 0-based. */
 export function boxesOf(citations: Citation[] | undefined): Box[] {
   const seen = new Set<string>()
   const out: Box[] = []
   for (const c of citations ?? []) {
-    if (!c.bbox || (c.page ?? 0) !== 0) continue
-    const key = [c.bbox.x, c.bbox.y, c.bbox.width, c.bbox.height].map((n) => n.toFixed(3)).join()
+    if (!c.bbox) continue
+    const page = c.page ?? 0
+    const key = [page, ...[c.bbox.x, c.bbox.y, c.bbox.width, c.bbox.height].map((n) => n.toFixed(3))].join()
     if (seen.has(key)) continue
     seen.add(key)
-    out.push(c.bbox)
+    out.push({ ...c.bbox, page })
   }
   return out
 }
@@ -78,7 +79,7 @@ function namesRow(text: string, name: string): boolean {
  * the first named row has no citation.
  */
 export function rowCitations(citations: Citation[] | undefined, rows: LabResultRow[]): RowCitation[] {
-  const all = (citations ?? []).filter((c) => c.bbox && (c.page ?? 0) === 0)
+  const all = (citations ?? []).filter((c) => c.bbox)
   const tall = all.filter((c) => c.bbox!.height >= MIN_TABLE_HEIGHT)
   const tables = tall.length ? tall : all
   const general: RowCitation = { boxes: boxesOf(tables), basis: 'general' }

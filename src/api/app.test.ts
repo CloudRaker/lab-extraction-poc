@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import app from './app'
+import app, { sniffFile } from './app'
 
 const samples = [{ id: '1001_000001', file: '1001_000001.jpg', mime: 'image/jpeg', doctype: 'prescription' }]
 const assets = {
@@ -47,5 +47,40 @@ describe('live run gate', () => {
     const e = env({ DEMO_CODE: 'abc', RUN_LIMIT: { limit: async () => ({ success: false }) } })
     const res = await run('poc.workers.dev', e)
     expect(res.status).toBe(429)
+  })
+})
+
+describe('upload route', () => {
+  const pdf = new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2d, 0x31])
+  const send = (form: FormData, code?: string) =>
+    app.request(
+      'https://poc.workers.dev/api/upload/stream',
+      { method: 'POST', headers: code ? { 'x-demo-code': code } : {}, body: form },
+      env({ PAPERWORK_API_KEY: 'k', DEMO_CODE: 'c' }) as never,
+    )
+  const form = (bytes: Uint8Array<ArrayBuffer>, pages: string) => {
+    const f = new FormData()
+    f.set('file', new File([bytes], 'patient-name.pdf'))
+    f.set('pages', pages)
+    return f
+  }
+
+  it('asks for the demo code before it reads the file', async () => {
+    const res = await send(form(pdf, '1'))
+    expect(res.status).toBe(401)
+  })
+  it('refuses a file that is not a PDF, PNG or JPEG, whatever its name says', async () => {
+    const res = await send(form(new Uint8Array([1, 2, 3, 4, 5, 6]), '1'), 'c')
+    expect(res.status).toBe(415)
+  })
+  it('refuses a page count over the limit', async () => {
+    const res = await send(form(pdf, '6'), 'c')
+    expect(res.status).toBe(400)
+  })
+  it('knows the file types by their first bytes', () => {
+    expect(sniffFile(pdf)?.mimeType).toBe('application/pdf')
+    expect(sniffFile(new Uint8Array([0xff, 0xd8, 0xff, 0xe0]))?.mimeType).toBe('image/jpeg')
+    expect(sniffFile(new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))?.mimeType).toBe('image/png')
+    expect(sniffFile(new Uint8Array([0x52, 0x49, 0x46, 0x46]))).toBeNull()
   })
 })

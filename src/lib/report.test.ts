@@ -75,23 +75,24 @@ describe('alignRows', () => {
 describe('citations', () => {
   const box = (y: number) => ({ x: 0.1, y, width: 0.8, height: 0.1 })
   const cite = (y: number, text: string): Citation => ({ fileId: 'f', page: 0, bbox: box(y), text })
+  const at = (y: number, page = 0) => ({ ...box(y), page })
 
-  it('drops duplicate boxes, missing boxes and other pages', () => {
+  it('drops duplicate and missing boxes, and keeps the page of each box', () => {
     const list: Citation[] = [cite(0.1, 'a'), cite(0.1, 'b'), { fileId: 'f' }, { ...cite(0.5, 'c'), page: 1 }]
-    expect(boxesOf(list)).toEqual([box(0.1)])
+    expect(boxesOf(list)).toEqual([at(0.1), at(0.5, 1)])
   })
 
   it('gives a row the box of its table, and the rows after it the same box', () => {
     const list = [cite(0.1, 'Sodium</td><td>144'), cite(0.5, 'Ferritin</td><td>20')]
     const out = rowCitations(list, [row('Sodium', '1'), row('Potassium', '1'), row('Ferritin', '1'), row('Zinc', '1')])
     expect(out.map((r) => r.basis)).toEqual(['named', 'nearby', 'named', 'nearby'])
-    expect(out.map((r) => r.boxes)).toEqual([[box(0.1)], [box(0.1)], [box(0.5)], [box(0.5)]])
+    expect(out.map((r) => r.boxes)).toEqual([[at(0.1)], [at(0.1)], [at(0.5)], [at(0.5)]])
   })
 
   it('claims less when no citation text names a row, and drops heading boxes', () => {
     const heading = { fileId: 'f', page: 0, bbox: { x: 0, y: 0.4, width: 0.2, height: 0.01 }, text: 'Panel' }
     const out = rowCitations([cite(0.1, 'Analytes'), heading], [row('Potassium', '1')])
-    expect(out[0]).toEqual({ boxes: [box(0.1)], basis: 'general' })
+    expect(out[0]).toEqual({ boxes: [at(0.1)], basis: 'general' })
   })
 
   it('gives no box to a row above the first named row', () => {

@@ -87,8 +87,15 @@ Live runs spend credits, so they are closed by default:
 | `GET /api/samples/:id/result` | The saved result of the sample. |
 | `POST /api/run` | A live run: `{ "sampleId": "..." }`. |
 | `POST /api/run/stream` | The same live run as NDJSON: one event per step, then the result. The app uses this route. |
+| `POST /api/upload/stream` | A live run on your own file: multipart form with `file` (PDF, PNG or JPEG, 15 MB and 5 pages at most), `pages` and `scanned`. Same demo code check and same events. The result has no score. |
 
 The types are in `src/shared/contract.ts`.
+
+## Your own file
+
+When live runs are on, the page shows **Upload your file**. The browser renders the pages with pdf.js and sends nothing until you press **Run live** and enter the demo code. The worker keeps no copy and sends the API a generic file name. It asks the API to delete the file after the run, and run data expires after one hour. Use test or de-identified documents only.
+
+A file has no ground truth, so the results have no checks. The extraction schema holds one report for each file, so split a PDF that holds several reports. A scanned PDF is counted as OCR because it has no text layer. The API does not report which one ran, so this is an estimate.
 
 ## How credits are computed
 

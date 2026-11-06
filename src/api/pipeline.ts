@@ -30,6 +30,10 @@ export interface SampleInput {
   name: string // file name sent to the API
   mimeType: string
   bytes: ArrayBuffer | Uint8Array
+  /** Pages in the file, when the caller knows them. Default: the pages the classifier read. */
+  pages?: number
+  /** A PDF with no text layer, so parsing runs OCR. */
+  ocr?: boolean
   /** synthdocs page_md, for scoring. Omit to skip the score. */
   truthMd?: string | null
 }
@@ -76,7 +80,8 @@ export async function runSample(
 ): Promise<RunResult> {
   const t0 = Date.now()
   onStep?.('upload')
-  const deadline = t0 + OPTIONS.deadlineMs
+  // Each more page gets one more minute.
+  const deadline = t0 + OPTIONS.deadlineMs + 60_000 * Math.max(0, (input.pages ?? 1) - 1)
 
   const fileId = await step('upload', () =>
     uploadFile(cfg, { name: input.name, mimeType: input.mimeType, bytes: input.bytes }),
@@ -108,9 +113,9 @@ export async function runSample(
       confidence: typeof out['confidence'] === 'number' ? out['confidence'] : null,
       reasoning: typeof out['reasoning'] === 'string' ? out['reasoning'] : null,
     }
-    // usage.pages counts the pages sent to the model. The bundled samples have one page,
-    // so this is also the parsed page count. A longer file needs its own page count here.
-    const pages = Number(classifyRun.usage?.['pages'] ?? 1) || 1
+    // usage.pages counts the pages sent to the model, which can be fewer than the file has.
+    const classified = Number(classifyRun.usage?.['pages'] ?? 1) || 1
+    const pages = input.pages ?? classified
 
     // Extract, only for lab reports.
     let extractRun: Run | null = null
@@ -155,8 +160,9 @@ export async function runSample(
       rates,
       runUnits({
         mimeType: input.mimeType,
+        ...(input.ocr ? { ocr: true } : {}),
         pages,
-        classified: pages,
+        classified,
         extracted,
         citations: OPTIONS.citations,
         judge: OPTIONS.judge,
@@ -165,6 +171,7 @@ export async function runSample(
 
     return {
       sampleId: input.id,
+      ...(input.pages ? { pages: input.pages } : {}),
       ranAt: new Date(t0).toISOString(),
       apiBase: cfg.apiBase,
       fileId,

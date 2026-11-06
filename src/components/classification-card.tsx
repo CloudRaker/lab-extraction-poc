@@ -6,7 +6,7 @@ import { doctypeLabel } from '@/lib/format'
 import type { Classification } from '@/shared/contract'
 
 /** The class the API gave the page, next to the class of the source document. */
-export function ClassificationCard({ classification, doctype }: { classification: Classification; doctype: string }) {
+export function ClassificationCard({ classification, doctype }: { classification: Classification; doctype: string | null }) {
   const matches = classification.classId === doctype
   return (
     <section aria-label="Classification" className="flex flex-col gap-2 rounded-3xl border border-border p-4">
@@ -16,7 +16,7 @@ export function ClassificationCard({ classification, doctype }: { classification
         {classification.confidence !== null ? (
           <Badge size="sm">Confidence {classification.confidence} of 5</Badge>
         ) : null}
-        {matches ? (
+        {doctype === null ? null : matches ? (
           <Badge size="sm" tone="success" icon={<Check size={12} strokeWidth={1.75} aria-hidden="true" />}>
             Matches the source
           </Badge>

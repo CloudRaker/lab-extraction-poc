@@ -19,17 +19,21 @@ import { ResultsTable } from './results-table'
 import { RunProgress, type LiveRunState } from './run-live'
 import { ScoreBar } from './score-bar'
 
+import type { UploadedFile } from '@/lib/upload'
 import type { RunResult, SampleInfo } from '@/shared/contract'
 
 /** The selected sample: the page on one side, and what the API returned on the other. */
 export function SampleView({
   sample,
+  upload,
   live,
   liveRunsOff,
   onRun,
   onShowSaved,
 }: {
   sample: SampleInfo
+  /** Set when the view shows the user's file: its pages, and no saved run or ground truth. */
+  upload?: UploadedFile | null
   live: LiveRunState
   liveRunsOff: boolean
   onRun: () => void
@@ -76,7 +80,8 @@ export function SampleView({
   return (
     <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
       <PageViewer
-        sample={sample}
+        pages={upload?.pages ?? [{ url: `/api/samples/${sample.id}/image`, width: sample.width, height: sample.height }]}
+        alt={upload ? 'Your file.' : `${sample.title}. Synthetic document page.`}
         highlight={active}
         hasCitations={!!result?.extraction}
         sectionRef={viewer}
@@ -86,12 +91,20 @@ export function SampleView({
       <div className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="flex min-w-0 flex-col gap-1">
-            <h2 className="text-lg font-medium">
-              {doctypeLabel(sample.doctype)}, {presetLabel(sample.preset).toLowerCase()}
+            <h2 className="truncate text-lg font-medium">
+              {upload ? upload.name : `${doctypeLabel(sample.doctype)}, ${presetLabel(sample.preset).toLowerCase()}`}
             </h2>
             <div className="flex flex-wrap items-center gap-2 text-xs text-secondary tabular-nums">
-              <span>{langLabel(sample.lang)}</span>
-              <Badge size="sm">Synthetic</Badge>
+              {upload ? (
+                <span>
+                  {upload.pages.length} {upload.pages.length === 1 ? 'page' : 'pages'}
+                </span>
+              ) : (
+                <>
+                  <span>{langLabel(sample.lang)}</span>
+                  <Badge size="sm">Synthetic</Badge>
+                </>
+              )}
               {result ? (
                 <Badge size="sm" tone={liveResult ? 'info' : 'neutral'} dot={!!liveResult}>
                   {liveResult
@@ -136,6 +149,14 @@ export function SampleView({
           </Alert>
         ) : null}
 
+        {upload ? (
+          <Alert tone="warning" title="Use test or de-identified documents only">
+            Your file goes through this app to the CloudRaker paperwork API. The app asks the API to delete it after
+            the run, and run data expires after one hour. A run uses credits. Your file has no source to compare with,
+            so the results show no checks.
+          </Alert>
+        ) : null}
+
         {note ? (
           <Alert tone={note.tone} title={note.title}>
             {note.body}
@@ -164,7 +185,7 @@ export function SampleView({
             <div className={`flex min-w-0 flex-col gap-4 transition-opacity ${running ? 'opacity-50' : ''}`}>
               <ResultBody
                 result={result}
-                doctype={sample.doctype}
+                doctype={upload ? null : sample.doctype}
                 activeKey={active?.key ?? null}
                 onHover={setHover}
                 onPin={pin}
@@ -185,13 +206,13 @@ function ResultBody({
   onPin,
 }: {
   result: RunResult
-  doctype: string
+  doctype: string | null
   activeKey: string | null
   onHover: (h: Highlight | null) => void
   onPin: (h: Highlight) => void
 }) {
   const [view, setView] = useState('results')
-  const pages = Number(result.usage.classify?.['pages'] ?? 1) || 1
+  const pages = result.pages ?? (Number(result.usage.classify?.['pages'] ?? 1) || 1)
   const ex = result.extraction
   return (
     <>
@@ -229,7 +250,7 @@ function ResultBody({
         />
       ) : (
         <p className="rounded-3xl border border-border p-4 text-sm text-secondary">
-          The classifier says this page is not a lab report, so extraction did not run. The page costs only OCR and classification.
+          The classifier says this document is not a lab report, so extraction did not run. The run costs only parsing and classification.
         </p>
       )}
     </>

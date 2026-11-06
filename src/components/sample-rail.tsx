@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 
 import { Badge } from '@/components/arc/badge/badge'
 import { doctypeLabel, presetLabel, SAMPLE_NOTES } from '@/lib/format'
@@ -48,7 +48,15 @@ function SampleLink({ sample, selected }: { sample: SampleInfo; selected: boolea
 }
 
 /** The sample picker: a column on wide screens, a sideways strip below that. */
-export function SampleRail({ samples, selectedId }: { samples: SampleInfo[]; selectedId: string }) {
+export function SampleRail({
+  samples,
+  selectedId,
+  top,
+}: {
+  samples: SampleInfo[]
+  selectedId: string
+  top?: ReactNode
+}) {
   const nav = useRef<HTMLElement>(null)
   // Keep the selected sample visible. Scroll the rail only, never the page.
   useEffect(() => {
@@ -82,6 +90,7 @@ export function SampleRail({ samples, selectedId }: { samples: SampleInfo[]; sel
   )
   return (
     <nav ref={nav} aria-label="Sample documents" className="-mx-4 flex gap-4 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6 xl:sticky xl:top-4 xl:mx-0 xl:max-h-[calc(100dvh-2rem)] xl:flex-col xl:gap-3 xl:self-start xl:overflow-x-hidden xl:overflow-y-auto xl:px-0 xl:pb-0">
+      {top}
       {group('Lab reports', labs)}
       {group('Other documents', others)}
     </nav>
