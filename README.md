@@ -40,6 +40,7 @@ Saved results show without a key. A live run needs the key.
 | `pnpm dev` | Starts the app with the worker on Vite. |
 | `pnpm test` | Runs the unit tests (ground-truth parsing and scoring). |
 | `pnpm typecheck` | Checks the types. |
+| `pnpm lint` | Runs oxlint on the app code. |
 | `pnpm run-samples [id ...]` | Runs the samples live and writes `public/samples/results/<id>.json`. |
 | `pnpm deploy` | Builds and deploys the worker. |
 
@@ -63,6 +64,7 @@ Saved results stay public.
 | `GET /api/samples/:id/image` | The page image (WebP). |
 | `GET /api/samples/:id/result` | The saved result of the sample. |
 | `POST /api/run` | A live run: `{ "sampleId": "..." }`. |
+| `POST /api/run/stream` | The same live run as NDJSON: one event per step, then the result. The app uses this route. |
 
 The types are in `src/shared/contract.ts`.
 
@@ -100,3 +102,4 @@ Each sample has three files in `public/samples/`:
 ## License
 
 MIT. See [LICENSE](LICENSE). The sample pages are CC BY 4.0.
+[THIRD_PARTY.md](THIRD_PARTY.md) lists the UI components and their licenses.

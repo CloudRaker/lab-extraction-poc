@@ -1,2 +1,75 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/inter';
+@import './components/arc/foundation.css';
+
+/* Arc reads its faces from these two variables. */
+:root {
+  --font-geist: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-inter: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Tailwind utilities that point at the Arc semantic tokens, so layout code
+   never uses raw colors. Example: bg-surface, text-secondary, border-border. */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --radius-2xl: var(--radius-control);
+  --radius-3xl: var(--radius-panel);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-geist);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
+  }
+  html {
+    background: var(--background);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body, var(--font-inter));
+    letter-spacing: var(--tracking-body, -0.01em);
+    line-height: var(--leading-body, 1.4);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* A cited region on the page image. */
+.cite-box {
+  position: absolute;
+  border: 2px solid var(--accent);
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+  border-radius: 4px;
+  pointer-events: none;
+  animation: cite-in 160ms var(--ease-enter, ease-out);
+}
+@keyframes cite-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cite-box {
+    animation: none;
+  }
+}
