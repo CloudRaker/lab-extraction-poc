@@ -5,6 +5,8 @@ export interface PaperworkConfig {
   apiKey: string
   /** Per-request timeout. A long poll (wait=20) needs more than 20 s. */
   timeoutMs?: number
+  /** Wait between poll retries. The tests set it to 0. */
+  retryDelayMs?: number
 }
 
 export class PaperworkError extends Error {
@@ -106,27 +108,45 @@ export const startRun = (
     Math.max(5_000, deadline - Date.now()),
   )
 
-/** Long-poll GET /v1/runs/{id}?wait=20 until terminal or until the deadline. */
+const POLL_RETRIES = 4
+const POLL_TIMEOUT_MS = 45_000
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+/**
+ * Long-poll GET /v1/runs/{id}?wait=20 until terminal or until the deadline.
+ * A failed poll does not end the run on the API, so a retryable failure polls again.
+ */
 export async function waitRun(cfg: PaperworkConfig, first: Run, deadline: number): Promise<Run> {
   let run = first
+  let failures = 0
   while (!TERMINAL.has(run.status)) {
-    if (Date.now() > deadline)
+    const left = deadline - Date.now()
+    if (left <= 0)
       throw new PaperworkError(504, 'timeout', `run ${run.id} still ${run.status} at the deadline`, true)
-    const wait = Math.max(1, Math.min(20, Math.floor((deadline - Date.now()) / 1000)))
-    // oxlint-disable-next-line no-await-in-loop -- polling is sequential by nature
-    run = await call<Run>(cfg, `/v1/runs/${run.id}?wait=${wait}&output=inline`)
+    const wait = Math.max(1, Math.min(20, Math.floor(left / 1000)))
+    const timeout = Math.min(POLL_TIMEOUT_MS, Math.max(left, wait * 1000) + 5_000)
+    try {
+      // oxlint-disable-next-line no-await-in-loop -- polling is sequential by nature
+      run = await call<Run>(cfg, `/v1/runs/${run.id}?wait=${wait}&output=inline`, {}, timeout)
+      failures = 0
+    } catch (e) {
+      failures++
+      if (!(e instanceof PaperworkError && e.retryable) || failures > POLL_RETRIES) throw e
+      // oxlint-disable-next-line no-await-in-loop -- back off before the next poll
+      await sleep(cfg.retryDelayMs ?? failures * 1000)
+    }
   }
   return run
 }
 
-/** GET a run once with inline output (the POST answer can omit inline sources). */
+/** GET a run once with inline output. The POST and poll answers can omit the output. */
 export const getRun = (cfg: PaperworkConfig, id: string) =>
   call<Run>(cfg, `/v1/runs/${id}?output=inline`)
 
 /** Best effort: the demo does not keep files. */
 export async function deleteFile(cfg: PaperworkConfig, id: string): Promise<void> {
   try {
-    await call(cfg, `/v1/files/${id}`, { method: 'DELETE' })
+    await call(cfg, `/v1/files/${id}`, { method: 'DELETE' }, 5_000)
   } catch {
     /* ignore */
   }

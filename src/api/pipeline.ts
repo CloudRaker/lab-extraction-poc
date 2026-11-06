@@ -2,9 +2,9 @@
 // The worker route POST /api/run and scripts/run-samples.ts both call runSample.
 
 import { CLASSES, CLASSIFY_INSTRUCTIONS, LAB_REPORT_INSTRUCTIONS, LAB_REPORT_SCHEMA } from '../shared/lab-schema'
-import { parseTruth, score } from '../shared/score'
+import { scoreReport } from '../shared/score'
 import { cost, runUnits, type Rates } from './cost'
-import { deleteFile, PaperworkError, startRun, uploadFile, waitRun, type PaperworkConfig, type Run } from './paperwork'
+import { deleteFile, getRun, PaperworkError, startRun, uploadFile, waitRun, type PaperworkConfig, type Run } from './paperwork'
 
 import type { Citation, Classification, Extraction, LabReport, RunResult } from '../shared/contract'
 
@@ -56,6 +56,16 @@ function failIfNotProcessed(run: Run) {
   }
 }
 
+/** A processed run can answer without its output. Read it once more, then fail the step. */
+async function withOutput(cfg: PaperworkConfig, run: Run): Promise<Run> {
+  failIfNotProcessed(run)
+  if (run.output) return run
+  const again = await getRun(cfg, run.id)
+  failIfNotProcessed(again)
+  if (!again.output) throw new PaperworkError(502, 'no_output', `run ${run.id} ended with no output`, true)
+  return again
+}
+
 export type RunStep = 'upload' | 'classify' | 'extract'
 
 export async function runSample(
@@ -87,9 +97,7 @@ export async function runSample(
           ttl: OPTIONS.ttl,
         }, deadline)
         classifyId = started.id
-        const run = await waitRun(cfg, started, deadline)
-        failIfNotProcessed(run)
-        return run
+        return withOutput(cfg, await waitRun(cfg, started, deadline))
       },
       () => classifyId,
     )
@@ -100,6 +108,8 @@ export async function runSample(
       confidence: typeof out['confidence'] === 'number' ? out['confidence'] : null,
       reasoning: typeof out['reasoning'] === 'string' ? out['reasoning'] : null,
     }
+    // usage.pages counts the pages sent to the model. The bundled samples have one page,
+    // so this is also the parsed page count. A longer file needs its own page count here.
     const pages = Number(classifyRun.usage?.['pages'] ?? 1) || 1
 
     // Extract, only for lab reports.
@@ -122,9 +132,7 @@ export async function runSample(
             ttl: OPTIONS.ttl,
           }, deadline)
           extractId = started.id
-          const run = await waitRun(cfg, started, deadline)
-          failIfNotProcessed(run)
-          return run
+          return withOutput(cfg, await waitRun(cfg, started, deadline))
         },
         () => extractId,
       )
@@ -155,7 +163,6 @@ export async function runSample(
       }),
     )
 
-    const truth = input.truthMd ? parseTruth(input.truthMd) : null
     return {
       sampleId: input.id,
       ranAt: new Date(t0).toISOString(),
@@ -176,7 +183,7 @@ export async function runSample(
         extractMs: extractRun ? t3 - t2 : null,
         totalMs: t3 - t0,
       },
-      score: truth && truth.length ? score(truth, extraction?.value.results) : null,
+      score: input.truthMd ? scoreReport(input.truthMd, extraction?.value) : null,
     }
   } finally {
     await deleteFile(cfg, fileId)

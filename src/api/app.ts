@@ -16,7 +16,7 @@ const ID = /^\d{4}_\d{6}$/
 
 function fail(
   c: Context<Env>,
-  status: 400 | 401 | 404 | 500 | 502 | 504,
+  status: 400 | 401 | 403 | 404 | 429 | 500 | 502 | 504,
   code: string,
   message: string,
   extra: Partial<ApiError['error']> = {},
@@ -49,10 +49,18 @@ app.onError((err, c) => {
   return fail(c, 500, 'internal', 'Something went wrong. Try again.')
 })
 
+/** Live runs spend credits. A deployment with no DEMO_CODE keeps them closed; localhost stays open. */
+function liveRunsOff(c: Context<Env>): boolean {
+  if (c.env.DEMO_CODE) return false
+  const host = new URL(c.req.url).hostname
+  return host !== 'localhost' && host !== '127.0.0.1'
+}
+
 app.get('/config', async (c) => {
   const r = await loadRates(c.env.CATALOG_URL)
   const body: AppConfig = {
     demoCodeRequired: !!c.env.DEMO_CODE,
+    liveRunsOff: liveRunsOff(c),
     creditUsd: r.creditUsd,
     rates: r.rates,
     ratesSource: r.source,
@@ -87,6 +95,15 @@ type Prepared = { s: SampleInfo; file: ArrayBuffer; pageMd: string | null }
 
 /** Checks shared by both run routes. Returns the sample files, or an error response. */
 async function prepareRun(c: Context<Env>): Promise<Prepared | Response> {
+  if (liveRunsOff(c)) {
+    return fail(c, 403, 'live_runs_off', 'Live runs are off on this deployment. Set DEMO_CODE to turn them on.', {
+      retryable: false,
+    })
+  }
+  // Before the code check, so the limit also slows a guess at the code.
+  const ip = c.req.header('cf-connecting-ip') ?? 'local'
+  const allowed = c.env.RUN_LIMIT ? (await c.env.RUN_LIMIT.limit({ key: ip })).success : true
+  if (!allowed) return fail(c, 429, 'rate_limited', 'Too many live runs. Wait a minute and try again.', { retryable: true })
   if (c.env.DEMO_CODE && c.req.header('x-demo-code') !== c.env.DEMO_CODE) {
     return fail(c, 401, 'demo_code_required', 'Enter the demo code to run a live extraction.')
   }

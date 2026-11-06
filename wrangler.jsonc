@@ -11,10 +11,12 @@
   },
   "vars": {
     "API_BASE": "https://api.cloudraker.com",
-    "CATALOG_URL": "https://catalog.cloudraker.com/catalog.json",
-    // Optional. When set (as a secret), POST /api/run needs a matching x-demo-code header.
-    "DEMO_CODE": ""
+    "CATALOG_URL": "https://catalog.cloudraker.com/catalog.json"
   },
+  // Live runs per client IP address, for each Cloudflare location.
+  "ratelimits": [{ "name": "RUN_LIMIT", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }],
   "observability": { "enabled": true }
-  // Secret: PAPERWORK_API_KEY (wrangler secret put PAPERWORK_API_KEY, or .dev.vars locally).
+  // Secrets (wrangler secret put, or .dev.vars locally):
+  //   PAPERWORK_API_KEY  required for live runs.
+  //   DEMO_CODE          the code both run routes ask for. Without it, a deployed worker refuses live runs.
 }
