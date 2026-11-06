@@ -9,7 +9,7 @@
 // Section rows have only the first cell filled. Previous-results tables open
 // with a row of dates and an empty first cell.
 
-import type { LabResultRow, RowScore, Score } from './contract'
+import type { FieldKey, FieldScore, LabReport, LabResultRow, RowScore, Score } from './contract'
 
 export interface TruthRow {
   section: string | null
@@ -115,20 +115,31 @@ export function fold(s: string): string {
 }
 
 export const normName = (s: string) => fold(s).replace(/[^a-z0-9]+/g, '')
-export const normUnits = (s: string | null | undefined) => (s ? fold(s).replace(/\s+/g, '') : '')
+export const normUnits = (s: string | null | undefined) => (s ? fold(s).replace(/\s+/g, '').replace(/,/g, '.') : '')
 export const normFlag = (s: string | null | undefined) => (s ? fold(s).replace(/\s+/g, '') : '')
 
 export function normValue(s: string | null | undefined): string {
   return s ? fold(s).replace(/\s+/g, '').replace(/,/g, '.') : ''
 }
 
+/** A plain decimal only: Number() also reads "0x10" and "1e3". */
+const DECIMAL = /^-?\d+(?:\.\d+)?$/
+
+// A decimal comma is the convention on these reports, so "1,234" reads as 1.234.
 export function sameValue(expected: string, found: string | null | undefined): boolean {
   const a = normValue(expected)
   const b = normValue(found)
   if (a === b) return true
-  const na = Number(a)
-  const nb = Number(b)
-  return a !== '' && b !== '' && Number.isFinite(na) && Number.isFinite(nb) && na === nb
+  return DECIMAL.test(a) && DECIMAL.test(b) && Number(a) === Number(b)
+}
+
+const normRange = (s: string | null | undefined) => normValue(s).replace(/−/g, '-')
+
+/** The range as printed. The extraction can leave the units inside it, and that is not an error. */
+export function sameRange(expected: string | null, units: string | null, found: string | null | undefined): boolean {
+  const a = normRange(expected)
+  const b = normRange(found)
+  return a === b || (a !== '' && b === a + normUnits(units))
 }
 
 /** Levenshtein distance, for test names with an OCR typo ("Cholestéro total"). */
@@ -143,45 +154,100 @@ export function editDistance(a: string, b: string): number {
   return prev[b.length]!
 }
 
-/** Match ground-truth rows to extracted rows by normalized test name, in page order. */
-export function score(truth: TruthRow[], extracted: LabResultRow[] | null | undefined): Score {
-  const rows = (extracted ?? []).filter((r) => r && (r.test_name || r.value))
+/** Names this short are too close to each other to match loosely: RBC and WBC, ALT and AST. */
+const MIN_LOOSE = 4
+
+/**
+ * Pairs ground-truth rows with extracted rows. Returns, per truth row, the extracted index or -1.
+ * Every exact name is claimed first, so a loose match can never take the exact row of another test.
+ * Then contained names, then small edit distances. Last, a gap between two matched rows that holds
+ * the same number of rows on both sides pairs by position, when the value matches or the name
+ * is at least half right: the OCR misread those names.
+ */
+function pairRows(truth: TruthRow[], rows: LabResultRow[]): number[] {
+  const keys = truth.map((t) => normName(t.test))
+  const names = rows.map((r) => normName(r.test_name ?? ''))
+  const pairs = truth.map(() => -1)
   const used = new Set<number>()
-  const pick = (test: string): number => {
-    const key = normName(test)
-    let idx = rows.findIndex((r, j) => !used.has(j) && normName(r.test_name ?? '') === key)
-    if (idx < 0) {
-      // Loose match: one name contains the other ("Glucose" vs "Glucose (fasting)").
-      idx = rows.findIndex((r, j) => {
-        const n = normName(r.test_name ?? '')
-        return !used.has(j) && n.length > 2 && (n.includes(key) || key.includes(n))
+  const pass = (matches: (name: string, key: string) => boolean) => {
+    keys.forEach((key, i) => {
+      if (pairs[i]! >= 0) return
+      const j = names.findIndex((n, idx) => !used.has(idx) && matches(n, key))
+      if (j >= 0) {
+        pairs[i] = j
+        used.add(j)
+      }
+    })
+  }
+  pass((n, key) => n === key)
+  pass((n, key) => n.length >= MIN_LOOSE && key.length >= MIN_LOOSE && (n.includes(key) || key.includes(n)))
+  pass(
+    (n, key) =>
+      n.length >= MIN_LOOSE &&
+      key.length >= MIN_LOOSE &&
+      editDistance(n, key) <= Math.max(1, Math.floor(key.length * 0.2)),
+  )
+
+  for (let i = 0; i < truth.length; i++) {
+    if (pairs[i]! >= 0) continue
+    let end = i
+    while (end + 1 < truth.length && pairs[end + 1]! < 0) end++
+    const lo = i > 0 ? pairs[i - 1]! : -1
+    const hi = end + 1 < truth.length ? pairs[end + 1]! : rows.length
+    const free: number[] = []
+    for (let j = lo + 1; j < hi; j++) if (!used.has(j)) free.push(j)
+    if (free.length === end - i + 1) {
+      free.forEach((j, k) => {
+        const t = truth[i + k]!
+        const close = editDistance(names[j]!, keys[i + k]!) <= keys[i + k]!.length / 2
+        if (!close && !sameValue(t.value, rows[j]!.value)) return
+        pairs[i + k] = j
+        used.add(j)
       })
     }
-    if (idx < 0) {
-      // Fuzzy match: a small edit distance, for OCR typos in the name.
-      const max = Math.max(1, Math.floor(key.length * 0.2))
-      idx = rows.findIndex(
-        (r, j) => !used.has(j) && editDistance(normName(r.test_name ?? ''), key) <= max,
-      )
-    }
-    if (idx >= 0) used.add(idx)
-    return idx
+    i = end
   }
+  return pairs
+}
 
-  const perRow: RowScore[] = truth.map((t) => {
-    const idx = pick(t.test)
+/** Compare the ground-truth rows with the extracted rows. */
+export function score(truth: TruthRow[], extracted: LabResultRow[] | null | undefined): Score {
+  const rows = (extracted ?? []).filter((r) => r && (r.test_name || r.value))
+  const pairs = pairRows(truth, rows)
+  const used = new Set(pairs.filter((j) => j >= 0))
+
+  const perRow: RowScore[] = truth.map((t, i) => {
+    const idx = pairs[i]!
     const r = idx >= 0 ? rows[idx]! : null
-    const expected = { value: t.value, flag: t.flag, units: t.units }
-    if (!r)
-      return { test: t.test, expected, found: null, nameOk: false, valueOk: false, flagOk: false, unitsOk: false }
+    const expected = { value: t.value, flag: t.flag, units: t.units, reference: t.reference }
+    if (!r) {
+      return {
+        test: t.test,
+        expected,
+        found: null,
+        nameOk: false,
+        valueOk: false,
+        flagOk: false,
+        unitsOk: false,
+        referenceOk: false,
+      }
+    }
     return {
       test: t.test,
       expected,
-      found: { test: r.test_name, value: r.value, flag: r.flag, units: r.units },
+      found: {
+        index: idx,
+        test: r.test_name,
+        value: r.value,
+        flag: r.flag,
+        units: r.units,
+        reference: r.reference_text,
+      },
       nameOk: normName(r.test_name ?? '') === normName(t.test),
       valueOk: sameValue(t.value, r.value),
       flagOk: normFlag(t.flag) === normFlag(r.flag),
       unitsOk: normUnits(t.units) === normUnits(r.units),
+      referenceOk: sameRange(t.reference, t.units, r.reference_text),
     }
   })
 
@@ -189,10 +255,73 @@ export function score(truth: TruthRow[], extracted: LabResultRow[] | null | unde
     rowsExpected: truth.length,
     rowsFound: perRow.filter((r) => r.found).length,
     rowsExtracted: rows.length,
+    namesCorrect: perRow.filter((r) => r.nameOk).length,
     valuesCorrect: perRow.filter((r) => r.valueOk).length,
     flagsCorrect: perRow.filter((r) => r.flagOk).length,
     unitsCorrect: perRow.filter((r) => r.unitsOk).length,
+    referencesCorrect: perRow.filter((r) => r.referenceOk).length,
     perRow,
     extraRows: rows.filter((_, j) => !used.has(j)).map((r) => r.test_name ?? '(no name)'),
+    fields: [],
   }
+}
+
+/** "FINAL / FINAL" -> final. Anything else, such as the page title, is not a status. */
+export function normStatus(s: string | null | undefined): 'final' | 'preliminary' | 'amended' | null {
+  const t = fold(s ?? '')
+  if (/\bfinal/.test(t)) return 'final'
+  if (/prelim|partial|partiel/.test(t)) return 'preliminary'
+  if (/amend|modifi|corrig/.test(t)) return 'amended'
+  return null
+}
+
+const FIELD_LABELS: Array<[FieldKey, RegExp]> = [
+  ['patient_name', /^patient/i],
+  ['health_insurance_number', /health ins|ass\. maladie/i],
+  ['date_of_birth', /date of birth|date de naissance/i],
+  ['sex', /^(sex|sexe)\b/i],
+  ['ordering_physician', /ordering physician|médecin requérant/i],
+  ['collected_at', /collected|prélevé/i],
+  ['reported_at', /reported|rapport émis/i],
+]
+
+/** The header fields printed on the page, from "Label : **value**" lines of the page markdown. */
+export function parseTruthFields(pageMd: string): Partial<Record<FieldKey, string>> {
+  const out: Partial<Record<FieldKey, string>> = {}
+  const lines = pageMd.split('\n')
+  const lab = lines.find((l) => /^\*\*[^*]+\*\*\s*$/.test(l))
+  if (lab) out.lab_name = lab.replace(/\*/g, '').trim()
+  for (const line of lines) {
+    const m = /^(.+?)\s*:\s*\*\*(.+?)\*\*\s*$/.exec(line)
+    if (!m) continue
+    const hit = FIELD_LABELS.find(([, re]) => re.test(m[1]!))
+    if (hit && !out[hit[0]]) out[hit[0]] = m[2]!.trim()
+  }
+  const title = lines.find((l) => l.startsWith('# '))
+  const status = title?.includes('—') ? normStatus(title.split('—').pop()) : null
+  if (status) out.report_status = status
+  return out
+}
+
+const normField = (s: string) => normName(s.replace(/(\d)T(\d)/g, '$1 $2'))
+
+/** Compares the patient and report fields with the page. A field the page does not print is not counted. */
+export function scoreFields(pageMd: string, value: LabReport | null | undefined): FieldScore[] {
+  const truth = parseTruthFields(pageMd)
+  return (Object.entries(truth) as Array<[FieldKey, string]>).map(([key, expected]) => {
+    const raw = value?.[key]
+    const found = typeof raw === 'string' && raw.trim() ? raw.trim() : null
+    const ok =
+      key === 'report_status'
+        ? normStatus(found) === expected
+        : found !== null && normField(found) === normField(expected)
+    return { key, expected, found, ok }
+  })
+}
+
+/** The full score of a lab report page. Null when the page has no results table. */
+export function scoreReport(pageMd: string, value: LabReport | null | undefined): Score | null {
+  const truth = parseTruth(pageMd)
+  if (!truth.length) return null
+  return { ...score(truth, value?.results), fields: scoreFields(pageMd, value) }
 }

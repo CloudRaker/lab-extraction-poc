@@ -1,5 +1,7 @@
 // Plain-word labels for the codes the API and the dataset use.
 
+import { normStatus } from '@/shared/score'
+
 const PRESETS: Record<string, string> = {
   clean: 'Clean print',
   scan_300dpi: 'Flatbed scan',
@@ -38,12 +40,26 @@ function sentence(code: string) {
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-/** Words for a flag printed on a report. */
-export function flagLabel(flag: string | null, abnormal: boolean | null): string | null {
-  const f = flag?.trim()
-  if (!f) return abnormal ? 'Abnormal' : null
-  const known: Record<string, string> = { H: 'High', L: 'Low', HH: 'Very high', LL: 'Very low', A: 'Abnormal' }
-  return known[f.toUpperCase()] ?? `Abnormal (${f})`
+export interface FlagInfo {
+  label: string
+  tone: 'warning' | 'danger' | 'neutral'
+}
+
+/** Words for a flag printed on a report. The legends on the pages say ** and HH mean a critical value. */
+export function flagInfo(flag: string | null, abnormal: boolean | null): FlagInfo | null {
+  const f = flag?.trim().toUpperCase()
+  if (!f) return abnormal ? { label: 'Abnormal', tone: 'warning' } : null
+  if (f === '**' || f === 'HH' || f === 'LL') return { label: 'Critical', tone: 'danger' }
+  const known: Record<string, string> = { '*': 'Out of range', H: 'High', L: 'Low', A: 'Abnormal' }
+  const label = known[f]
+  return label ? { label, tone: 'warning' } : { label: 'Unclear mark', tone: 'neutral' }
+}
+
+const STATUS = { final: 'Final', preliminary: 'Preliminary', amended: 'Amended' }
+/** The report status in plain words, or null when the text is not a status. */
+export function statusLabel(text: string | null | undefined): string | null {
+  const s = normStatus(text)
+  return s ? STATUS[s] : null
 }
 
 /** Samples with a note the demo should show. */

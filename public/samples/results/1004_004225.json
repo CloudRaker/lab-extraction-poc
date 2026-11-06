@@ -1,16 +1,16 @@
 {
   "sampleId": "1004_004225",
-  "ranAt": "2026-11-06T15:48:25.455Z",
+  "ranAt": "2026-11-06T16:33:27.912Z",
   "apiBase": "https://api.cloudraker.com",
-  "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+  "fileId": null,
   "runs": {
-    "classify": "clr_01M6RRR3HJTYHG83RTYQG5W3HB",
-    "extract": "exr_01M6RRSA8HVHHXV0G19NK02FCT"
+    "classify": null,
+    "extract": null
   },
   "classification": {
     "classId": "lab_report",
     "confidence": 5,
-    "reasoning": "This is a laboratory report with multiple test result tables showing analytes (HbA1c, TSH, T4 libre, etc.) with values, abnormal flags (*), units, and reference ranges for one patient (Olivier Lacasse)."
+    "reasoning": "This is a laboratory report with multiple test result tables showing analytes, values, abnormal flags, units, and reference ranges for one patient (Olivier Lacasse)."
   },
   "extraction": {
     "value": {
@@ -22,7 +22,7 @@
       "ordering_physician": "Dr Marie Lessard (53054)",
       "collected_at": "2025-01-19 07:06",
       "reported_at": "2025-01-21 04:06",
-      "report_status": "FINAL",
+      "report_status": "final",
       "results": [
         {
           "section": "Endocrinologie / Fer / Vitamines",
@@ -245,7 +245,6 @@
     "citations": {
       "lab_name": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.159,
@@ -259,7 +258,6 @@
       ],
       "patient_name": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.06699999999999999,
@@ -273,7 +271,6 @@
       ],
       "health_insurance_number": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.361,
@@ -287,7 +284,6 @@
       ],
       "date_of_birth": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.654,
@@ -301,7 +297,6 @@
       ],
       "sex": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -315,7 +310,6 @@
       ],
       "ordering_physician": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -329,7 +323,6 @@
       ],
       "collected_at": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.654,
@@ -343,7 +336,6 @@
       ],
       "reported_at": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -357,7 +349,6 @@
       ],
       "report_status": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.057999999999999996,
@@ -371,7 +362,6 @@
       ],
       "results": [
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.055,
@@ -383,7 +373,6 @@
           "confidence": 3
         },
         {
-          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
           "page": 0,
           "bbox": {
             "x": 0.055,
@@ -449,344 +438,474 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 2860,
-    "classifyMs": 39231,
-    "extractMs": 38684,
-    "totalMs": 80775
+    "uploadMs": 3181,
+    "classifyMs": 29154,
+    "extractMs": 43745,
+    "totalMs": 76080
   },
   "score": {
     "rowsExpected": 18,
     "rowsFound": 18,
     "rowsExtracted": 18,
+    "namesCorrect": 18,
     "valuesCorrect": 18,
     "flagsCorrect": 18,
     "unitsCorrect": 17,
+    "referencesCorrect": 18,
     "perRow": [
       {
         "test": "HbA1c",
         "expected": {
           "value": "5,7",
           "flag": null,
-          "units": "%"
+          "units": "%",
+          "reference": "4,0 – 6,0"
         },
         "found": {
+          "index": 0,
           "test": "HbA1c",
           "value": "5,7",
           "flag": null,
-          "units": "%"
+          "units": "%",
+          "reference": "4,0 - 6,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "TSH",
         "expected": {
           "value": "3,68",
           "flag": null,
-          "units": "mUI/L"
+          "units": "mUI/L",
+          "reference": "0,40 – 4,00"
         },
         "found": {
+          "index": 1,
           "test": "TSH",
           "value": "3,68",
           "flag": null,
-          "units": "mUI/L"
+          "units": "mUI/L",
+          "reference": "0,40 - 4,00"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "T4 libre",
         "expected": {
           "value": "28,1",
           "flag": "*",
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "10,0 – 22,0"
         },
         "found": {
+          "index": 2,
           "test": "T4 libre",
           "value": "28,1",
           "flag": "*",
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "10,0 - 22,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Ferritine",
         "expected": {
           "value": "163",
           "flag": null,
-          "units": "µg/L"
+          "units": "µg/L",
+          "reference": "20 – 250"
         },
         "found": {
+          "index": 3,
           "test": "Ferritine",
           "value": "163",
           "flag": null,
-          "units": "μg/L"
+          "units": "μg/L",
+          "reference": "20 - 250"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Vitamine B12",
         "expected": {
           "value": "365",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 – 650"
         },
         "found": {
+          "index": 4,
           "test": "Vitamine B12",
           "value": "365",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 - 650"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "25-OH vitamine D",
         "expected": {
           "value": "144",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 – 250"
         },
         "found": {
+          "index": 5,
           "test": "25-OH vitamine D",
           "value": "144",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 - 250"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Protéine C réactive",
         "expected": {
           "value": "6,1",
           "flag": "*",
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5,0"
         },
         "found": {
+          "index": 6,
           "test": "Protéine C réactive",
           "value": "6,1",
           "flag": "*",
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Acide urique",
         "expected": {
           "value": "510",
           "flag": "*",
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "200 – 420"
         },
         "found": {
+          "index": 7,
           "test": "Acide urique",
           "value": "510",
           "flag": "*",
-          "units": "μmol/L"
+          "units": "μmol/L",
+          "reference": "200 - 420"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "RNI",
         "expected": {
           "value": "1,0",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "0,9 – 1,1"
         },
         "found": {
+          "index": 8,
           "test": "RNI",
           "value": "1,0",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "0,9 - 1,1"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Couleur urine",
         "expected": {
           "value": "Ambrée",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "Jaune"
         },
         "found": {
+          "index": 9,
           "test": "Couleur urine",
           "value": "Ambrée",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "Jaune"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "pH",
         "expected": {
           "value": "9,1",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "5,0 – 8,0"
         },
         "found": {
+          "index": 10,
           "test": "pH",
           "value": "9,1",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "5,0 - 8,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Densité",
         "expected": {
           "value": "1,005",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "1,005 – 1,030"
         },
         "found": {
+          "index": 11,
           "test": "Densité",
           "value": "1,005",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "1,005 - 1,030"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Glucose",
         "expected": {
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 12,
           "test": "Glucose",
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Protéines",
         "expected": {
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 13,
           "test": "Protéines",
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Cétones",
         "expected": {
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 14,
           "test": "Cétones",
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Sang",
         "expected": {
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 15,
           "test": "Sang",
           "value": "Négatif",
           "flag": null,
-          "units": "FINA"
+          "units": "FINA",
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": true
       },
       {
         "test": "Leucocytes estérase",
         "expected": {
           "value": "Positif",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 16,
           "test": "Leucocytes estérase",
           "value": "Positif",
           "flag": "*",
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Nitrites",
         "expected": {
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "found": {
+          "index": 17,
           "test": "Nitrites",
           "value": "Négatif",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "Négatif"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       }
     ],
-    "extraRows": []
+    "extraRows": [],
+    "fields": [
+      {
+        "key": "lab_name",
+        "expected": "INSTITUT DE CARDIOLOGIE ET DE PNEUMOLOGIE DE MONTRÉAL",
+        "found": "INSTITUT DE CARDIOLOGIE ET DE PNEUMOLOGIE DE MONTRÉAL",
+        "ok": true
+      },
+      {
+        "key": "patient_name",
+        "expected": "LACASSE, Olivier",
+        "found": "LACASSE, Olivier",
+        "ok": true
+      },
+      {
+        "key": "health_insurance_number",
+        "expected": "LACO 1312 0690",
+        "found": "LACO 1312 0690",
+        "ok": true
+      },
+      {
+        "key": "date_of_birth",
+        "expected": "2013-12-06",
+        "found": "2013-12-06",
+        "ok": true
+      },
+      {
+        "key": "sex",
+        "expected": "M",
+        "found": "M",
+        "ok": true
+      },
+      {
+        "key": "ordering_physician",
+        "expected": "Dr Marie Lessard (53054)",
+        "found": "Dr Marie Lessard (53054)",
+        "ok": true
+      },
+      {
+        "key": "collected_at",
+        "expected": "2025-01-19 07:06",
+        "found": "2025-01-19 07:06",
+        "ok": true
+      },
+      {
+        "key": "reported_at",
+        "expected": "2025-01-21 04:06",
+        "found": "2025-01-21 04:06",
+        "ok": true
+      },
+      {
+        "key": "report_status",
+        "expected": "final",
+        "found": "final",
+        "ok": true
+      }
+    ]
   }
 }

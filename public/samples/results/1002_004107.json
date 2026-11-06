@@ -1,11 +1,11 @@
 {
   "sampleId": "1002_004107",
-  "ranAt": "2026-11-06T15:48:25.454Z",
+  "ranAt": "2026-11-06T16:33:27.912Z",
   "apiBase": "https://api.cloudraker.com",
-  "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
+  "fileId": null,
   "runs": {
-    "classify": "clr_01M6RRR26G27SNA5018NJJEWB6",
-    "extract": "exr_01M6RRSF3D91CZ7W8EYNE1NR33"
+    "classify": null,
+    "extract": null
   },
   "classification": {
     "classId": "lab_report",
@@ -22,7 +22,7 @@
       "ordering_physician": "Dre Lucie Bernard (90861)",
       "collected_at": "2025-03-12 15:59",
       "reported_at": "2025-03-14 14:59",
-      "report_status": "FINAL",
+      "report_status": "final",
       "results": [
         {
           "section": "Formule sanguine complète (FSC)",
@@ -365,7 +365,6 @@
     "citations": {
       "lab_name": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.09599999999999999,
@@ -379,7 +378,6 @@
       ],
       "patient_name": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.066,
@@ -387,13 +385,12 @@
             "width": 0.18300000000000002,
             "height": 0.012999999999999984
           },
-          "text": "Patient : RODRIGUE, Thérèse",
+          "text": "RODRIGUE, Thérèse",
           "confidence": 5
         }
       ],
       "health_insurance_number": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.507,
@@ -407,7 +404,6 @@
       ],
       "date_of_birth": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -421,7 +417,6 @@
       ],
       "sex": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.507,
@@ -435,7 +430,6 @@
       ],
       "ordering_physician": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -449,7 +443,6 @@
       ],
       "collected_at": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.06799999999999999,
@@ -463,7 +456,6 @@
       ],
       "reported_at": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.507,
@@ -477,7 +469,6 @@
       ],
       "report_status": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.056,
@@ -491,7 +482,6 @@
       ],
       "results": [
         {
-          "fileId": "file_01M6RRR13X97PN2CSBRH93BZNE",
           "page": 0,
           "bbox": {
             "x": 0.056,
@@ -500,7 +490,29 @@
             "height": 0.6310000000000001
           },
           "text": "Formule sanguine complète (FSC)",
-          "confidence": 1
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "Endocrinologie / Fer / Vitamines",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.056,
+            "y": 0.228,
+            "width": 0.8869999999999999,
+            "height": 0.6310000000000001
+          },
+          "text": "Bilan biochimique",
+          "confidence": 3
         }
       ]
     }
@@ -557,524 +569,688 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1294,
-    "classifyMs": 46159,
-    "extractMs": 58563,
-    "totalMs": 106016
+    "uploadMs": 4169,
+    "classifyMs": 34425,
+    "extractMs": 75427,
+    "totalMs": 114021
   },
   "score": {
     "rowsExpected": 28,
     "rowsFound": 28,
     "rowsExtracted": 28,
+    "namesCorrect": 28,
     "valuesCorrect": 28,
     "flagsCorrect": 28,
     "unitsCorrect": 28,
+    "referencesCorrect": 28,
     "perRow": [
       {
         "test": "Hémoglobine",
         "expected": {
           "value": "126",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "120 – 160"
         },
         "found": {
+          "index": 0,
           "test": "Hémoglobine",
           "value": "126",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "120 – 160"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Hématocrite",
         "expected": {
           "value": "0,54",
           "flag": "*",
-          "units": "L/L"
+          "units": "L/L",
+          "reference": "0,36 – 0,48"
         },
         "found": {
+          "index": 1,
           "test": "Hématocrite",
           "value": "0,54",
           "flag": "*",
-          "units": "L/L"
+          "units": "L/L",
+          "reference": "0,36 – 0,48"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Globules rouges",
         "expected": {
           "value": "4,06",
           "flag": null,
-          "units": "x10¹²/L"
+          "units": "x10¹²/L",
+          "reference": "4,00 – 5,50"
         },
         "found": {
+          "index": 2,
           "test": "Globules rouges",
           "value": "4,06",
           "flag": null,
-          "units": "x10<sup>12</sup>/L"
+          "units": "x10<sup>12</sup>/L",
+          "reference": "4,00 – 5,50"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "VGM",
         "expected": {
           "value": "96",
           "flag": null,
-          "units": "fL"
+          "units": "fL",
+          "reference": "80 – 100"
         },
         "found": {
+          "index": 3,
           "test": "VGM",
           "value": "96",
           "flag": null,
-          "units": "fL"
+          "units": "fL",
+          "reference": "80 – 100"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "TCMH",
         "expected": {
           "value": "25,3",
           "flag": "*",
-          "units": "pg"
+          "units": "pg",
+          "reference": "27,0 – 33,0"
         },
         "found": {
+          "index": 4,
           "test": "TCMH",
           "value": "25,3",
           "flag": "*",
-          "units": "pg"
+          "units": "pg",
+          "reference": "27,0 – 33,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "CCMH",
         "expected": {
           "value": "334",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "320 – 360"
         },
         "found": {
+          "index": 5,
           "test": "CCMH",
           "value": "334",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "320 – 360"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "IDR",
         "expected": {
           "value": "14,1",
           "flag": null,
-          "units": "%"
+          "units": "%",
+          "reference": "11,5 – 14,5"
         },
         "found": {
+          "index": 6,
           "test": "IDR",
           "value": "14,1",
           "flag": null,
-          "units": "%"
+          "units": "%",
+          "reference": "11,5 – 14,5"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Plaquettes",
         "expected": {
           "value": "342",
           "flag": null,
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "150 – 400"
         },
         "found": {
+          "index": 7,
           "test": "Plaquettes",
           "value": "342",
           "flag": null,
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "150 – 400"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Globules blancs",
         "expected": {
           "value": "5,2",
           "flag": null,
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "4,0 – 10,0"
         },
         "found": {
+          "index": 8,
           "test": "Globules blancs",
           "value": "5,2",
           "flag": null,
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "4,0 – 10,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Neutrophiles",
         "expected": {
           "value": "8,71",
           "flag": "*",
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "2,00 – 7,50"
         },
         "found": {
+          "index": 9,
           "test": "Neutrophiles",
           "value": "8,71",
           "flag": "*",
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "2,00 – 7,50"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Lymphocytes",
         "expected": {
           "value": "2,00",
           "flag": null,
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "1,00 – 4,00"
         },
         "found": {
+          "index": 10,
           "test": "Lymphocytes",
           "value": "2,00",
           "flag": null,
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "1,00 – 4,00"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Monocytes",
         "expected": {
           "value": "0,00",
           "flag": "*",
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "0,20 – 1,00"
         },
         "found": {
+          "index": 11,
           "test": "Monocytes",
           "value": "0,00",
           "flag": "*",
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "0,20 – 1,00"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Éosinophiles",
         "expected": {
           "value": "0,13",
           "flag": null,
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "0,00 – 0,50"
         },
         "found": {
+          "index": 12,
           "test": "Éosinophiles",
           "value": "0,13",
           "flag": null,
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "0,00 – 0,50"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Basophiles",
         "expected": {
           "value": "0,03",
           "flag": null,
-          "units": "x10⁹/L"
+          "units": "x10⁹/L",
+          "reference": "0,00 – 0,20"
         },
         "found": {
+          "index": 13,
           "test": "Basophiles",
           "value": "0,03",
           "flag": null,
-          "units": "x10<sup>9</sup>/L"
+          "units": "x10<sup>9</sup>/L",
+          "reference": "0,00 – 0,20"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "HbA1c",
         "expected": {
           "value": "6,7",
           "flag": "*",
-          "units": "%"
+          "units": "%",
+          "reference": "4,0 – 6,0"
         },
         "found": {
+          "index": 14,
           "test": "HbA1c",
           "value": "6,7",
           "flag": "*",
-          "units": "%"
+          "units": "%",
+          "reference": "4,0 – 6,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "TSH",
         "expected": {
           "value": "2,96",
           "flag": null,
-          "units": "mUI/L"
+          "units": "mUI/L",
+          "reference": "0,40 – 4,00"
         },
         "found": {
+          "index": 15,
           "test": "TSH",
           "value": "2,96",
           "flag": null,
-          "units": "mUI/L"
+          "units": "mUI/L",
+          "reference": "0,40 – 4,00"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "T4 libre",
         "expected": {
           "value": "13,9",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "10,0 – 22,0"
         },
         "found": {
+          "index": 16,
           "test": "T4 libre",
           "value": "13,9",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "10,0 – 22,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Ferritine",
         "expected": {
           "value": "155",
           "flag": null,
-          "units": "µg/L"
+          "units": "µg/L",
+          "reference": "20 – 250"
         },
         "found": {
+          "index": 17,
           "test": "Ferritine",
           "value": "155",
           "flag": null,
-          "units": "μg/L"
+          "units": "μg/L",
+          "reference": "20 – 250"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Vitamine B12",
         "expected": {
           "value": "435",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 – 650"
         },
         "found": {
+          "index": 18,
           "test": "Vitamine B12",
           "value": "435",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 – 650"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "25-OH vitamine D",
         "expected": {
           "value": "124",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 – 250"
         },
         "found": {
+          "index": 19,
           "test": "25-OH vitamine D",
           "value": "124",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 – 250"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Protéine C réactive",
         "expected": {
           "value": "3,5",
           "flag": null,
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5,0"
         },
         "found": {
+          "index": 20,
           "test": "Protéine C réactive",
           "value": "3,5",
           "flag": null,
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Acide urique",
         "expected": {
           "value": "227",
           "flag": null,
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "200 – 420"
         },
         "found": {
+          "index": 21,
           "test": "Acide urique",
           "value": "227",
           "flag": null,
-          "units": "μmol/L"
+          "units": "μmol/L",
+          "reference": "200 – 420"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "RNI",
         "expected": {
           "value": "1,0",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "0,9 – 1,1"
         },
         "found": {
+          "index": 22,
           "test": "RNI",
           "value": "1,0",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "0,9 – 1,1"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Sodium",
         "expected": {
           "value": "142",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "135 – 145"
         },
         "found": {
+          "index": 23,
           "test": "Sodium",
           "value": "142",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "135 – 145"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Potassium",
         "expected": {
           "value": "4,8",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "3,5 – 5,0"
         },
         "found": {
+          "index": 24,
           "test": "Potassium",
           "value": "4,8",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "3,5 – 5,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Chlorure",
         "expected": {
           "value": "106",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "98 – 107"
         },
         "found": {
+          "index": 25,
           "test": "Chlorure",
           "value": "106",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "98 – 107"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Bicarbonate (CO2)",
         "expected": {
           "value": "27",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "22 – 29"
         },
         "found": {
+          "index": 26,
           "test": "Bicarbonate (CO2)",
           "value": "27",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "22 – 29"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Urée",
         "expected": {
           "value": "7,3",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "2,5 – 8,0"
         },
         "found": {
+          "index": 27,
           "test": "Urée",
           "value": "7,3",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "2,5 – 8,0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       }
     ],
-    "extraRows": []
+    "extraRows": [],
+    "fields": [
+      {
+        "key": "patient_name",
+        "expected": "RODRIGUE, Thérèse",
+        "found": "RODRIGUE, Thérèse",
+        "ok": true
+      },
+      {
+        "key": "health_insurance_number",
+        "expected": "RODT 9956 0929",
+        "found": "RODT 9956 0929",
+        "ok": true
+      },
+      {
+        "key": "date_of_birth",
+        "expected": "1999-06-09",
+        "found": "1999-06-09",
+        "ok": true
+      },
+      {
+        "key": "sex",
+        "expected": "F",
+        "found": "F",
+        "ok": true
+      },
+      {
+        "key": "ordering_physician",
+        "expected": "Dre Lucie Bernard (90861)",
+        "found": "Dre Lucie Bernard (90861)",
+        "ok": true
+      },
+      {
+        "key": "collected_at",
+        "expected": "2025-03-12 15:59",
+        "found": "2025-03-12 15:59",
+        "ok": true
+      },
+      {
+        "key": "reported_at",
+        "expected": "2025-03-14 14:59",
+        "found": "2025-03-14 14:59",
+        "ok": true
+      },
+      {
+        "key": "report_status",
+        "expected": "final",
+        "found": "final",
+        "ok": true
+      }
+    ]
   }
 }

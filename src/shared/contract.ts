@@ -40,7 +40,7 @@ export interface Cost {
 
 /** One cited location on the page. bbox is normalized (0..1) to the page. */
 export interface Citation {
-  fileId: string
+  fileId?: string // saved results drop it
   page?: number // 0-based in practice (the API returns page 0 for a one-page image)
   bbox?: { x: number; y: number; width: number; height: number }
   text?: string
@@ -75,6 +75,8 @@ export interface LabReport {
   results: LabResultRow[] | null
 }
 
+export type FieldKey = Exclude<keyof LabReport, 'results'>
+
 export interface Classification {
   classId: ClassId | string
   confidence: number | null // 0..5
@@ -90,23 +92,42 @@ export interface Extraction {
 /** Score of the extraction against the synthdocs ground truth. */
 export interface RowScore {
   test: string // ground-truth test name
-  expected: { value: string; flag: string | null; units: string | null }
-  found: { test: string | null; value: string | null; flag: string | null; units: string | null } | null
+  expected: { value: string; flag: string | null; units: string | null; reference: string | null }
+  found: {
+    index: number // position in the extracted results
+    test: string | null
+    value: string | null
+    flag: string | null
+    units: string | null
+    reference: string | null
+  } | null
   nameOk: boolean // the extracted test name matches exactly (after accent and case folding)
   valueOk: boolean
   flagOk: boolean
   unitsOk: boolean
+  referenceOk: boolean
+}
+
+/** A patient or report field that the page prints, compared with the extraction. */
+export interface FieldScore {
+  key: FieldKey
+  expected: string
+  found: string | null
+  ok: boolean
 }
 
 export interface Score {
   rowsExpected: number
-  rowsFound: number // ground-truth rows matched by test name (exact, contained, or within a small edit distance)
+  rowsFound: number // ground-truth rows paired by name or by position in the table
   rowsExtracted: number // rows the model returned
+  namesCorrect: number
   valuesCorrect: number
   flagsCorrect: number
   unitsCorrect: number
+  referencesCorrect: number
   perRow: RowScore[]
   extraRows: string[] // extracted test names with no ground-truth match
+  fields: FieldScore[]
 }
 
 export interface Timings {
@@ -121,8 +142,8 @@ export interface RunResult {
   sampleId: string
   ranAt: string // ISO time
   apiBase: string
-  fileId: string
-  runs: { classify: string; extract: string | null }
+  fileId: string | null // saved results drop the production ids
+  runs: { classify: string | null; extract: string | null }
   classification: Classification
   extraction: Extraction | null // null when the class is not lab_report
   extractSkipped: string | null // why extract did not run
@@ -132,7 +153,7 @@ export interface RunResult {
   score: Score | null // null when the sample is not a lab report
 }
 
-/** POST /api/run request body. Header x-demo-code is required when DEMO_CODE is set. */
+/** POST /api/run request body. Header x-demo-code is required when DEMO_CODE is set. Without DEMO_CODE, only localhost can run. */
 export interface RunRequest {
   sampleId: string
 }
@@ -151,7 +172,7 @@ export type RunEvent =
 /** Every error body. */
 export interface ApiError {
   error: {
-    code: string // not_found | bad_request | demo_code_required | upstream_error | timeout | run_failed | internal
+    code: string // not_found | bad_request | demo_code_required | live_runs_off | rate_limited | upstream_error | timeout | run_failed | no_output | internal
     message: string
     retryable: boolean
     step?: 'upload' | 'classify' | 'extract'
@@ -162,6 +183,7 @@ export interface ApiError {
 /** GET /api/config -> what the UI needs to render cost and options. */
 export interface AppConfig {
   demoCodeRequired: boolean
+  liveRunsOff: boolean // deployed without DEMO_CODE: saved results only
   creditUsd: number
   rates: Record<string, number>
   ratesSource: 'catalog' | 'fallback'

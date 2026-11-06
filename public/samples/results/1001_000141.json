@@ -1,11 +1,11 @@
 {
   "sampleId": "1001_000141",
-  "ranAt": "2026-11-06T15:57:23.091Z",
+  "ranAt": "2026-11-06T16:33:27.912Z",
   "apiBase": "https://api.cloudraker.com",
-  "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
+  "fileId": null,
   "runs": {
-    "classify": "clr_01M6RS8FRQB4VA7JP7SDGPRAXC",
-    "extract": "exr_01M6RS9W64KKT7KB7XGHYSPFC1"
+    "classify": null,
+    "extract": null
   },
   "classification": {
     "classId": "lab_report",
@@ -210,7 +210,7 @@
           "value": "65",
           "numeric_value": 65,
           "flag": null,
-          "units": "ml/min/1, 73m-",
+          "units": "ml/min/1, 73m<sup>-</sup>",
           "reference_low": 60,
           "reference_high": null,
           "reference_text": "> 60",
@@ -247,9 +247,9 @@
           "numeric_value": 9.03,
           "flag": "*",
           "units": "mmol/L",
-          "reference_low": 7.78,
+          "reference_low": 7.79,
           "reference_high": 1.05,
-          "reference_text": "$7.78 - $1.05",
+          "reference_text": "$7.79 - $1.05",
           "abnormal": true
         },
         {
@@ -353,7 +353,6 @@
     "citations": {
       "lab_name": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "page": 0,
           "bbox": {
             "x": 0.295,
@@ -367,7 +366,6 @@
       ],
       "patient_name": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "page": 0,
           "bbox": {
             "x": 0.053,
@@ -381,37 +379,31 @@
       ],
       "health_insurance_number": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "date_of_birth": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "sex": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "ordering_physician": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "collected_at": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "reported_at": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "page": 0,
           "bbox": {
             "x": 0.047999999999999994,
@@ -419,31 +411,17 @@
             "width": 0.751,
             "height": 0.013000000000000062
           },
-          "text": "2024-08-25 5:44",
+          "text": "### by / ### year : Robert Smith, Medical Biochemistry / Biochemistry clinic 2024-08-25 5:44",
           "confidence": 5
         }
       ],
       "report_status": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "notFound": true
         }
       ],
       "results": [
         {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
-          "page": 0,
-          "bbox": {
-            "x": 0.05,
-            "y": 0.259,
-            "width": 0.899,
-            "height": 0.19400000000000003
-          },
-          "text": "Analytes / Analyte",
-          "confidence": 2
-        },
-        {
-          "fileId": "file_01M6RS8EHF778EQDQVB0WXPBTA",
           "page": 0,
           "bbox": {
             "x": 0.051000000000000004,
@@ -452,7 +430,205 @@
             "height": 0.014000000000000032
           },
           "text": "Comparative Referencing Parallel",
-          "confidence": 2
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Sodium</td><td>138</td><td></td><td>139 - 145 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Potassium</td><td>6.2</td><td></td><td>$5 - $6 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Chloride</td><td>183</td><td></td><td>28 - 357 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Bicarbonate (CO2)</td><td>31</td><td>*</td><td>$2 - 75 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Urea</td><td>7.3</td><td></td><td>$2.5 - $8 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Creatinine</td><td>81</td><td></td><td>50 - 110 μmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "eGFR (CKD-EF1)</td><td>65</td><td></td><td>&gt; 60 ml/min/1, 73m&lt;sup&gt;-&lt;/sup&gt;</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Glucose (Fasting)</td><td>6.1</td><td></td><td>$9 - $1 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Calcium</td><td>7.16</td><td></td><td>$7.15 - $7.45 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Magnesium</td><td>9.03</td><td>*</td><td>$7.79 - $1.05 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Phosphate</td><td>1.07</td><td></td><td>$0.88 - $1.45 mmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Total protein</td><td>57</td><td>*</td><td>40 - 60 g/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Albumin</td><td>49</td><td></td><td>25 - 50 g/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Total bilirubin</td><td>5</td><td></td><td>3 - 71 μmol/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "ALT</td><td>10</td><td></td><td>7 - 40 U/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "AST</td><td>70</td><td></td><td>10 - 40 U/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "Aikeline phosphonase</td><td>149</td><td>*</td><td>40 - 120 U/L</td>",
+          "confidence": 3
+        },
+        {
+          "page": 0,
+          "bbox": {
+            "x": 0.05,
+            "y": 0.47,
+            "width": 0.899,
+            "height": 0.36600000000000005
+          },
+          "text": "CoF</td><td>45</td><td></td><td>10 - 62 U/L</td>",
+          "confidence": 3
         }
       ]
     }
@@ -509,487 +685,649 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1817,
-    "classifyMs": 45541,
-    "extractMs": 47539,
-    "totalMs": 94897
+    "uploadMs": 1557,
+    "classifyMs": 53287,
+    "extractMs": 75400,
+    "totalMs": 130244
   },
   "score": {
     "rowsExpected": 27,
-    "rowsFound": 22,
+    "rowsFound": 24,
     "rowsExtracted": 27,
-    "valuesCorrect": 12,
-    "flagsCorrect": 22,
-    "unitsCorrect": 20,
+    "namesCorrect": 18,
+    "valuesCorrect": 14,
+    "flagsCorrect": 24,
+    "unitsCorrect": 22,
+    "referencesCorrect": 8,
     "perRow": [
       {
         "test": "HbA1c",
         "expected": {
           "value": "4.6",
           "flag": null,
-          "units": "%"
+          "units": "%",
+          "reference": "4.0 – 6.0"
         },
         "found": null,
         "nameOk": false,
         "valueOk": false,
         "flagOk": false,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": false
       },
       {
         "test": "TSH",
         "expected": {
           "value": "2.70",
           "flag": null,
-          "units": "mUI/L"
+          "units": "mUI/L",
+          "reference": "0.40 – 4.00"
         },
         "found": null,
         "nameOk": false,
         "valueOk": false,
         "flagOk": false,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": false
       },
       {
         "test": "Free T4",
         "expected": {
           "value": "20.9",
           "flag": null,
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "10.0 – 22.0"
         },
         "found": {
+          "index": 2,
           "test": "Free T4",
           "value": "20.9",
           "flag": null,
-          "units": "μmol/L"
+          "units": "μmol/L",
+          "reference": "18.0 - 22.0"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": false
       },
       {
         "test": "Ferritin",
         "expected": {
           "value": "169",
           "flag": null,
-          "units": "µg/L"
+          "units": "µg/L",
+          "reference": "20 – 250"
         },
         "found": {
+          "index": 3,
           "test": "Ferritin",
           "value": "169",
           "flag": null,
-          "units": "µg/L"
+          "units": "µg/L",
+          "reference": "20 - 250"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Vitamin B12",
         "expected": {
           "value": "113",
           "flag": "*",
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 – 650"
         },
         "found": {
+          "index": 4,
           "test": "Vitamin D12",
           "value": "113",
           "flag": "*",
-          "units": "pmol/L"
+          "units": "pmol/L",
+          "reference": "150 - 553"
         },
         "nameOk": false,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "25-OH vitamin D",
         "expected": {
           "value": "138",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 – 250"
         },
         "found": {
+          "index": 5,
           "test": "25-OH vitamin O",
           "value": "138",
           "flag": null,
-          "units": "nmol/L"
+          "units": "nmol/L",
+          "reference": "75 - 250"
         },
         "nameOk": false,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "CRP",
         "expected": {
           "value": "3.6",
           "flag": null,
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5.0"
         },
         "found": {
+          "index": 6,
           "test": "COP",
           "value": "2.8",
           "flag": null,
-          "units": "mg/L"
+          "units": "mg/L",
+          "reference": "< 5.0"
         },
         "nameOk": false,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Uric acid",
         "expected": {
           "value": "352",
           "flag": null,
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "200 – 420"
         },
         "found": {
+          "index": 7,
           "test": "Uric acid",
           "value": "357",
           "flag": null,
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "200 - 425"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "INR",
         "expected": {
           "value": "0.9",
           "flag": null,
-          "units": null
+          "units": null,
+          "reference": "0.9 – 1.1"
         },
         "found": null,
         "nameOk": false,
         "valueOk": false,
         "flagOk": false,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": false
       },
       {
         "test": "Sodium",
         "expected": {
           "value": "138",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "135 – 145"
         },
         "found": {
+          "index": 9,
           "test": "Sodium",
           "value": "138",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "139 - 145"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Potassium",
         "expected": {
           "value": "4.2",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "3.5 – 5.0"
         },
         "found": {
+          "index": 10,
           "test": "Potassium",
           "value": "6.2",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$5 - $6"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Chloride",
         "expected": {
           "value": "103",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "98 – 107"
         },
         "found": {
+          "index": 11,
           "test": "Chloride",
           "value": "183",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "28 - 357"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Bicarbonate (CO2)",
         "expected": {
           "value": "31",
           "flag": "*",
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "22 – 29"
         },
         "found": {
+          "index": 12,
           "test": "Bicarbonate (CO2)",
           "value": "31",
           "flag": "*",
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$2 - 75"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Urea",
         "expected": {
           "value": "7.3",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "2.5 – 8.0"
         },
         "found": {
+          "index": 13,
           "test": "Urea",
           "value": "7.3",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$2.5 - $8"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Creatinine",
         "expected": {
           "value": "81",
           "flag": null,
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "50 – 110"
         },
         "found": {
+          "index": 14,
           "test": "Creatinine",
           "value": "81",
           "flag": null,
-          "units": "μmol/L"
+          "units": "μmol/L",
+          "reference": "50 - 110"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "eGFR (CKD-EPI)",
         "expected": {
           "value": "68",
           "flag": null,
-          "units": "mL/min/1,73m²"
+          "units": "mL/min/1,73m²",
+          "reference": "> 60"
         },
         "found": {
+          "index": 15,
           "test": "eGFR (CKD-EF1)",
           "value": "65",
           "flag": null,
-          "units": "ml/min/1, 73m-"
+          "units": "ml/min/1, 73m<sup>-</sup>",
+          "reference": "> 60"
         },
         "nameOk": false,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": false
+        "unitsOk": false,
+        "referenceOk": true
       },
       {
         "test": "Glucose (fasting)",
         "expected": {
           "value": "6.1",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "3.9 – 6.1"
         },
         "found": {
+          "index": 16,
           "test": "Glucose (Fasting)",
           "value": "6.1",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$9 - $1"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Calcium",
         "expected": {
           "value": "2.16",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "2.15 – 2.55"
         },
         "found": {
+          "index": 17,
           "test": "Calcium",
           "value": "7.16",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$7.15 - $7.45"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Magnesium",
         "expected": {
           "value": "0.63",
           "flag": "*",
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "0.70 – 1.05"
         },
         "found": {
+          "index": 18,
           "test": "Magnesium",
           "value": "9.03",
           "flag": "*",
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$7.79 - $1.05"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Phosphate",
         "expected": {
           "value": "1.03",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "0.80 – 1.45"
         },
         "found": {
+          "index": 19,
           "test": "Phosphate",
           "value": "1.07",
           "flag": null,
-          "units": "mmol/L"
+          "units": "mmol/L",
+          "reference": "$0.88 - $1.45"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Total protein",
         "expected": {
           "value": "53",
           "flag": "*",
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "60 – 80"
         },
         "found": {
+          "index": 20,
           "test": "Total protein",
           "value": "57",
           "flag": "*",
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "40 - 60"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Albumin",
         "expected": {
           "value": "49",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "35 – 50"
         },
         "found": {
+          "index": 21,
           "test": "Albumin",
           "value": "49",
           "flag": null,
-          "units": "g/L"
+          "units": "g/L",
+          "reference": "25 - 50"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "Total bilirubin",
         "expected": {
           "value": "5",
           "flag": null,
-          "units": "µmol/L"
+          "units": "µmol/L",
+          "reference": "3 – 21"
         },
         "found": {
+          "index": 22,
           "test": "Total bilirubin",
           "value": "5",
           "flag": null,
-          "units": "μmol/L"
+          "units": "μmol/L",
+          "reference": "3 - 71"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": false
       },
       {
         "test": "ALT",
         "expected": {
           "value": "10",
           "flag": null,
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "7 – 40"
         },
         "found": {
+          "index": 23,
           "test": "ALT",
           "value": "10",
           "flag": null,
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "7 - 40"
         },
         "nameOk": true,
         "valueOk": true,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "AST",
         "expected": {
           "value": "36",
           "flag": null,
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "10 – 40"
         },
         "found": {
+          "index": 24,
           "test": "AST",
           "value": "70",
           "flag": null,
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "10 - 40"
         },
         "nameOk": true,
         "valueOk": false,
         "flagOk": true,
-        "unitsOk": true
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "Alkaline phosphatase",
         "expected": {
           "value": "149",
           "flag": "*",
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "40 – 120"
         },
-        "found": null,
+        "found": {
+          "index": 25,
+          "test": "Aikeline phosphonase",
+          "value": "149",
+          "flag": "*",
+          "units": "U/L",
+          "reference": "40 - 120"
+        },
         "nameOk": false,
-        "valueOk": false,
-        "flagOk": false,
-        "unitsOk": false
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true,
+        "referenceOk": true
       },
       {
         "test": "GGT",
         "expected": {
           "value": "45",
           "flag": null,
-          "units": "U/L"
+          "units": "U/L",
+          "reference": "10 – 60"
         },
-        "found": null,
+        "found": {
+          "index": 26,
+          "test": "CoF",
+          "value": "45",
+          "flag": null,
+          "units": "U/L",
+          "reference": "10 - 62"
+        },
         "nameOk": false,
-        "valueOk": false,
-        "flagOk": false,
-        "unitsOk": false
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true,
+        "referenceOk": false
       }
     ],
     "extraRows": [
       "Halic",
       "15#",
-      "1##",
-      "Aikeline phosphonase",
-      "CoF"
+      "1##"
+    ],
+    "fields": [
+      {
+        "key": "lab_name",
+        "expected": "MOUNT ROYAL CHILDREN'S HOSPITAL",
+        "found": "MOUNT ROYAL CHILDREN'S HOSPITAL",
+        "ok": true
+      },
+      {
+        "key": "patient_name",
+        "expected": "CANTU, Caitlin",
+        "found": "CANTU, CAICLIN",
+        "ok": false
+      },
+      {
+        "key": "health_insurance_number",
+        "expected": "CANC 9059 0878",
+        "found": null,
+        "ok": false
+      },
+      {
+        "key": "date_of_birth",
+        "expected": "1990-09-08",
+        "found": null,
+        "ok": false
+      },
+      {
+        "key": "sex",
+        "expected": "F",
+        "found": null,
+        "ok": false
+      },
+      {
+        "key": "ordering_physician",
+        "expected": "Dr Richard May (29467)",
+        "found": null,
+        "ok": false
+      },
+      {
+        "key": "collected_at",
+        "expected": "2024-09-23 12:44",
+        "found": null,
+        "ok": false
+      },
+      {
+        "key": "reported_at",
+        "expected": "2024-09-25 12:44",
+        "found": "2024-08-25 5:44",
+        "ok": false
+      }
     ]
   }
 }

@@ -1,16 +1,16 @@
 {
   "sampleId": "1001_000388",
-  "ranAt": "2026-11-06T15:55:03.635Z",
+  "ranAt": "2026-11-06T16:37:56.848Z",
   "apiBase": "https://api.cloudraker.com",
-  "fileId": "file_01M6RS461NYK7F3BC93E74DEMB",
+  "fileId": null,
   "runs": {
-    "classify": "clr_01M6RS476F1B0QRVT8XKVYWPDB",
+    "classify": null,
     "extract": null
   },
   "classification": {
     "classId": "prescription",
     "confidence": 5,
-    "reasoning": "This is an electronic prescription (ordonnance électronique) containing a table of 8 medications with doses, routes, frequencies, and quantities, signed by Dr. Aurélie Robitaille."
+    "reasoning": "This is an electronic prescription (ORDONNANCE ÉLECTRONIQUE) containing a table of 8 medications with dose, route, frequency, and quantity, signed by Dr. Aurélie Robitaille."
   },
   "extraction": null,
   "extractSkipped": "Classified as prescription, so the lab report extraction did not run.",
@@ -44,10 +44,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1453,
-    "classifyMs": 36457,
+    "uploadMs": 1284,
+    "classifyMs": 28476,
     "extractMs": null,
-    "totalMs": 37910
+    "totalMs": 29760
   },
   "score": null
 }

@@ -13,7 +13,7 @@ import { execFileSync } from 'node:child_process'
 
 import { loadRates } from '../src/api/cost'
 import { StepError, runSample } from '../src/api/pipeline'
-import { parseTruth, score } from '../src/shared/score'
+import { scoreReport } from '../src/shared/score'
 
 import type { RunResult, SampleInfo } from '../src/shared/contract'
 
@@ -32,6 +32,23 @@ function devVars(): Record<string, string> {
   )
 }
 
+/** Saved results are public, so they keep no production ids. */
+function forSaving(r: RunResult): string {
+  const citations = Object.fromEntries(
+    Object.entries(r.extraction?.citations ?? {}).map(([k, list]) => [
+      k,
+      list.map(({ fileId: _fileId, ...c }) => c),
+    ]),
+  )
+  const saved: RunResult = {
+    ...r,
+    fileId: null,
+    runs: { classify: null, extract: null },
+    extraction: r.extraction ? { ...r.extraction, citations } : null,
+  }
+  return JSON.stringify(saved, null, 2) + '\n'
+}
+
 const index = JSON.parse(readFileSync(new URL('index.json', samplesDir), 'utf8')) as SampleInfo[]
 const args = process.argv.slice(2)
 
@@ -44,8 +61,8 @@ if (args.includes('--rescore')) {
       page_md: string
       doctype: string
     }
-    if (truth.doctype === 'lab_report') r.score = score(parseTruth(truth.page_md), r.extraction?.value.results)
-    writeFileSync(file, JSON.stringify(r, null, 2) + '\n')
+    if (truth.doctype === 'lab_report') r.score = scoreReport(truth.page_md, r.extraction?.value)
+    writeFileSync(file, forSaving(r))
     const sc = r.score
     if (sc) console.log(s.id, `rows ${sc.rowsFound}/${sc.rowsExpected} values ${sc.valuesCorrect} flags ${sc.flagsCorrect} units ${sc.unitsCorrect}`)
   }
@@ -88,7 +105,7 @@ async function one(s: SampleInfo): Promise<RunResult | null> {
         },
         rates,
       )
-      writeFileSync(new URL(`results/${s.id}.json`, samplesDir), JSON.stringify(r, null, 2) + '\n')
+      writeFileSync(new URL(`results/${s.id}.json`, samplesDir), forSaving(r))
       const sc = r.score
       console.log(
         [

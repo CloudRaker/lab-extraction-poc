@@ -1,10 +1,10 @@
 {
   "sampleId": "1001_000635",
-  "ranAt": "2026-11-06T15:56:21.308Z",
+  "ranAt": "2026-11-06T16:39:12.777Z",
   "apiBase": "https://api.cloudraker.com",
-  "fileId": "file_01M6RS6HK730QQJF7MARM9KTZP",
+  "fileId": null,
   "runs": {
-    "classify": "clr_01M6RS6JHH732FK9VF11YAAN28",
+    "classify": null,
     "extract": null
   },
   "classification": {
@@ -44,10 +44,10 @@
     "estimate": true
   },
   "timings": {
-    "uploadMs": 1103,
-    "classifyMs": 24516,
+    "uploadMs": 1142,
+    "classifyMs": 27964,
     "extractMs": null,
-    "totalMs": 25619
+    "totalMs": 29106
   },
   "score": null
 }

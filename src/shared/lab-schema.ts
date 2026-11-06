@@ -16,7 +16,11 @@ export const LAB_REPORT_SCHEMA = {
     ordering_physician: str('Name of the ordering physician, with the licence number if printed.'),
     collected_at: str('Date and time the specimen was collected, as printed.'),
     reported_at: str('Date and time the report was issued, as printed.'),
-    report_status: str('Report status if printed, for example final, preliminary or amended.'),
+    report_status: {
+      type: ['string', 'null'],
+      enum: ['final', 'preliminary', 'amended', null],
+      description: 'Status printed on the report. Null when no status is printed. The document title is not a status.',
+    },
     results: {
       type: 'array',
       description:
@@ -49,6 +53,7 @@ export const LAB_REPORT_INSTRUCTIONS = [
   'Extract only the current result. Ignore "Previous results / Résultats antérieurs" columns.',
   'When units and the reference interval share one column (for example "135 – 145 mmol/L"), split them: units go to "units", the interval to "reference_text".',
   'Section heading rows are not results: put the heading in "section" of the rows below it.',
+  'Stamps and handwritten notes (for example "COPIE" or "ok - DS") are not part of a value or a range. Leave them out.',
 ].join('\n')
 
 export const CLASSES = [

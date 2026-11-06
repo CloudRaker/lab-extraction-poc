@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { alignRows, boxesOf, cleanCitationText, rowBoxes } from './report'
+import { alignRows, boxesOf, cleanCitationText, rowCitations } from './report'
 
 import type { Citation, LabResultRow, RowScore, Score } from '@/shared/contract'
 
@@ -17,14 +17,15 @@ const row = (test_name: string, value: string): LabResultRow => ({
   abnormal: false,
 })
 
-const scored = (test: string, found: string | null, ok: Partial<RowScore> = {}): RowScore => ({
+const scored = (test: string, index: number | null, ok: Partial<RowScore> = {}): RowScore => ({
   test,
-  expected: { value: '1', flag: null, units: null },
-  found: found === null ? null : { test: found, value: '1', flag: null, units: null },
-  nameOk: found === test,
+  expected: { value: '1', flag: null, units: null, reference: null },
+  found: index === null ? null : { index, test, value: '1', flag: null, units: null, reference: null },
+  nameOk: true,
   valueOk: true,
   flagOk: true,
   unitsOk: true,
+  referenceOk: true,
   ...ok,
 })
 
@@ -32,11 +33,14 @@ const score = (perRow: RowScore[]): Score => ({
   rowsExpected: perRow.length,
   rowsFound: 0,
   rowsExtracted: 0,
+  namesCorrect: 0,
   valuesCorrect: 0,
   flagsCorrect: 0,
   unitsCorrect: 0,
+  referencesCorrect: 0,
   perRow,
   extraRows: [],
+  fields: [],
 })
 
 describe('alignRows', () => {
@@ -45,9 +49,9 @@ describe('alignRows', () => {
     const { checks, missed } = alignRows(
       rows,
       score([
-        scored('A', 'A'),
-        scored('B', 'B', { valueOk: false }),
-        scored('C', 'C', { unitsOk: false }),
+        scored('A', 0),
+        scored('B', 1, { valueOk: false }),
+        scored('C', 2, { unitsOk: false }),
         scored('HbA1c', null),
       ]),
     )
@@ -55,10 +59,12 @@ describe('alignRows', () => {
     expect(missed.map((m) => m.test)).toEqual(['HbA1c'])
   })
 
-  it('does not use one extracted row twice when test names repeat', () => {
-    const rows = [row('Glucose', '1'), row('Glucose', '1')]
-    const { checks } = alignRows(rows, score([scored('Glucose', 'Glucose'), scored('Glucose', 'Glucose')]))
-    expect(checks.map((c) => c.state)).toEqual(['ok', 'ok'])
+  it('does not call a row correct when the name or the range differs', () => {
+    const { checks } = alignRows(
+      [row('Vitamin D12', '1'), row('Sodium', '1')],
+      score([scored('Vitamin B12', 0, { nameOk: false }), scored('Sodium', 1, { referenceOk: false })]),
+    )
+    expect(checks.map((c) => c.state)).toEqual(['detail', 'detail'])
   })
 
   it('marks rows unscored without a ground truth', () => {
@@ -75,10 +81,33 @@ describe('citations', () => {
     expect(boxesOf(list)).toEqual([box(0.1)])
   })
 
-  it('prefers the table whose citation names the row', () => {
+  it('gives a row the box of its table, and the rows after it the same box', () => {
     const list = [cite(0.1, 'Sodium</td><td>144'), cite(0.5, 'Ferritin</td><td>20')]
-    expect(rowBoxes(list, 'ferritin')).toEqual([box(0.5)])
-    expect(rowBoxes(list, 'unknown')).toEqual([box(0.1), box(0.5)])
+    const out = rowCitations(list, [row('Sodium', '1'), row('Potassium', '1'), row('Ferritin', '1'), row('Zinc', '1')])
+    expect(out.map((r) => r.basis)).toEqual(['named', 'nearby', 'named', 'nearby'])
+    expect(out.map((r) => r.boxes)).toEqual([[box(0.1)], [box(0.1)], [box(0.5)], [box(0.5)]])
+  })
+
+  it('claims less when no citation text names a row, and drops heading boxes', () => {
+    const heading = { fileId: 'f', page: 0, bbox: { x: 0, y: 0.4, width: 0.2, height: 0.01 }, text: 'Panel' }
+    const out = rowCitations([cite(0.1, 'Analytes'), heading], [row('Potassium', '1')])
+    expect(out[0]).toEqual({ boxes: [box(0.1)], basis: 'general' })
+  })
+
+  it('gives no box to a row above the first named row', () => {
+    const out = rowCitations([cite(0.5, 'Sodium')], [row('TSH', '1'), row('Sodium', '1')])
+    expect(out.map((r) => r.basis)).toEqual(['none', 'named'])
+    expect(out[0]?.boxes).toEqual([])
+  })
+
+  it('finds a name right after table markup', () => {
+    const out = rowCitations([cite(0.1, '<tr><th>2023-01-29</th></tr><tr><td>HbA1c</td><td>5,7</td></tr>')], [row('HbA1c', '1')])
+    expect(out[0]?.basis).toBe('named')
+  })
+
+  it('does not match a name inside another word', () => {
+    const out = rowCitations([cite(0.1, 'Gastric acid')], [row('AST', '1')])
+    expect(out[0]?.basis).toBe('general')
   })
 
   it('removes table markup from cited text', () => {

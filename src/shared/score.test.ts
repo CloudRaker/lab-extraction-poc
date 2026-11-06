@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-import { fold, parseTruth, sameValue, score, unitsFromInterval } from './score'
+import { fold, normStatus, parseTruth, parseTruthFields, sameRange, sameValue, score, scoreFields, unitsFromInterval } from './score'
 
 import type { LabResultRow } from './contract'
 
@@ -112,6 +112,7 @@ describe('normalization', () => {
     expect(sameValue('35.0', '35')).toBe(true)
     expect(sameValue('Négatif', 'Negatif')).toBe(true)
     expect(sameValue('4,2', '4.3')).toBe(false)
+    expect(sameValue('16', '0x10')).toBe(false)
   })
 
   it('reads intervals without units', () => {
@@ -156,5 +157,111 @@ describe('score', () => {
   it('falls back to a loose name match', () => {
     const s = score(parseTruth(combinedUnits), [row({ test_name: 'eGFR', value: '51', flag: '*', units: 'mL/min/1.73m2' })])
     expect(s.perRow[1]).toMatchObject({ valueOk: true, flagOk: true })
+  })
+
+  it('does not let one test take the row of another', () => {
+    const table = (...names: string[]) =>
+      parseTruth(`| Test | Result |\n|---|---|\n${names.map((n) => `| ${n} | 4.2 |`).join('\n')}\n`)
+    const a = score(table('RBC', 'WBC'), [row({ test_name: 'WBC', value: '4.2' })])
+    expect(a.perRow.map((r) => !!r.found)).toEqual([false, true])
+    const b = score(table('ALT', 'AST'), [row({ test_name: 'AST', value: '4.2' }), row({ test_name: 'A1T', value: '4.2' })])
+    expect(b.perRow[1]).toMatchObject({ nameOk: true, valueOk: true })
+    const c = score(table('Glucose', 'Glucose urine'), [row({ test_name: 'Glucose urine', value: '4.2' })])
+    expect(c.perRow.map((r) => !!r.found)).toEqual([false, true])
+  })
+
+  it('pairs misread names by position when the gap has the same size on both sides', () => {
+    const t = parseTruth('| Test | Result |\n|---|---|\n| Sodium | 1 |\n| Alkaline phosphatase | 149 |\n| Potassium | 2 |\n')
+    const s = score(t, [
+      row({ test_name: 'Sodium', value: '1' }),
+      row({ test_name: 'Aikeline phosphonase', value: '149' }),
+      row({ test_name: 'Potassium', value: '2' }),
+    ])
+    expect(s.valuesCorrect).toBe(3)
+    expect(s.namesCorrect).toBe(2)
+    expect(s.extraRows).toEqual([])
+    expect(s.perRow[1]).toMatchObject({ nameOk: false, found: { index: 1 } })
+  })
+
+  it('does not pair by position when the sizes differ', () => {
+    const t = parseTruth('| Test | Result |\n|---|---|\n| Sodium | 1 |\n| Zinc | 149 |\n| Copper | 3 |\n')
+    const s = score(t, [row({ test_name: 'Sodium', value: '1' }), row({ test_name: 'Lead', value: '149' })])
+    expect(s.rowsFound).toBe(1)
+    expect(s.extraRows).toEqual(['Lead'])
+  })
+
+  it('checks the reference range', () => {
+    expect(sameRange('135 – 145', 'mmol/L', '135 - 145')).toBe(true)
+    expect(sameRange('135 – 145', 'mmol/L', '135 – 145 mmol/L')).toBe(true)
+    expect(sameRange('0,40 – 4,00', null, '0.40-4.00')).toBe(true)
+    expect(sameRange('135 – 145', 'mmol/L', '135 - 145COPIE')).toBe(false)
+    expect(sameRange('22 – 29', null, '$2 - 75')).toBe(false)
+    const t = parseTruth('| Test | Result | Reference range |\n|---|---|---|\n| GGT | 12 | 10 – 60 |\n')
+    expect(score(t, [row({ test_name: 'GGT', value: '12', reference_text: '***' })]).referencesCorrect).toBe(0)
+  })
+
+  it('folds a decimal comma in units', () => {
+    const t = parseTruth(combinedUnits)
+    const s = score(t, [row({ test_name: 'eGFR (CKD-EPI)', value: '51', units: 'mL/min/1.73m²' })])
+    expect(s.perRow[1]!.unitsOk).toBe(true)
+  })
+})
+
+describe('fields', () => {
+  const page = `**MOUNT ROYAL HOSPITAL**
+8518, boulevard Pie-IX
+
+# LABORATORY REPORT \u2014 FINAL
+
+Patient / Patient : **CANTU, Caitlin**
+
+Health ins. no. / No ass. maladie : **CANC 9059 0878**
+
+Sexe / Sex : **F**
+
+Ordering physician / Médecin requérant : **Dr Richard May (29467)**
+`
+  it('reads the fields the page prints', () => {
+    expect(parseTruthFields(page)).toEqual({
+      lab_name: 'MOUNT ROYAL HOSPITAL',
+      patient_name: 'CANTU, Caitlin',
+      health_insurance_number: 'CANC 9059 0878',
+      sex: 'F',
+      ordering_physician: 'Dr Richard May (29467)',
+      report_status: 'final',
+    })
+  })
+
+  it('finds a misread name, a missing field and a title used as a status', () => {
+    const value = {
+      lab_name: 'Mount Royal Hospital',
+      patient_name: 'CANTU, CAICLIN',
+      sex: 'F',
+      ordering_physician: null,
+      report_status: 'FINAL',
+    } as never
+    const out = Object.fromEntries(scoreFields(page, value).map((f) => [f.key, f.ok]))
+    expect(out).toMatchObject({
+      lab_name: true,
+      patient_name: false,
+      sex: true,
+      ordering_physician: false,
+      report_status: true,
+    })
+    expect(normStatus('LABORATORY REPORT / RAPPORT DE LABORATOIRE')).toBeNull()
+    expect(normStatus('FINAL / FINAL')).toBe('final')
+  })
+
+  it('reads the fields of every bundled lab report', () => {
+    const dir = new URL('../../public/samples/', import.meta.url)
+    const labs = readdirSync(dir)
+      .filter((f) => f.endsWith('.json') && f !== 'index.json')
+      .map((f) => JSON.parse(readFileSync(new URL(f, dir), 'utf8')) as { doctype: string; page_md: string })
+      .filter((d) => d.doctype === 'lab_report')
+    for (const d of labs) {
+      const f = parseTruthFields(d.page_md)
+      for (const key of ['patient_name', 'health_insurance_number', 'date_of_birth', 'sex', 'ordering_physician', 'collected_at', 'reported_at'] as const)
+        expect(f[key], `${key} in a sample`).toBeTruthy()
+    }
   })
 })
