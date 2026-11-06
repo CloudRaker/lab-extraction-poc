@@ -1,0 +1,53 @@
+{
+  "sampleId": "1001_000635",
+  "ranAt": "2026-11-06T15:56:21.308Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RS6HK730QQJF7MARM9KTZP",
+  "runs": {
+    "classify": "clr_01M6RS6JHH732FK9VF11YAAN28",
+    "extract": null
+  },
+  "classification": {
+    "classId": "consult_note",
+    "confidence": 5,
+    "reasoning": "This is a consultation note from an endocrinology specialist containing reason for referral, history of present illness, past medical history, physical examination, impression with diagnoses, and a detailed plan."
+  },
+  "extraction": null,
+  "extractSkipped": "Classified as consult_note, so the lab report extraction did not run.",
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 20,
+    "usd": 0.02,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 1103,
+    "classifyMs": 24516,
+    "extractMs": null,
+    "totalMs": 25619
+  },
+  "score": null
+}

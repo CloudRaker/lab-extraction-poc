@@ -1,0 +1,53 @@
+{
+  "sampleId": "1001_000566",
+  "ranAt": "2026-11-06T15:55:03.635Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RS483MENF6KMER0CT06SV9",
+  "runs": {
+    "classify": "clr_01M6RS491RQX4Y9ZN5QYRANAGC",
+    "extract": null
+  },
+  "classification": {
+    "classId": "discharge_summary",
+    "confidence": 5,
+    "reasoning": "This is a hospital discharge summary (Sommaire d'hospitalisation) containing admission/discharge dates, diagnoses, hospital course, discharge medications, and follow-up instructions."
+  },
+  "extraction": null,
+  "extractSkipped": "Classified as discharge_summary, so the lab report extraction did not run.",
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 20,
+    "usd": 0.02,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 3298,
+    "classifyMs": 29428,
+    "extractMs": null,
+    "totalMs": 32726
+  },
+  "score": null
+}

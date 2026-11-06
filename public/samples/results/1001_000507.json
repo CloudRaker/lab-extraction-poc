@@ -1,0 +1,1110 @@
+{
+  "sampleId": "1001_000507",
+  "ranAt": "2026-11-06T15:50:33.633Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+  "runs": {
+    "classify": "clr_01M6RRVZKV84VA44GTSKY4ZAPH",
+    "extract": "exr_01M6RRX0Y5E5NTTRF5P68QE3F1"
+  },
+  "classification": {
+    "classId": "lab_report",
+    "confidence": 5,
+    "reasoning": "This is a laboratory report containing a comprehensive table of test results (analytes) with values, abnormal flags, units, and reference ranges for one patient (John Smith)."
+  },
+  "extraction": {
+    "value": {
+      "lab_name": "SAINT-LAURENT UNIVERSITY HOSPITAL CENTRE",
+      "patient_name": "SMITH, John",
+      "health_insurance_number": "SMIJ 1401 1472",
+      "date_of_birth": "2014-01-14",
+      "sex": "M",
+      "ordering_physician": "Dr Scott Barger (12000)",
+      "collected_at": "2025-10-08 16:26",
+      "reported_at": "2025-10-09 17:26",
+      "report_status": "FINAL",
+      "results": [
+        {
+          "section": "Urinalysis",
+          "test_name": "Urine colour",
+          "value": "Yellow",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Yellow",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "pH",
+          "value": "7.5",
+          "numeric_value": 7.5,
+          "flag": null,
+          "units": null,
+          "reference_low": 5,
+          "reference_high": 8,
+          "reference_text": "5.0 - 8.0",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Specific gravity",
+          "value": "1.011",
+          "numeric_value": 1.011,
+          "flag": null,
+          "units": null,
+          "reference_low": 1.005,
+          "reference_high": 1.03,
+          "reference_text": "1.005 - 1.030",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Glucose",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Protein",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Ketones",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Blood",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Leukocyte esterase",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Urinalysis",
+          "test_name": "Nitrites",
+          "value": "Negative",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Negative",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "HbA1c",
+          "value": "5.4",
+          "numeric_value": 5.4,
+          "flag": null,
+          "units": "%",
+          "reference_low": 4,
+          "reference_high": 6,
+          "reference_text": "4.0 - 6.0 %",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "TSH",
+          "value": "3.66",
+          "numeric_value": 3.66,
+          "flag": null,
+          "units": "mUI/L",
+          "reference_low": 0.4,
+          "reference_high": 4,
+          "reference_text": "0.40 - 4.00 mUI/L",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "Free T4",
+          "value": "10.3",
+          "numeric_value": 10.3,
+          "flag": null,
+          "units": "pmol/L",
+          "reference_low": 10,
+          "reference_high": 22,
+          "reference_text": "10.0 - 22.0 pmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "Ferritin",
+          "value": "607",
+          "numeric_value": 607,
+          "flag": "HH",
+          "units": "μg/L",
+          "reference_low": 20,
+          "reference_high": 250,
+          "reference_text": "20 - 250 μg/L",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "Vitamin B12",
+          "value": "0",
+          "numeric_value": 0,
+          "flag": "L",
+          "units": "pmol/L",
+          "reference_low": 150,
+          "reference_high": 650,
+          "reference_text": "150 - 650 pmol/L",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "25-DH vitamin D",
+          "value": "268",
+          "numeric_value": 268,
+          "flag": "H",
+          "units": "nmol/L",
+          "reference_low": 75,
+          "reference_high": 250,
+          "reference_text": "75 - 250 nmol/L",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "CRP",
+          "value": "4.7",
+          "numeric_value": 4.7,
+          "flag": null,
+          "units": "mg/L",
+          "reference_low": null,
+          "reference_high": 5,
+          "reference_text": "< 5.0 mg/L",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "Uric acid",
+          "value": "226",
+          "numeric_value": 226,
+          "flag": null,
+          "units": "μmol/L",
+          "reference_low": 200,
+          "reference_high": 420,
+          "reference_text": "200 - 420 μmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinology / Iron / Vitamins",
+          "test_name": "INR",
+          "value": "1.0",
+          "numeric_value": 1,
+          "flag": null,
+          "units": null,
+          "reference_low": 0.9,
+          "reference_high": 1.1,
+          "reference_text": "0.9 - 1.1",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Sodium",
+          "value": "144",
+          "numeric_value": 144,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 135,
+          "reference_high": 145,
+          "reference_text": "135 - 145 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Potassium",
+          "value": "3.9",
+          "numeric_value": 3.9,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 3.5,
+          "reference_high": 5,
+          "reference_text": "3.5 - 5.0 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Chloride",
+          "value": "104",
+          "numeric_value": 104,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 98,
+          "reference_high": 107,
+          "reference_text": "98 - 107 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Bicarbonate (CO2)",
+          "value": "24",
+          "numeric_value": 24,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 22,
+          "reference_high": 29,
+          "reference_text": "22 - 29 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Urea",
+          "value": "6.0",
+          "numeric_value": 6,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 2.5,
+          "reference_high": 8,
+          "reference_text": "2.5 - 8.0 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Creatinine",
+          "value": "37",
+          "numeric_value": 37,
+          "flag": "L",
+          "units": "μmol/L",
+          "reference_low": 50,
+          "reference_high": 110,
+          "reference_text": "50 - 110 μmol/L",
+          "abnormal": true
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "eGFR (CKD-EPI)",
+          "value": "73",
+          "numeric_value": 73,
+          "flag": null,
+          "units": "mL/min/1.73m²",
+          "reference_low": 60,
+          "reference_high": null,
+          "reference_text": ">60 mL/min/1.73m²",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Glucose (fasting)",
+          "value": "4.3",
+          "numeric_value": 4.3,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 3.9,
+          "reference_high": 6.1,
+          "reference_text": "3.9 - 6.1 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Calcium",
+          "value": "2.22",
+          "numeric_value": 2.22,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 2.15,
+          "reference_high": 2.55,
+          "reference_text": "2.15 - 2.55 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Magnesium",
+          "value": "0.77",
+          "numeric_value": 0.77,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 0.7,
+          "reference_high": 1.05,
+          "reference_text": "0.70 - 1.05 mmol/L",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Phosphate",
+          "value": "1.28",
+          "numeric_value": 1.28,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 0.8,
+          "reference_high": 1.45,
+          "reference_text": "0.80 - 1.45 mmol/L",
+          "abnormal": false
+        }
+      ]
+    },
+    "citations": {
+      "lab_name": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.242,
+            "y": 0.07400000000000001,
+            "width": 0.497,
+            "height": 0.032
+          },
+          "text": "SAINT-LAURENT UNIVERSITY HOSPITAL CENTRE",
+          "confidence": 5
+        }
+      ],
+      "patient_name": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.086,
+            "y": 0.17400000000000002,
+            "width": 0.11800000000000001,
+            "height": 0.015
+          },
+          "text": "Patient : SMITH, John",
+          "confidence": 5
+        }
+      ],
+      "health_insurance_number": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.492,
+            "y": 0.193,
+            "width": 0.188,
+            "height": 0.015999999999999993
+          },
+          "text": "Health ins. no.: SMIJ 1401 1472",
+          "confidence": 5
+        }
+      ],
+      "date_of_birth": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.08700000000000001,
+            "y": 0.19000000000000003,
+            "width": 0.13899999999999998,
+            "height": 0.01399999999999998
+          },
+          "text": "Date of birth : 2014-01-14",
+          "confidence": 5
+        }
+      ],
+      "sex": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.493,
+            "y": 0.209,
+            "width": 0.04099999999999996,
+            "height": 0.01100000000000002
+          },
+          "text": "Sex : M",
+          "confidence": 5
+        }
+      ],
+      "ordering_physician": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.09,
+            "y": 0.218,
+            "width": 0.233,
+            "height": 0.012000000000000016
+          },
+          "text": "Ordering physician : Dr Scott Barger (12000)",
+          "confidence": 5
+        }
+      ],
+      "collected_at": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.091,
+            "y": 0.23000000000000004,
+            "width": 0.156,
+            "height": 0.015999999999999993
+          },
+          "text": "Collected: 2025-10-08 16:26",
+          "confidence": 5
+        }
+      ],
+      "reported_at": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.493,
+            "y": 0.25200000000000006,
+            "width": 0.168,
+            "height": 0.01599999999999997
+          },
+          "text": "Reported: 2025-10-09 17:26",
+          "confidence": 5
+        }
+      ],
+      "report_status": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.075,
+            "y": 0.14300000000000002,
+            "width": 0.303,
+            "height": 0.027000000000000017
+          },
+          "text": "LABORATORY REPORT — FINAL",
+          "confidence": 5
+        }
+      ],
+      "results": [
+        {
+          "fileId": "file_01M6RRVY5EN78ZH8XGSNAQZV93",
+          "page": 0,
+          "bbox": {
+            "x": 0.086,
+            "y": 0.255,
+            "width": 0.838,
+            "height": 0.6400000000000001
+          },
+          "text": "<table><tr><td>Analysis</td><td>Result</td><td>Abn.</td><td>Reference interval / units</td><td>Comment</td></tr><tr><td colspan=5>Urinalysis</td></tr><tr><td>Urine colour</td><td>Yellow</td><td>&lt;fcel&gt;</td><td>Yellow</td><td>&lt;nl&gt;</td></tr><tr><td>pH</td><td>7.5</td><td>&lt;fcel&gt;</td><td>5.0 - 8.0</td><td>&lt;nl&gt;</td></tr><tr><td>Specific gravity</td><td>1.011</td><td>&lt;fcel&gt;</td><td>1.005 - 1.030</td><td>seen, repeat in 3</td></tr><tr><td>Glucose</td><td>Negative</td><td>&l",
+          "confidence": 3
+        }
+      ]
+    }
+  },
+  "extractSkipped": null,
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 45,
+    "usd": 0.045,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      },
+      {
+        "event": "page_extracted",
+        "units": 1,
+        "rate": 15,
+        "credits": 15,
+        "reason": "Each page read by the extraction."
+      },
+      {
+        "event": "extraction_grounding",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Citations: each value is linked to its place on the page."
+      },
+      {
+        "event": "page_judged",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Judge pass: each cited value gets a confidence score."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 1684,
+    "classifyMs": 33974,
+    "extractMs": 44861,
+    "totalMs": 80519
+  },
+  "score": {
+    "rowsExpected": 29,
+    "rowsFound": 29,
+    "rowsExtracted": 29,
+    "valuesCorrect": 29,
+    "flagsCorrect": 29,
+    "unitsCorrect": 28,
+    "perRow": [
+      {
+        "test": "Urine colour",
+        "expected": {
+          "value": "Yellow",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Urine colour",
+          "value": "Yellow",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "pH",
+        "expected": {
+          "value": "7.5",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "pH",
+          "value": "7.5",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Specific gravity",
+        "expected": {
+          "value": "1.011",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Specific gravity",
+          "value": "1.011",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Glucose",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Glucose",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Protein",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Protein",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Ketones",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Ketones",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Blood",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Blood",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Leukocyte esterase",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Leukocyte esterase",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Nitrites",
+        "expected": {
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Nitrites",
+          "value": "Negative",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "HbA1c",
+        "expected": {
+          "value": "5.4",
+          "flag": null,
+          "units": "%"
+        },
+        "found": {
+          "test": "HbA1c",
+          "value": "5.4",
+          "flag": null,
+          "units": "%"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "TSH",
+        "expected": {
+          "value": "3.66",
+          "flag": null,
+          "units": "mUI/L"
+        },
+        "found": {
+          "test": "TSH",
+          "value": "3.66",
+          "flag": null,
+          "units": "mUI/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Free T4",
+        "expected": {
+          "value": "10.3",
+          "flag": null,
+          "units": "pmol/L"
+        },
+        "found": {
+          "test": "Free T4",
+          "value": "10.3",
+          "flag": null,
+          "units": "pmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Ferritin",
+        "expected": {
+          "value": "607",
+          "flag": "HH",
+          "units": "µg/L"
+        },
+        "found": {
+          "test": "Ferritin",
+          "value": "607",
+          "flag": "HH",
+          "units": "μg/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Vitamin B12",
+        "expected": {
+          "value": "0",
+          "flag": "L",
+          "units": "pmol/L"
+        },
+        "found": {
+          "test": "Vitamin B12",
+          "value": "0",
+          "flag": "L",
+          "units": "pmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "25-OH vitamin D",
+        "expected": {
+          "value": "268",
+          "flag": "H",
+          "units": "nmol/L"
+        },
+        "found": {
+          "test": "25-DH vitamin D",
+          "value": "268",
+          "flag": "H",
+          "units": "nmol/L"
+        },
+        "nameOk": false,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "CRP",
+        "expected": {
+          "value": "4.7",
+          "flag": null,
+          "units": "mg/L"
+        },
+        "found": {
+          "test": "CRP",
+          "value": "4.7",
+          "flag": null,
+          "units": "mg/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Uric acid",
+        "expected": {
+          "value": "226",
+          "flag": null,
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Uric acid",
+          "value": "226",
+          "flag": null,
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "INR",
+        "expected": {
+          "value": "1.0",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "INR",
+          "value": "1.0",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Sodium",
+        "expected": {
+          "value": "144",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Sodium",
+          "value": "144",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Potassium",
+        "expected": {
+          "value": "3.9",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Potassium",
+          "value": "3.9",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Chloride",
+        "expected": {
+          "value": "104",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Chloride",
+          "value": "104",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Bicarbonate (CO2)",
+        "expected": {
+          "value": "24",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Bicarbonate (CO2)",
+          "value": "24",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Urea",
+        "expected": {
+          "value": "6.0",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Urea",
+          "value": "6.0",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Creatinine",
+        "expected": {
+          "value": "37",
+          "flag": "L",
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Creatinine",
+          "value": "37",
+          "flag": "L",
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "eGFR (CKD-EPI)",
+        "expected": {
+          "value": "73",
+          "flag": null,
+          "units": "mL/min/1,73m²"
+        },
+        "found": {
+          "test": "eGFR (CKD-EPI)",
+          "value": "73",
+          "flag": null,
+          "units": "mL/min/1.73m²"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": false
+      },
+      {
+        "test": "Glucose (fasting)",
+        "expected": {
+          "value": "4.3",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Glucose (fasting)",
+          "value": "4.3",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Calcium",
+        "expected": {
+          "value": "2.22",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Calcium",
+          "value": "2.22",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Magnesium",
+        "expected": {
+          "value": "0.77",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Magnesium",
+          "value": "0.77",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Phosphate",
+        "expected": {
+          "value": "1.28",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Phosphate",
+          "value": "1.28",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      }
+    ],
+    "extraRows": []
+  }
+}

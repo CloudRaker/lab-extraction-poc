@@ -1,0 +1,53 @@
+{
+  "sampleId": "1001_000388",
+  "ranAt": "2026-11-06T15:55:03.635Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RS461NYK7F3BC93E74DEMB",
+  "runs": {
+    "classify": "clr_01M6RS476F1B0QRVT8XKVYWPDB",
+    "extract": null
+  },
+  "classification": {
+    "classId": "prescription",
+    "confidence": 5,
+    "reasoning": "This is an electronic prescription (ordonnance électronique) containing a table of 8 medications with doses, routes, frequencies, and quantities, signed by Dr. Aurélie Robitaille."
+  },
+  "extraction": null,
+  "extractSkipped": "Classified as prescription, so the lab report extraction did not run.",
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 20,
+    "usd": 0.02,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 1453,
+    "classifyMs": 36457,
+    "extractMs": null,
+    "totalMs": 37910
+  },
+  "score": null
+}

@@ -1,0 +1,1428 @@
+{
+  "sampleId": "1001_000434",
+  "ranAt": "2026-11-06T15:53:05.148Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+  "runs": {
+    "classify": "clr_01M6RS0KD5VT73XSQKPP2AQ9CK",
+    "extract": "exr_01M6RS1F455TMD9JSZ7ZWGT5K6"
+  },
+  "classification": {
+    "classId": "lab_report",
+    "confidence": 5,
+    "reasoning": "This is a laboratory report containing comprehensive test results with analytes, values, abnormal flags, units, and reference ranges for patient Brianna Herrera, including metabolic panel and complete blood count."
+  },
+  "extraction": {
+    "value": {
+      "lab_name": "Saint-Laurent CHU Clinical Laboratory",
+      "patient_name": "HERRERA, Brianna",
+      "health_insurance_number": "HERB 0855 0543",
+      "date_of_birth": "2008-05-05",
+      "sex": "F",
+      "ordering_physician": "Dr Harry Davis (88835)",
+      "collected_at": "2024-09-27 06:47",
+      "reported_at": "2024-09-28 05:47",
+      "report_status": "LABORATORY REPORT / RAPPORT DE LABORATOIRE",
+      "results": [
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Sodium",
+          "value": "144",
+          "numeric_value": 144,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 135,
+          "reference_high": 145,
+          "reference_text": "135 - 145",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Potassium",
+          "value": "4.9",
+          "numeric_value": 4.9,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 3.5,
+          "reference_high": 5,
+          "reference_text": "3.5 - 5.0",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Chloride",
+          "value": "102",
+          "numeric_value": 102,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 98,
+          "reference_high": 107,
+          "reference_text": "98 - 107",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Bicarbonate (CO2)",
+          "value": "28",
+          "numeric_value": 28,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 22,
+          "reference_high": 29,
+          "reference_text": "22 - 29",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Urea",
+          "value": "5.3",
+          "numeric_value": 5.3,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 2.5,
+          "reference_high": 8,
+          "reference_text": "2.5 - 8.0",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Creatinine",
+          "value": "123",
+          "numeric_value": 123,
+          "flag": "*",
+          "units": "μmol/L",
+          "reference_low": 50,
+          "reference_high": 110,
+          "reference_text": "50 - 110",
+          "abnormal": true
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "eGFR (CKD-EPI)",
+          "value": "51",
+          "numeric_value": 51,
+          "flag": "*",
+          "units": "mL/min/1,73㎡",
+          "reference_low": null,
+          "reference_high": 60,
+          "reference_text": "> 60",
+          "abnormal": true
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Glucose (fasting)",
+          "value": "4.6",
+          "numeric_value": 4.6,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 3.9,
+          "reference_high": 6.1,
+          "reference_text": "3.9 - 6.1",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Calcium",
+          "value": "2.31",
+          "numeric_value": 2.31,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 2.15,
+          "reference_high": 2.55,
+          "reference_text": "2.15 - 2.55",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Magnesium",
+          "value": "0.81",
+          "numeric_value": 0.81,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 0.7,
+          "reference_high": 1.05,
+          "reference_text": "0.70 - 1.05",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Phosphate",
+          "value": "1.44",
+          "numeric_value": 1.44,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 0.8,
+          "reference_high": 1.45,
+          "reference_text": "0.80 - 1.45",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Total protein",
+          "value": "77",
+          "numeric_value": 77,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 60,
+          "reference_high": 80,
+          "reference_text": "60 - 80",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Albumin",
+          "value": "37",
+          "numeric_value": 37,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 35,
+          "reference_high": 50,
+          "reference_text": "35 - 50",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Total bilirubin",
+          "value": "20",
+          "numeric_value": 20,
+          "flag": null,
+          "units": "μmol/L",
+          "reference_low": 3,
+          "reference_high": 21,
+          "reference_text": "3 - 21",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "ALT",
+          "value": "2",
+          "numeric_value": 2,
+          "flag": "*",
+          "units": "U/L",
+          "reference_low": 7,
+          "reference_high": 40,
+          "reference_text": "7 - 40",
+          "abnormal": true
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "AST",
+          "value": "33",
+          "numeric_value": 33,
+          "flag": null,
+          "units": "U/L",
+          "reference_low": 10,
+          "reference_high": 40,
+          "reference_text": "10 - 40",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "Alkaline phosphatase",
+          "value": "107",
+          "numeric_value": 107,
+          "flag": null,
+          "units": "U/L",
+          "reference_low": 40,
+          "reference_high": 120,
+          "reference_text": "40 - 120",
+          "abnormal": false
+        },
+        {
+          "section": "Comprehensive Metabolic Panel",
+          "test_name": "GGT",
+          "value": "58",
+          "numeric_value": 58,
+          "flag": null,
+          "units": "U/L",
+          "reference_low": 10,
+          "reference_high": 60,
+          "reference_text": "10 - 60",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Hemoglobin",
+          "value": "134",
+          "numeric_value": 134,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 120,
+          "reference_high": 160,
+          "reference_text": "120 - 160",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Hematocrit",
+          "value": "0.42",
+          "numeric_value": 0.42,
+          "flag": null,
+          "units": "L/L",
+          "reference_low": 0.36,
+          "reference_high": 0.48,
+          "reference_text": "0.36 - 0.48",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "RBC",
+          "value": "4.97",
+          "numeric_value": 4.97,
+          "flag": null,
+          "units": "x10^12/L",
+          "reference_low": 4,
+          "reference_high": 5.5,
+          "reference_text": "4.00 - 5.50",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCV",
+          "value": "92",
+          "numeric_value": 92,
+          "flag": null,
+          "units": "fL",
+          "reference_low": 80,
+          "reference_high": 100,
+          "reference_text": "80 - 100",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCH",
+          "value": "32.2",
+          "numeric_value": 32.2,
+          "flag": null,
+          "units": "pg",
+          "reference_low": 27,
+          "reference_high": 33,
+          "reference_text": "27.0 - 33.0",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCHC",
+          "value": "358",
+          "numeric_value": 358,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 320,
+          "reference_high": 360,
+          "reference_text": "320 - 360",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "RDW",
+          "value": "11.3",
+          "numeric_value": 11.3,
+          "flag": "*",
+          "units": "%",
+          "reference_low": 11.5,
+          "reference_high": 14.5,
+          "reference_text": "11.5 - 14.5",
+          "abnormal": true
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Platelets",
+          "value": "192",
+          "numeric_value": 192,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 150,
+          "reference_high": 400,
+          "reference_text": "150 - 400",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "WBC",
+          "value": "8.7",
+          "numeric_value": 8.7,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 4,
+          "reference_high": 10,
+          "reference_text": "4.0 - 10.0",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Neutrophils",
+          "value": "4.21",
+          "numeric_value": 4.21,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 2,
+          "reference_high": 7.5,
+          "reference_text": "2.00 - 7.50",
+          "abnormal": false
+        }
+      ]
+    },
+    "citations": {
+      "lab_name": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.115,
+            "y": 0.062,
+            "width": 0.268,
+            "height": 0.019000000000000006
+          },
+          "text": "Saint-Laurent CHU Clinical Laboratory",
+          "confidence": 5
+        }
+      ],
+      "patient_name": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Patient / Patient : HERRERA, Brianna",
+          "confidence": 5
+        }
+      ],
+      "health_insurance_number": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Health ins. no. / No ass. maladie : HERB<br>0855 0543",
+          "confidence": 5
+        }
+      ],
+      "date_of_birth": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Date of birth / Date de naissance :<br>2008-05-05",
+          "confidence": 5
+        }
+      ],
+      "sex": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Sex / Sexe : F",
+          "confidence": 5
+        }
+      ],
+      "ordering_physician": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Ordering physician / Médecin requérant : Dr Harry Davis (88835)",
+          "confidence": 5
+        }
+      ],
+      "collected_at": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Collected / Prélevé le : 2024-09-27<br>06:47",
+          "confidence": 5
+        }
+      ],
+      "reported_at": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.07,
+            "y": 0.159,
+            "width": 0.824,
+            "height": 0.086
+          },
+          "text": "Reported / Rapport émis le : 2024-09-28<br>05:47",
+          "confidence": 5
+        }
+      ],
+      "report_status": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.133,
+            "width": 0.501,
+            "height": 0.01699999999999999
+          },
+          "text": "LABORATORY REPORT / RAPPORT DE LABORATOIRE",
+          "confidence": 5
+        }
+      ],
+      "results": [
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Comprehensive Metabolic Panel",
+          "confidence": 1
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Sodium</td><td>144</td><td></td><td>135 - 145 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Potassium</td><td>4.9</td><td></td><td>3.5 - 5.0 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Chloride</td><td>102</td><td></td><td>98 - 107 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Bicarbonate (CO2)</td><td>28</td><td></td><td>22 - 29 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Urea</td><td>5.3</td><td></td><td>2.5 - 8.0 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Creatinine</td><td>123</td><td>*</td><td>50 - 110 μmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "eGFR (CKD-EPI)</td><td>51</td><td>*</td><td>&gt; 60 mL/min/1,73㎡",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Glucose (fasting)</td><td>4.6</td><td></td><td>3.9 - 6.1 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Calcium</td><td>2.31</td><td></td><td>2.15 - 2.55 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Magnesium</td><td>0.81</td><td></td><td>0.70 - 1.05 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Phosphate</td><td>1.44</td><td></td><td>0.80 - 1.45 mmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Total protein</td><td>77</td><td></td><td>60 - 80 g/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Albumin</td><td>37</td><td></td><td>35 - 50 g/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Total bilirubin</td><td>20</td><td></td><td>3 - 21 μmol/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "ALT</td><td>2</td><td>*</td><td>7 - 40 U/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "AST</td><td>33</td><td></td><td>10 - 40 U/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Alkaline phosphatase</td><td>107</td><td></td><td>40 - 120 U/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "GGT</td><td>58</td><td></td><td>10 - 60 U/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Complete Blood Count (CBC)",
+          "confidence": 1
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Hemoglobin</td><td>134</td><td></td><td>120 - 160 g/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Hematocrit</td><td>0.42</td><td></td><td>0.36 - 0.48 L/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "RBC</td><td>4.97</td><td></td><td>4.00 - 5.50 x10&lt;sup&gt;12&lt;/sup&gt;/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "MCV</td><td>92</td><td></td><td>80 - 100 fL",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "MCH</td><td>32.2</td><td></td><td>27.0 - 33.0 pg",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "MCHC</td><td>358</td><td></td><td>320 - 360 g/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "RDW</td><td>11.3</td><td>*</td><td>11.5 - 14.5 %",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Platelets</td><td>192</td><td></td><td>150 - 400 x10&lt;sup&gt;9&lt;/sup&gt;/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "WBC</td><td>8.7</td><td></td><td>4.0 - 10.0 x10&lt;sup&gt;9&lt;/sup&gt;/L",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J68VY55XD9DV99MFXZX",
+          "page": 0,
+          "bbox": {
+            "x": 0.06899999999999999,
+            "y": 0.254,
+            "width": 0.861,
+            "height": 0.5810000000000001
+          },
+          "text": "Neutrophils</td><td>4.21</td><td></td><td>2.00 - 7.50 x10&lt;sup&gt;9&lt;/sup&gt;/L",
+          "confidence": 3
+        }
+      ]
+    }
+  },
+  "extractSkipped": null,
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 45,
+    "usd": 0.045,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      },
+      {
+        "event": "page_extracted",
+        "units": 1,
+        "rate": 15,
+        "credits": 15,
+        "reason": "Each page read by the extraction."
+      },
+      {
+        "event": "extraction_grounding",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Citations: each value is linked to its place on the page."
+      },
+      {
+        "event": "page_judged",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Judge pass: each cited value gets a confidence score."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 1365,
+    "classifyMs": 28303,
+    "extractMs": 48450,
+    "totalMs": 78118
+  },
+  "score": {
+    "rowsExpected": 28,
+    "rowsFound": 28,
+    "rowsExtracted": 28,
+    "valuesCorrect": 28,
+    "flagsCorrect": 28,
+    "unitsCorrect": 28,
+    "perRow": [
+      {
+        "test": "Sodium",
+        "expected": {
+          "value": "144",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Sodium",
+          "value": "144",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Potassium",
+        "expected": {
+          "value": "4.9",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Potassium",
+          "value": "4.9",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Chloride",
+        "expected": {
+          "value": "102",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Chloride",
+          "value": "102",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Bicarbonate (CO2)",
+        "expected": {
+          "value": "28",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Bicarbonate (CO2)",
+          "value": "28",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Urea",
+        "expected": {
+          "value": "5.3",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Urea",
+          "value": "5.3",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Creatinine",
+        "expected": {
+          "value": "123",
+          "flag": "*",
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Creatinine",
+          "value": "123",
+          "flag": "*",
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "eGFR (CKD-EPI)",
+        "expected": {
+          "value": "51",
+          "flag": "*",
+          "units": "mL/min/1,73m²"
+        },
+        "found": {
+          "test": "eGFR (CKD-EPI)",
+          "value": "51",
+          "flag": "*",
+          "units": "mL/min/1,73㎡"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Glucose (fasting)",
+        "expected": {
+          "value": "4.6",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Glucose (fasting)",
+          "value": "4.6",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Calcium",
+        "expected": {
+          "value": "2.31",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Calcium",
+          "value": "2.31",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Magnesium",
+        "expected": {
+          "value": "0.81",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Magnesium",
+          "value": "0.81",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Phosphate",
+        "expected": {
+          "value": "1.44",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Phosphate",
+          "value": "1.44",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Total protein",
+        "expected": {
+          "value": "77",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "Total protein",
+          "value": "77",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Albumin",
+        "expected": {
+          "value": "37",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "Albumin",
+          "value": "37",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Total bilirubin",
+        "expected": {
+          "value": "20",
+          "flag": null,
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Total bilirubin",
+          "value": "20",
+          "flag": null,
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "ALT",
+        "expected": {
+          "value": "2",
+          "flag": "*",
+          "units": "U/L"
+        },
+        "found": {
+          "test": "ALT",
+          "value": "2",
+          "flag": "*",
+          "units": "U/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "AST",
+        "expected": {
+          "value": "33",
+          "flag": null,
+          "units": "U/L"
+        },
+        "found": {
+          "test": "AST",
+          "value": "33",
+          "flag": null,
+          "units": "U/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Alkaline phosphatase",
+        "expected": {
+          "value": "107",
+          "flag": null,
+          "units": "U/L"
+        },
+        "found": {
+          "test": "Alkaline phosphatase",
+          "value": "107",
+          "flag": null,
+          "units": "U/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "GGT",
+        "expected": {
+          "value": "58",
+          "flag": null,
+          "units": "U/L"
+        },
+        "found": {
+          "test": "GGT",
+          "value": "58",
+          "flag": null,
+          "units": "U/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Hemoglobin",
+        "expected": {
+          "value": "134",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "Hemoglobin",
+          "value": "134",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Hematocrit",
+        "expected": {
+          "value": "0.42",
+          "flag": null,
+          "units": "L/L"
+        },
+        "found": {
+          "test": "Hematocrit",
+          "value": "0.42",
+          "flag": null,
+          "units": "L/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "RBC",
+        "expected": {
+          "value": "4.97",
+          "flag": null,
+          "units": "x10¹²/L"
+        },
+        "found": {
+          "test": "RBC",
+          "value": "4.97",
+          "flag": null,
+          "units": "x10^12/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCV",
+        "expected": {
+          "value": "92",
+          "flag": null,
+          "units": "fL"
+        },
+        "found": {
+          "test": "MCV",
+          "value": "92",
+          "flag": null,
+          "units": "fL"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCH",
+        "expected": {
+          "value": "32.2",
+          "flag": null,
+          "units": "pg"
+        },
+        "found": {
+          "test": "MCH",
+          "value": "32.2",
+          "flag": null,
+          "units": "pg"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCHC",
+        "expected": {
+          "value": "358",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "MCHC",
+          "value": "358",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "RDW",
+        "expected": {
+          "value": "11.3",
+          "flag": "*",
+          "units": "%"
+        },
+        "found": {
+          "test": "RDW",
+          "value": "11.3",
+          "flag": "*",
+          "units": "%"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Platelets",
+        "expected": {
+          "value": "192",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Platelets",
+          "value": "192",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "WBC",
+        "expected": {
+          "value": "8.7",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "WBC",
+          "value": "8.7",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Neutrophils",
+        "expected": {
+          "value": "4.21",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Neutrophils",
+          "value": "4.21",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      }
+    ],
+    "extraRows": []
+  }
+}

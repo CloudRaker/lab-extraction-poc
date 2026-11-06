@@ -1,0 +1,1092 @@
+{
+  "sampleId": "1001_001038",
+  "ranAt": "2026-11-06T15:53:05.012Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+  "runs": {
+    "classify": "clr_01M6RS0M1Q02M2VEHSPG9BT92W",
+    "extract": "exr_01M6RS1KRWMNJABWY4SFP531VG"
+  },
+  "classification": {
+    "classId": "lab_report",
+    "confidence": 5,
+    "reasoning": "This is a laboratory report with comprehensive test results tables including analytes (lipid profile, CBC), values, abnormal flags (H/L), units, and reference ranges for patient Jonathan Lopez."
+  },
+  "extraction": {
+    "value": {
+      "lab_name": "Dynacare Laboratory Québec",
+      "patient_name": "LOPEZ, Jonathan",
+      "health_insurance_number": "LOPJ 4605 0396",
+      "date_of_birth": "1946-05-03",
+      "sex": "M",
+      "ordering_physician": "Dr Timothy Fuller (33535)",
+      "collected_at": "2024-04-25 13:10",
+      "reported_at": "2024-04-27 13:10",
+      "report_status": "FINAL",
+      "results": [
+        {
+          "section": "Lipid Profile",
+          "test_name": "Total cholesterol",
+          "value": "4.96",
+          "numeric_value": 4.96,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": null,
+          "reference_high": 5.2,
+          "reference_text": "< 5.20",
+          "abnormal": false
+        },
+        {
+          "section": "Lipid Profile",
+          "test_name": "LDL cholesterol",
+          "value": "2.34",
+          "numeric_value": 2.34,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": null,
+          "reference_high": 3.5,
+          "reference_text": "< 3.50",
+          "abnormal": false
+        },
+        {
+          "section": "Lipid Profile",
+          "test_name": "HDL cholesterol",
+          "value": "1.09",
+          "numeric_value": 1.09,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 1,
+          "reference_high": null,
+          "reference_text": "> 1.00",
+          "abnormal": false
+        },
+        {
+          "section": "Lipid Profile",
+          "test_name": "Non-HDL cholesterol",
+          "value": "4.48",
+          "numeric_value": 4.48,
+          "flag": "H",
+          "units": "mmol/L",
+          "reference_low": null,
+          "reference_high": 4.3,
+          "reference_text": "< 4.30",
+          "abnormal": true
+        },
+        {
+          "section": "Lipid Profile",
+          "test_name": "Triglycerides",
+          "value": "1.32",
+          "numeric_value": 1.32,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": null,
+          "reference_high": 1.7,
+          "reference_text": "< 1.70",
+          "abnormal": false
+        },
+        {
+          "section": "Lipid Profile",
+          "test_name": "Chol/HDL ratio",
+          "value": "2.5",
+          "numeric_value": 2.5,
+          "flag": "..",
+          "units": null,
+          "reference_low": null,
+          "reference_high": 4,
+          "reference_text": "< 4.0",
+          "abnormal": true
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Hemoglobin",
+          "value": "137",
+          "numeric_value": 137,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 120,
+          "reference_high": 160,
+          "reference_text": "120 - 160",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Hematocrit",
+          "value": "0.43",
+          "numeric_value": 0.43,
+          "flag": null,
+          "units": "L/L",
+          "reference_low": 0.36,
+          "reference_high": 0.48,
+          "reference_text": "0.36 - 0.48",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "RBC",
+          "value": "5.35",
+          "numeric_value": 5.35,
+          "flag": null,
+          "units": "x10<sup>12</sup>/L",
+          "reference_low": 4,
+          "reference_high": 5.5,
+          "reference_text": "4.00 - 5.50",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCV",
+          "value": "99",
+          "numeric_value": 99,
+          "flag": null,
+          "units": "fL",
+          "reference_low": 80,
+          "reference_high": 100,
+          "reference_text": "80 - 100",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCH",
+          "value": "29.8",
+          "numeric_value": 29.8,
+          "flag": null,
+          "units": "pg",
+          "reference_low": 27,
+          "reference_high": 33,
+          "reference_text": "27.0 - 33.0",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "MCHC",
+          "value": "321",
+          "numeric_value": 321,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 320,
+          "reference_high": 360,
+          "reference_text": "320 - 360",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "RDW",
+          "value": "13.9",
+          "numeric_value": 13.9,
+          "flag": null,
+          "units": "%",
+          "reference_low": 11.5,
+          "reference_high": 14.5,
+          "reference_text": "11.5 - 14.5",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Platelets",
+          "value": "316",
+          "numeric_value": 316,
+          "flag": null,
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 150,
+          "reference_high": 400,
+          "reference_text": "150 - 400",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "WBC",
+          "value": "9.6",
+          "numeric_value": 9.6,
+          "flag": null,
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 4,
+          "reference_high": 10,
+          "reference_text": "4.0 - 10.0",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Neutrophils",
+          "value": "6.96",
+          "numeric_value": 6.96,
+          "flag": null,
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 2,
+          "reference_high": 7.5,
+          "reference_text": "2.00 - 7.50",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Lymphocytes",
+          "value": "3.69",
+          "numeric_value": 3.69,
+          "flag": null,
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 1,
+          "reference_high": 4,
+          "reference_text": "1.00 - 4.00",
+          "abnormal": false
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Monocytes",
+          "value": "1.22",
+          "numeric_value": 1.22,
+          "flag": "H",
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 0.2,
+          "reference_high": 1,
+          "reference_text": "0.20 - 1.00",
+          "abnormal": true
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Eosinophils",
+          "value": "0.00",
+          "numeric_value": 0,
+          "flag": "L",
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 0,
+          "reference_high": 0.5,
+          "reference_text": "0.00 - 0.50",
+          "abnormal": true
+        },
+        {
+          "section": "Complete Blood Count (CBC)",
+          "test_name": "Basophils",
+          "value": "0.00",
+          "numeric_value": 0,
+          "flag": "L",
+          "units": "x10<sup>9</sup>/L",
+          "reference_low": 0,
+          "reference_high": 0.2,
+          "reference_text": "0.00 - 0.20",
+          "abnormal": true
+        }
+      ]
+    },
+    "citations": {
+      "lab_name": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.117,
+            "y": 0.06,
+            "width": 0.31100000000000005,
+            "height": 0.022000000000000002
+          },
+          "text": "Dynacare Laboratory Québec",
+          "confidence": 5
+        }
+      ],
+      "patient_name": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Patient : LOPEZ, Jonathan",
+          "confidence": 5
+        }
+      ],
+      "health_insurance_number": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Health ins. no. : LOPJ 4605 0396",
+          "confidence": 5
+        }
+      ],
+      "date_of_birth": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Date of birth : 1946-05-03",
+          "confidence": 5
+        }
+      ],
+      "sex": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Sex : M",
+          "confidence": 5
+        }
+      ],
+      "ordering_physician": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Ordering physician : Dr Timothy Fuller (33535)",
+          "confidence": 5
+        }
+      ],
+      "collected_at": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Collected : 2024-04-25 13:10",
+          "confidence": 5
+        }
+      ],
+      "reported_at": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.072,
+            "y": 0.139,
+            "width": 0.8019999999999999,
+            "height": 0.07300000000000001
+          },
+          "text": "Reported : 2024-04-27 13:10",
+          "confidence": 5
+        }
+      ],
+      "report_status": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.11000000000000001,
+            "width": 0.346,
+            "height": 0.018
+          },
+          "text": "**LABORATORY REPORT — FINAL**",
+          "confidence": 5
+        }
+      ],
+      "results": [
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Lipid Profile",
+          "confidence": 1
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Total cholesterol</td><td>4.96</td><td></td><td>3.98</td><td>6.34</td><td>mmol/L</td><td>&lt; 5.20",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "LDL cholesterol</td><td>2.34</td><td></td><td>1.93</td><td>3.85</td><td>mmol/L</td><td>&lt; 3.50",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "HDL cholesterol</td><td>1.09</td><td></td><td>1.36</td><td>1.29</td><td>mmol/L</td><td>&gt; 1.00",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Non-HDL cholesterol</td><td>4.48</td><td>H</td><td>3.07</td><td>3.16</td><td>mmol/L</td><td>&lt; 4.30",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Triglycerides</td><td>1.32</td><td></td><td>1.65</td><td>1.36</td><td>mmol/L</td><td>&lt; 1.70",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Chol/HDL ratio</td><td>2.5</td><td>..</td><td>2.1</td><td>1.9</td><td></td><td>&lt; 4.0",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Complete Blood Count (CBC)",
+          "confidence": 1
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Hemoglobin</td><td>137</td><td></td><td>152</td><td>147</td><td>g/L</td><td>120 - 160",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Hematocrit</td><td>0.43</td><td></td><td>0.33</td><td>0.39</td><td>L/L</td><td>0.36 - 0.48",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "RBC</td><td>5.35</td><td></td><td>5.42</td><td>4.24</td><td>x10&lt;sup&gt;12&lt;/sup&gt;/L</td><td>4.00 - 5.50",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCV</td><td>99</td><td></td><td>89</td><td>98</td><td>fL</td><td>80 - 100",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCH</td><td>29.8</td><td></td><td>36.2</td><td>30.7</td><td>pg</td><td>27.0 - 33.0",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "MCHC</td><td>321</td><td></td><td>339</td><td>338</td><td>g/L</td><td>320 - 360",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "RDW</td><td>13.9</td><td></td><td>16.1</td><td>11.1</td><td>%</td><td>11.5 - 14.5",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Platelets</td><td>316</td><td></td><td>216</td><td>429</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>150 - 400",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "WBC</td><td>9.6</td><td></td><td>8.1</td><td>7.8</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>4.0 - 10.0",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Neutrophils</td><td>6.96</td><td></td><td>4.27</td><td>2.77</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>2.00 - 7.50",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Lymphocytes</td><td>3.69</td><td></td><td>3.84</td><td>2.11</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>1.00 - 4.00",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Monocytes</td><td>1.22</td><td>H</td><td>0.16</td><td>0.29</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0.20 - 1.00",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Eosinophils</td><td>0.00</td><td>L</td><td>0.00</td><td>0.43</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0.00 - 0.50",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RS0J6C6JKWP0HP999M6XGK",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.222,
+            "width": 0.8620000000000001,
+            "height": 0.479
+          },
+          "text": "Basophils</td><td>0.00</td><td>L</td><td>0.13</td><td>0.05</td><td>x10&lt;sup&gt;9&lt;/sup&gt;/L</td><td>0.00 - 0.20",
+          "confidence": 3
+        }
+      ]
+    }
+  },
+  "extractSkipped": null,
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 45,
+    "usd": 0.045,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      },
+      {
+        "event": "page_extracted",
+        "units": 1,
+        "rate": 15,
+        "credits": 15,
+        "reason": "Each page read by the extraction."
+      },
+      {
+        "event": "extraction_grounding",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Citations: each value is linked to its place on the page."
+      },
+      {
+        "event": "page_judged",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Judge pass: each cited value gets a confidence score."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 2021,
+    "classifyMs": 32814,
+    "extractMs": 81049,
+    "totalMs": 115884
+  },
+  "score": {
+    "rowsExpected": 20,
+    "rowsFound": 20,
+    "rowsExtracted": 20,
+    "valuesCorrect": 20,
+    "flagsCorrect": 19,
+    "unitsCorrect": 20,
+    "perRow": [
+      {
+        "test": "Total cholesterol",
+        "expected": {
+          "value": "4.96",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Total cholesterol",
+          "value": "4.96",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "LDL cholesterol",
+        "expected": {
+          "value": "2.34",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "LDL cholesterol",
+          "value": "2.34",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "HDL cholesterol",
+        "expected": {
+          "value": "1.09",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "HDL cholesterol",
+          "value": "1.09",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Non-HDL cholesterol",
+        "expected": {
+          "value": "4.48",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Non-HDL cholesterol",
+          "value": "4.48",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Triglycerides",
+        "expected": {
+          "value": "1.32",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Triglycerides",
+          "value": "1.32",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Chol/HDL ratio",
+        "expected": {
+          "value": "2.5",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Chol/HDL ratio",
+          "value": "2.5",
+          "flag": "..",
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": false,
+        "unitsOk": true
+      },
+      {
+        "test": "Hemoglobin",
+        "expected": {
+          "value": "137",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "Hemoglobin",
+          "value": "137",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Hematocrit",
+        "expected": {
+          "value": "0.43",
+          "flag": null,
+          "units": "L/L"
+        },
+        "found": {
+          "test": "Hematocrit",
+          "value": "0.43",
+          "flag": null,
+          "units": "L/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "RBC",
+        "expected": {
+          "value": "5.35",
+          "flag": null,
+          "units": "x10¹²/L"
+        },
+        "found": {
+          "test": "RBC",
+          "value": "5.35",
+          "flag": null,
+          "units": "x10<sup>12</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCV",
+        "expected": {
+          "value": "99",
+          "flag": null,
+          "units": "fL"
+        },
+        "found": {
+          "test": "MCV",
+          "value": "99",
+          "flag": null,
+          "units": "fL"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCH",
+        "expected": {
+          "value": "29.8",
+          "flag": null,
+          "units": "pg"
+        },
+        "found": {
+          "test": "MCH",
+          "value": "29.8",
+          "flag": null,
+          "units": "pg"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "MCHC",
+        "expected": {
+          "value": "321",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "MCHC",
+          "value": "321",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "RDW",
+        "expected": {
+          "value": "13.9",
+          "flag": null,
+          "units": "%"
+        },
+        "found": {
+          "test": "RDW",
+          "value": "13.9",
+          "flag": null,
+          "units": "%"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Platelets",
+        "expected": {
+          "value": "316",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Platelets",
+          "value": "316",
+          "flag": null,
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "WBC",
+        "expected": {
+          "value": "9.6",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "WBC",
+          "value": "9.6",
+          "flag": null,
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Neutrophils",
+        "expected": {
+          "value": "6.96",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Neutrophils",
+          "value": "6.96",
+          "flag": null,
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Lymphocytes",
+        "expected": {
+          "value": "3.69",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Lymphocytes",
+          "value": "3.69",
+          "flag": null,
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Monocytes",
+        "expected": {
+          "value": "1.22",
+          "flag": "H",
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Monocytes",
+          "value": "1.22",
+          "flag": "H",
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Eosinophils",
+        "expected": {
+          "value": "0.00",
+          "flag": "L",
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Eosinophils",
+          "value": "0.00",
+          "flag": "L",
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Basophils",
+        "expected": {
+          "value": "0.00",
+          "flag": "L",
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Basophils",
+          "value": "0.00",
+          "flag": "L",
+          "units": "x10<sup>9</sup>/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      }
+    ],
+    "extraRows": []
+  }
+}

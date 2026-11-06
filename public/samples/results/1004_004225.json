@@ -1,0 +1,792 @@
+{
+  "sampleId": "1004_004225",
+  "ranAt": "2026-11-06T15:48:25.455Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+  "runs": {
+    "classify": "clr_01M6RRR3HJTYHG83RTYQG5W3HB",
+    "extract": "exr_01M6RRSA8HVHHXV0G19NK02FCT"
+  },
+  "classification": {
+    "classId": "lab_report",
+    "confidence": 5,
+    "reasoning": "This is a laboratory report with multiple test result tables showing analytes (HbA1c, TSH, T4 libre, etc.) with values, abnormal flags (*), units, and reference ranges for one patient (Olivier Lacasse)."
+  },
+  "extraction": {
+    "value": {
+      "lab_name": "INSTITUT DE CARDIOLOGIE ET DE PNEUMOLOGIE DE MONTRÉAL",
+      "patient_name": "LACASSE, Olivier",
+      "health_insurance_number": "LACO 1312 0690",
+      "date_of_birth": "2013-12-06",
+      "sex": "M",
+      "ordering_physician": "Dr Marie Lessard (53054)",
+      "collected_at": "2025-01-19 07:06",
+      "reported_at": "2025-01-21 04:06",
+      "report_status": "FINAL",
+      "results": [
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "HbA1c",
+          "value": "5,7",
+          "numeric_value": 5.7,
+          "flag": null,
+          "units": "%",
+          "reference_low": 4,
+          "reference_high": 6,
+          "reference_text": "4,0 - 6,0",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "TSH",
+          "value": "3,68",
+          "numeric_value": 3.68,
+          "flag": null,
+          "units": "mUI/L",
+          "reference_low": 0.4,
+          "reference_high": 4,
+          "reference_text": "0,40 - 4,00",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "T4 libre",
+          "value": "28,1",
+          "numeric_value": 28.1,
+          "flag": "*",
+          "units": "pmol/L",
+          "reference_low": 10,
+          "reference_high": 22,
+          "reference_text": "10,0 - 22,0",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "Ferritine",
+          "value": "163",
+          "numeric_value": 163,
+          "flag": null,
+          "units": "μg/L",
+          "reference_low": 20,
+          "reference_high": 250,
+          "reference_text": "20 - 250",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "Vitamine B12",
+          "value": "365",
+          "numeric_value": 365,
+          "flag": null,
+          "units": "pmol/L",
+          "reference_low": 150,
+          "reference_high": 650,
+          "reference_text": "150 - 650",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "25-OH vitamine D",
+          "value": "144",
+          "numeric_value": 144,
+          "flag": null,
+          "units": "nmol/L",
+          "reference_low": 75,
+          "reference_high": 250,
+          "reference_text": "75 - 250",
+          "abnormal": false
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "Protéine C réactive",
+          "value": "6,1",
+          "numeric_value": 6.1,
+          "flag": "*",
+          "units": "mg/L",
+          "reference_low": null,
+          "reference_high": 5,
+          "reference_text": "< 5,0",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "Acide urique",
+          "value": "510",
+          "numeric_value": 510,
+          "flag": "*",
+          "units": "μmol/L",
+          "reference_low": 200,
+          "reference_high": 420,
+          "reference_text": "200 - 420",
+          "abnormal": true
+        },
+        {
+          "section": "Endocrinologie / Fer / Vitamines",
+          "test_name": "RNI",
+          "value": "1,0",
+          "numeric_value": 1,
+          "flag": null,
+          "units": null,
+          "reference_low": 0.9,
+          "reference_high": 1.1,
+          "reference_text": "0,9 - 1,1",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Couleur urine",
+          "value": "Ambrée",
+          "numeric_value": null,
+          "flag": "*",
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Jaune",
+          "abnormal": true
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "pH",
+          "value": "9,1",
+          "numeric_value": 9.1,
+          "flag": "*",
+          "units": null,
+          "reference_low": 5,
+          "reference_high": 8,
+          "reference_text": "5,0 - 8,0",
+          "abnormal": true
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Densité",
+          "value": "1,005",
+          "numeric_value": 1.005,
+          "flag": null,
+          "units": null,
+          "reference_low": 1.005,
+          "reference_high": 1.03,
+          "reference_text": "1,005 - 1,030",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Glucose",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Protéines",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Cétones",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Sang",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": "FINA",
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Leucocytes estérase",
+          "value": "Positif",
+          "numeric_value": null,
+          "flag": "*",
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": true
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Nitrites",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        }
+      ]
+    },
+    "citations": {
+      "lab_name": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.159,
+            "y": 0.044000000000000004,
+            "width": 0.68,
+            "height": 0.020999999999999994
+          },
+          "text": "INSTITUT DE CARDIOLOGIE ET DE PNEUMOLOGIE DE MONTRÉAL",
+          "confidence": 5
+        }
+      ],
+      "patient_name": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.06699999999999999,
+            "y": 0.149,
+            "width": 0.163,
+            "height": 0.01300000000000001
+          },
+          "text": "Patient : LACASSE, Olivier",
+          "confidence": 5
+        }
+      ],
+      "health_insurance_number": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.361,
+            "y": 0.149,
+            "width": 0.21100000000000002,
+            "height": 0.012000000000000016
+          },
+          "text": "No ass. maladie : LACO 1312 0690",
+          "confidence": 5
+        }
+      ],
+      "date_of_birth": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.654,
+            "y": 0.15,
+            "width": 0.19100000000000003,
+            "height": 0.01300000000000001
+          },
+          "text": "Date de naissance : 2013-12-06",
+          "confidence": 5
+        }
+      ],
+      "sex": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.164,
+            "width": 0.053,
+            "height": 0.01100000000000002
+          },
+          "text": "Sexe : M",
+          "confidence": 5
+        }
+      ],
+      "ordering_physician": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.17800000000000002,
+            "width": 0.24,
+            "height": 0.027000000000000017
+          },
+          "text": "Médecin requérant : Dr Marie Lessard\n(53054)",
+          "confidence": 5
+        }
+      ],
+      "collected_at": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.654,
+            "y": 0.17800000000000002,
+            "width": 0.17700000000000005,
+            "height": 0.01300000000000001
+          },
+          "text": "Prélevé le : 2025-01-19 07:06",
+          "confidence": 5
+        }
+      ],
+      "reported_at": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.20600000000000002,
+            "width": 0.21300000000000002,
+            "height": 0.01199999999999999
+          },
+          "text": "Rapport émis le : 2025-01-21 04:06",
+          "confidence": 5
+        }
+      ],
+      "report_status": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.057999999999999996,
+            "y": 0.11700000000000002,
+            "width": 0.4129999999999999,
+            "height": 0.017999999999999985
+          },
+          "text": "RAPPORT DE LABORATOIRE — FINAL",
+          "confidence": 5
+        }
+      ],
+      "results": [
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.055,
+            "y": 0.24700000000000005,
+            "width": 0.8879999999999999,
+            "height": 0.231
+          },
+          "text": "<table><tr><th rowspan=2>Analyse</th><th rowspan=2>Résultat</th><th rowspan=2>Ind.</th><th colspan=2>Résultats antérieurs</th><th rowspan=2>Unités</th><th rowspan=2>Valeurs de référence</th></tr><tr><th>2024-11-14</th><th>2023-01-29</th></tr><tr><td>HbA1c</td><td>5,7</td><td></td><td>4,9</td><td>5,5</td><td>%</td><td>4,0 - 6,0</td></tr><tr><td>TSH</td><td>3,68</td><td></td><td>5,32</td><td>1,46</td><td>mUI/L</td><td>0,40 - 4,00</td></tr><tr><td>T4 libre</td><td>28,1</td><td>*</td><td>20,9</td><t",
+          "confidence": 3
+        },
+        {
+          "fileId": "file_01M6RRR2T7942MJZJ2ZGVMW3WB",
+          "page": 0,
+          "bbox": {
+            "x": 0.055,
+            "y": 0.49800000000000005,
+            "width": 0.89,
+            "height": 0.23
+          },
+          "text": "<table><tr><th rowspan=2>Analyse</th><th rowspan=2>Résultat</th><th rowspan=2>Ind.</th><th colspan=2>Résultats antérieurs</th><th rowspan=2>Unités</th><th rowspan=2>Valeurs de référence</th></tr><tr><th>2024-11-14</th><th>2023-01-29</th></tr><tr><td>Couleur urine</td><td>Ambrée</td><td>*</td><td>Jaune</td><td>Jaune</td><td></td><td>Jaune</td></tr><tr><td>pH</td><td>9,1</td><td>*</td><td>7,3</td><td>6,2</td><td></td><td>5,0 - 8,0</td></tr><tr><td>Densité</td><td>1,005</td><td></td><td>1,010</td><",
+          "confidence": 3
+        }
+      ]
+    }
+  },
+  "extractSkipped": null,
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 45,
+    "usd": 0.045,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      },
+      {
+        "event": "page_extracted",
+        "units": 1,
+        "rate": 15,
+        "credits": 15,
+        "reason": "Each page read by the extraction."
+      },
+      {
+        "event": "extraction_grounding",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Citations: each value is linked to its place on the page."
+      },
+      {
+        "event": "page_judged",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Judge pass: each cited value gets a confidence score."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 2860,
+    "classifyMs": 39231,
+    "extractMs": 38684,
+    "totalMs": 80775
+  },
+  "score": {
+    "rowsExpected": 18,
+    "rowsFound": 18,
+    "rowsExtracted": 18,
+    "valuesCorrect": 18,
+    "flagsCorrect": 18,
+    "unitsCorrect": 17,
+    "perRow": [
+      {
+        "test": "HbA1c",
+        "expected": {
+          "value": "5,7",
+          "flag": null,
+          "units": "%"
+        },
+        "found": {
+          "test": "HbA1c",
+          "value": "5,7",
+          "flag": null,
+          "units": "%"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "TSH",
+        "expected": {
+          "value": "3,68",
+          "flag": null,
+          "units": "mUI/L"
+        },
+        "found": {
+          "test": "TSH",
+          "value": "3,68",
+          "flag": null,
+          "units": "mUI/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "T4 libre",
+        "expected": {
+          "value": "28,1",
+          "flag": "*",
+          "units": "pmol/L"
+        },
+        "found": {
+          "test": "T4 libre",
+          "value": "28,1",
+          "flag": "*",
+          "units": "pmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Ferritine",
+        "expected": {
+          "value": "163",
+          "flag": null,
+          "units": "µg/L"
+        },
+        "found": {
+          "test": "Ferritine",
+          "value": "163",
+          "flag": null,
+          "units": "μg/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Vitamine B12",
+        "expected": {
+          "value": "365",
+          "flag": null,
+          "units": "pmol/L"
+        },
+        "found": {
+          "test": "Vitamine B12",
+          "value": "365",
+          "flag": null,
+          "units": "pmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "25-OH vitamine D",
+        "expected": {
+          "value": "144",
+          "flag": null,
+          "units": "nmol/L"
+        },
+        "found": {
+          "test": "25-OH vitamine D",
+          "value": "144",
+          "flag": null,
+          "units": "nmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Protéine C réactive",
+        "expected": {
+          "value": "6,1",
+          "flag": "*",
+          "units": "mg/L"
+        },
+        "found": {
+          "test": "Protéine C réactive",
+          "value": "6,1",
+          "flag": "*",
+          "units": "mg/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Acide urique",
+        "expected": {
+          "value": "510",
+          "flag": "*",
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Acide urique",
+          "value": "510",
+          "flag": "*",
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "RNI",
+        "expected": {
+          "value": "1,0",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "RNI",
+          "value": "1,0",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Couleur urine",
+        "expected": {
+          "value": "Ambrée",
+          "flag": "*",
+          "units": null
+        },
+        "found": {
+          "test": "Couleur urine",
+          "value": "Ambrée",
+          "flag": "*",
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "pH",
+        "expected": {
+          "value": "9,1",
+          "flag": "*",
+          "units": null
+        },
+        "found": {
+          "test": "pH",
+          "value": "9,1",
+          "flag": "*",
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Densité",
+        "expected": {
+          "value": "1,005",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Densité",
+          "value": "1,005",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Glucose",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Glucose",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Protéines",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Protéines",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Cétones",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Cétones",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Sang",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Sang",
+          "value": "Négatif",
+          "flag": null,
+          "units": "FINA"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": false
+      },
+      {
+        "test": "Leucocytes estérase",
+        "expected": {
+          "value": "Positif",
+          "flag": "*",
+          "units": null
+        },
+        "found": {
+          "test": "Leucocytes estérase",
+          "value": "Positif",
+          "flag": "*",
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Nitrites",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Nitrites",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      }
+    ],
+    "extraRows": []
+  }
+}

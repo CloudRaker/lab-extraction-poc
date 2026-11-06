@@ -1,0 +1,1122 @@
+{
+  "sampleId": "1001_002668",
+  "ranAt": "2026-11-06T15:44:26.427Z",
+  "apiBase": "https://api.cloudraker.com",
+  "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+  "runs": {
+    "classify": "clr_01M6RRGRV3CV3BW8WMXV3PRMXT",
+    "extract": "exr_01M6RRJ9P2TYR1291CKJRB8S0C"
+  },
+  "classification": {
+    "classId": "lab_report",
+    "confidence": 5,
+    "reasoning": "This is a laboratory report with comprehensive test results tables including analytes (hemoglobin, hematocrite, glucose, etc.), values, abnormal flags (H, L, HH), units, and reference ranges for one patient (Diane Desjardins)."
+  },
+  "extraction": {
+    "value": {
+      "lab_name": "Hôpital de la Rivière-des-Prairies",
+      "patient_name": "DESJARDINS, Diane",
+      "health_insurance_number": "DESD 3462 0880",
+      "date_of_birth": "1934-12-08",
+      "sex": "F",
+      "ordering_physician": "Dre Marcel Lapierre",
+      "collected_at": "2025-05-14 12:53",
+      "reported_at": "2025-05-15 14:53",
+      "report_status": "FINAL",
+      "results": [
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Hémoglobine",
+          "value": "152",
+          "numeric_value": 152,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 120,
+          "reference_high": 160,
+          "reference_text": "120 – 160",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Hématocrite",
+          "value": "0,51",
+          "numeric_value": 0.51,
+          "flag": "H",
+          "units": "L/L",
+          "reference_low": 0.36,
+          "reference_high": 0.48,
+          "reference_text": "0,36 – 0,48",
+          "abnormal": true
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Globules rouges",
+          "value": "5,06",
+          "numeric_value": 5.06,
+          "flag": null,
+          "units": "x10^12/L",
+          "reference_low": 4,
+          "reference_high": 5.5,
+          "reference_text": "4,00 – 5,50",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "VGM",
+          "value": "100",
+          "numeric_value": 100,
+          "flag": null,
+          "units": "fL",
+          "reference_low": 80,
+          "reference_high": 100,
+          "reference_text": "80 – 100",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "TCMH",
+          "value": "28,8",
+          "numeric_value": 28.8,
+          "flag": null,
+          "units": "pg",
+          "reference_low": 27,
+          "reference_high": 33,
+          "reference_text": "27,0 – 33,0",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "CCMH",
+          "value": "339",
+          "numeric_value": 339,
+          "flag": null,
+          "units": "g/L",
+          "reference_low": 320,
+          "reference_high": 360,
+          "reference_text": "320 – 360",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "IDR",
+          "value": "12,3",
+          "numeric_value": 12.3,
+          "flag": null,
+          "units": "%",
+          "reference_low": 11.5,
+          "reference_high": 14.5,
+          "reference_text": "11,5 – 14,5",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Plaquettes",
+          "value": "302",
+          "numeric_value": 302,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 150,
+          "reference_high": 400,
+          "reference_text": "150 – 400",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Globules blancs",
+          "value": "7,0",
+          "numeric_value": 7,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 4,
+          "reference_high": 10,
+          "reference_text": "4,0 – 10,0",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Neutrophiles",
+          "value": "7,19",
+          "numeric_value": 7.19,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 2,
+          "reference_high": 7.5,
+          "reference_text": "2,00 – 7,50",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Lymphocytes",
+          "value": "1,31",
+          "numeric_value": 1.31,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 1,
+          "reference_high": 4,
+          "reference_text": "1,00 – 4,00",
+          "abnormal": false
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Monocytes",
+          "value": "1,08",
+          "numeric_value": 1.08,
+          "flag": "H",
+          "units": "x10^9/L",
+          "reference_low": 0.2,
+          "reference_high": 1,
+          "reference_text": "0,20 – 1,00",
+          "abnormal": true
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Éosinophiles",
+          "value": "1,57",
+          "numeric_value": 1.57,
+          "flag": "HH",
+          "units": "x10^9/L",
+          "reference_low": 0,
+          "reference_high": 0.5,
+          "reference_text": "0,00 – 0,50",
+          "abnormal": true
+        },
+        {
+          "section": "Formule sanguine complète (FSC)",
+          "test_name": "Basophiles",
+          "value": "0,18",
+          "numeric_value": 0.18,
+          "flag": null,
+          "units": "x10^9/L",
+          "reference_low": 0,
+          "reference_high": 0.2,
+          "reference_text": "0,00 – 0,20",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Couleur urine",
+          "value": "Jaune",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Jaune",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "pH",
+          "value": "5,9",
+          "numeric_value": 5.9,
+          "flag": null,
+          "units": null,
+          "reference_low": 5,
+          "reference_high": 8,
+          "reference_text": "5,0 – 8,0",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Densité",
+          "value": "1,025",
+          "numeric_value": 1.025,
+          "flag": null,
+          "units": null,
+          "reference_low": 1.005,
+          "reference_high": 1.03,
+          "reference_text": "1,005 – 1,030",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Glucose",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Protéines",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Cétones",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Sang",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Leucocytes estérase",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Analyse d'urine",
+          "test_name": "Nitrites",
+          "value": "Négatif",
+          "numeric_value": null,
+          "flag": null,
+          "units": null,
+          "reference_low": null,
+          "reference_high": null,
+          "reference_text": "Négatif",
+          "abnormal": false
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Sodium",
+          "value": "141",
+          "numeric_value": 141,
+          "flag": null,
+          "units": "mmol/L",
+          "reference_low": 135,
+          "reference_high": 145,
+          "reference_text": "135 – 145",
+          "abnormal": false
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Potassium",
+          "value": "5,4",
+          "numeric_value": 5.4,
+          "flag": "H",
+          "units": "mmol/L",
+          "reference_low": 3.5,
+          "reference_high": 5,
+          "reference_text": "3,5 – 5,0",
+          "abnormal": true
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Chlorure",
+          "value": "112",
+          "numeric_value": 112,
+          "flag": "H",
+          "units": "mmol/L",
+          "reference_low": 98,
+          "reference_high": 107,
+          "reference_text": "98 – 107",
+          "abnormal": true
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Bicarbonate (CO2)",
+          "value": "30",
+          "numeric_value": 30,
+          "flag": "H",
+          "units": "mmol/L",
+          "reference_low": 22,
+          "reference_high": 29,
+          "reference_text": "22 – 29",
+          "abnormal": true
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Urée",
+          "value": "10,3",
+          "numeric_value": 10.3,
+          "flag": "H",
+          "units": "mmol/L",
+          "reference_low": 2.5,
+          "reference_high": 8,
+          "reference_text": "2,5 – 8,0",
+          "abnormal": true
+        },
+        {
+          "section": "Bilan biochimique",
+          "test_name": "Créatinine",
+          "value": "39",
+          "numeric_value": 39,
+          "flag": "L",
+          "units": "μmol/L",
+          "reference_low": 50,
+          "reference_high": 110,
+          "reference_text": "50 – 110",
+          "abnormal": true
+        }
+      ]
+    },
+    "citations": {
+      "lab_name": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.137,
+            "y": 0.058,
+            "width": 0.322,
+            "height": 0.018000000000000006
+          },
+          "text": "Hôpital de la Rivière-des-Prairies",
+          "confidence": 5
+        }
+      ],
+      "patient_name": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.077,
+            "y": 0.16,
+            "width": 0.175,
+            "height": 0.01100000000000002
+          },
+          "text": "Patient : DESJARDINS, Diane",
+          "confidence": 5
+        }
+      ],
+      "health_insurance_number": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.362,
+            "y": 0.159,
+            "width": 0.20100000000000004,
+            "height": 0.01100000000000002
+          },
+          "text": "No ass. maladie : DESD 3462 0880",
+          "confidence": 5
+        }
+      ],
+      "date_of_birth": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.6469999999999999,
+            "y": 0.159,
+            "width": 0.18100000000000002,
+            "height": 0.01
+          },
+          "text": "Date de naissance : 1934-12-08",
+          "confidence": 5
+        }
+      ],
+      "sex": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.078,
+            "y": 0.17400000000000002,
+            "width": 0.05,
+            "height": 0.01
+          },
+          "text": "Sexe : F",
+          "confidence": 5
+        }
+      ],
+      "ordering_physician": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.078,
+            "y": 0.18700000000000003,
+            "width": 0.23399999999999999,
+            "height": 0.010999999999999994
+          },
+          "text": "Médecin requérant : Dre Marcel Lapierre",
+          "confidence": 5
+        }
+      ],
+      "collected_at": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.6469999999999999,
+            "y": 0.18500000000000003,
+            "width": 0.1690000000000001,
+            "height": 0.010999999999999994
+          },
+          "text": "Prélevé le : 2025-05-14 12:53",
+          "confidence": 5
+        }
+      ],
+      "reported_at": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.078,
+            "y": 0.21300000000000002,
+            "width": 0.2,
+            "height": 0.012000000000000016
+          },
+          "text": "Rapport émis le : 2025-05-15 14:53",
+          "confidence": 5
+        }
+      ],
+      "report_status": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.066,
+            "y": 0.128,
+            "width": 0.411,
+            "height": 0.01699999999999999
+          },
+          "text": "RAPPORT DE LABORATOIRE — FINAL",
+          "confidence": 5
+        }
+      ],
+      "results": [
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.23400000000000004,
+            "width": 0.8620000000000001,
+            "height": 0.63
+          },
+          "text": "Formule sanguine complète (FSC)",
+          "confidence": 2
+        },
+        {
+          "fileId": "file_01M6RRGQN1T3Q0WNA2S4FHHT16",
+          "page": 0,
+          "bbox": {
+            "x": 0.06799999999999999,
+            "y": 0.23400000000000004,
+            "width": 0.8620000000000001,
+            "height": 0.63
+          },
+          "text": "Bilan biochimique",
+          "confidence": 2
+        }
+      ]
+    }
+  },
+  "extractSkipped": null,
+  "usage": {
+    "classify": {
+      "pages": 1
+    },
+    "extract": null
+  },
+  "cost": {
+    "credits": 45,
+    "usd": 0.045,
+    "creditUsd": 0.001,
+    "ratesSource": "catalog",
+    "lines": [
+      {
+        "event": "page_ocr",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "The page is an image, so parsing runs OCR (rakedoc)."
+      },
+      {
+        "event": "page_classified",
+        "units": 1,
+        "rate": 10,
+        "credits": 10,
+        "reason": "Each page sent to the classifier."
+      },
+      {
+        "event": "page_extracted",
+        "units": 1,
+        "rate": 15,
+        "credits": 15,
+        "reason": "Each page read by the extraction."
+      },
+      {
+        "event": "extraction_grounding",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Citations: each value is linked to its place on the page."
+      },
+      {
+        "event": "page_judged",
+        "units": 1,
+        "rate": 5,
+        "credits": 5,
+        "reason": "Judge pass: each cited value gets a confidence score."
+      }
+    ],
+    "estimate": true
+  },
+  "timings": {
+    "uploadMs": 1371,
+    "classifyMs": 50205,
+    "extractMs": 97781,
+    "totalMs": 149357
+  },
+  "score": {
+    "rowsExpected": 29,
+    "rowsFound": 29,
+    "rowsExtracted": 29,
+    "valuesCorrect": 29,
+    "flagsCorrect": 29,
+    "unitsCorrect": 29,
+    "perRow": [
+      {
+        "test": "Hémoglobine",
+        "expected": {
+          "value": "152",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "Hémoglobine",
+          "value": "152",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Hématocrite",
+        "expected": {
+          "value": "0,51",
+          "flag": "H",
+          "units": "L/L"
+        },
+        "found": {
+          "test": "Hématocrite",
+          "value": "0,51",
+          "flag": "H",
+          "units": "L/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Globules rouges",
+        "expected": {
+          "value": "5,06",
+          "flag": null,
+          "units": "x10¹²/L"
+        },
+        "found": {
+          "test": "Globules rouges",
+          "value": "5,06",
+          "flag": null,
+          "units": "x10^12/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "VGM",
+        "expected": {
+          "value": "100",
+          "flag": null,
+          "units": "fL"
+        },
+        "found": {
+          "test": "VGM",
+          "value": "100",
+          "flag": null,
+          "units": "fL"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "TCMH",
+        "expected": {
+          "value": "28,8",
+          "flag": null,
+          "units": "pg"
+        },
+        "found": {
+          "test": "TCMH",
+          "value": "28,8",
+          "flag": null,
+          "units": "pg"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "CCMH",
+        "expected": {
+          "value": "339",
+          "flag": null,
+          "units": "g/L"
+        },
+        "found": {
+          "test": "CCMH",
+          "value": "339",
+          "flag": null,
+          "units": "g/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "IDR",
+        "expected": {
+          "value": "12,3",
+          "flag": null,
+          "units": "%"
+        },
+        "found": {
+          "test": "IDR",
+          "value": "12,3",
+          "flag": null,
+          "units": "%"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Plaquettes",
+        "expected": {
+          "value": "302",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Plaquettes",
+          "value": "302",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Globules blancs",
+        "expected": {
+          "value": "7,0",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Globules blancs",
+          "value": "7,0",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Neutrophiles",
+        "expected": {
+          "value": "7,19",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Neutrophiles",
+          "value": "7,19",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Lymphocytes",
+        "expected": {
+          "value": "1,31",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Lymphocytes",
+          "value": "1,31",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Monocytes",
+        "expected": {
+          "value": "1,08",
+          "flag": "H",
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Monocytes",
+          "value": "1,08",
+          "flag": "H",
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Éosinophiles",
+        "expected": {
+          "value": "1,57",
+          "flag": "HH",
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Éosinophiles",
+          "value": "1,57",
+          "flag": "HH",
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Basophiles",
+        "expected": {
+          "value": "0,18",
+          "flag": null,
+          "units": "x10⁹/L"
+        },
+        "found": {
+          "test": "Basophiles",
+          "value": "0,18",
+          "flag": null,
+          "units": "x10^9/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Couleur urine",
+        "expected": {
+          "value": "Jaune",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Couleur urine",
+          "value": "Jaune",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "pH",
+        "expected": {
+          "value": "5,9",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "pH",
+          "value": "5,9",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Densité",
+        "expected": {
+          "value": "1,025",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Densité",
+          "value": "1,025",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Glucose",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Glucose",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Protéines",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Protéines",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Cétones",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Cétones",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Sang",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Sang",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Leucocytes estérase",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Leucocytes estérase",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Nitrites",
+        "expected": {
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "found": {
+          "test": "Nitrites",
+          "value": "Négatif",
+          "flag": null,
+          "units": null
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Sodium",
+        "expected": {
+          "value": "141",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Sodium",
+          "value": "141",
+          "flag": null,
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Potassium",
+        "expected": {
+          "value": "5,4",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Potassium",
+          "value": "5,4",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Chlorure",
+        "expected": {
+          "value": "112",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Chlorure",
+          "value": "112",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Bicarbonate (CO2)",
+        "expected": {
+          "value": "30",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Bicarbonate (CO2)",
+          "value": "30",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Urée",
+        "expected": {
+          "value": "10,3",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "found": {
+          "test": "Urée",
+          "value": "10,3",
+          "flag": "H",
+          "units": "mmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      },
+      {
+        "test": "Créatinine",
+        "expected": {
+          "value": "39",
+          "flag": "L",
+          "units": "µmol/L"
+        },
+        "found": {
+          "test": "Créatinine",
+          "value": "39",
+          "flag": "L",
+          "units": "μmol/L"
+        },
+        "nameOk": true,
+        "valueOk": true,
+        "flagOk": true,
+        "unitsOk": true
+      }
+    ],
+    "extraRows": []
+  }
+}
