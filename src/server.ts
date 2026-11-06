@@ -13,6 +13,11 @@ const server = new Hono<{ Bindings: CloudflareBindings }>()
 
 server.route('/', api)
 
+// Unknown /api paths answer JSON, not the SPA shell.
+server.all('/api/*', (c) =>
+  c.json({ error: { code: 'not_found', message: 'No such API route.', retryable: false } }, 404),
+)
+
 server.all('*', async (c) => {
   const assetResponse = await c.env.ASSETS.fetch(c.req.raw)
   if (assetResponse.status !== 404) return new Response(assetResponse.body, assetResponse)

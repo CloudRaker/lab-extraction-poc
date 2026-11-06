@@ -12,7 +12,7 @@ export const OPTIONS = {
   citations: true,
   judge: true,
   ttl: 3600, // runs and their data are purged after one hour
-  deadlineMs: 150_000, // whole pipeline
+  deadlineMs: 240_000, // whole pipeline (a slow page took 150 s in testing)
 }
 
 export class StepError extends PaperworkError {

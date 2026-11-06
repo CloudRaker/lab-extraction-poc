@@ -49,8 +49,6 @@ app.onError((err, c) => {
   return fail(c, 500, 'internal', 'Something went wrong. Try again.')
 })
 
-app.notFound((c) => fail(c, 404, 'not_found', 'No such API route.'))
-
 app.get('/config', async (c) => {
   const r = await loadRates(c.env.CATALOG_URL)
   const body: AppConfig = {
